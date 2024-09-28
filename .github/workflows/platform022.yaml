@@ -14,6 +14,7 @@ jobs:
           run: |
             mkdir folder
             cd folder
+            mkdir folder01
             echo "test" >> folder.yaml
             cd ..
 
