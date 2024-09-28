@@ -14,7 +14,6 @@ jobs:
           run: |
             mkdir folder
             mkdir folder/sync2
-            cp sync/* folder/sync2/
             cd folder
             git clone https://github.com/maxxam123/platform01
             mv platform01/test/test.yaml new.yaml
@@ -22,8 +21,10 @@ jobs:
             mkdir .github
             mkdir .github/workflows
             cd ..
+            diff sync/* folder/sync2/ > diff.yaml
+            
             cp pipeline/template.yaml folder/.github/workflows/template.yaml
-
+            cp sync/* folder/sync2/
             cd ..
 
         - name: Pushes to another repository
