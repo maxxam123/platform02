@@ -1,1 +1,14 @@
-abc
+on:
+  push:
+    branches:
+    - main
+    paths:
+    - 'sync2/xyz.yaml'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: test
+        run: |
+          ls -la
