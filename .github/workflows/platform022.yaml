@@ -15,10 +15,23 @@ jobs:
             mkdir folder
             cd folder
             git clone https://github.com/maxxam123/platform01
-            mkdir test
-            mkdir test2
-            echo "ettst" >> test3.yaml
-            cd ..
+            mkdir .github
+            cd .github
+            mkdir workflows
+            cd workflows
+            echo "on:" >> pipeline.yaml
+            echo "  push:" >> pipeline.yaml
+            echo "    branches:" >> pipeline.yaml
+            echo "    - main" >> pipeline.yaml
+            echo "jobs:" >> pipeline.yaml
+            echo "  build:" >> pipeline.yaml
+            echo "    runs-on: ubuntu-latest" >> pipeline.yaml
+            echo "    steps:" >> pipeline.yaml
+            echo "      - uses: actions/checkout@v3" >> pipeline.yaml
+            echo "      - name: test" >> pipeline.yaml
+            echo "        run: |" >> pipeline.yaml
+            echo "          ls -la" >> pipeline.yaml
+            cd ../../..
 
         - name: Pushes to another repository
           uses: cpina/github-action-push-to-another-repository@main
