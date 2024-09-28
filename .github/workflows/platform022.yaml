@@ -1,0 +1,31 @@
+on:
+ push:
+   branches:
+   - main
+   paths:
+   - 'test/**'
+
+jobs:
+  build:
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v3
+        - name: test
+          run: |
+            mkdir folder
+            cd folder
+            echo "test" >> folder.yaml
+            cd ..
+
+        - name: Pushes to another repository
+          uses: cpina/github-action-push-to-another-repository@main
+          env:
+            API_TOKEN_GITHUB: ${{ secrets.ACCESS_TOKEN }}
+          with:
+            source-directory: "folder"
+            destination-github-username: "maxxam123"
+            destination-repository-name: "platform01"
+            user-email: hennighausenmax@gmail.com
+            target-branch: main
+
+   
