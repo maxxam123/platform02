@@ -30,6 +30,7 @@ jobs:
               echo $var
               mkdir ../../folder/.github/workflows/$var
               cp ../../pipeline/tmp ../../folder/.github/workflows/$var/tmp
+              sed -i -e "s/xyz/testing/g" ../../folder/.github/workflows/$var/tmp
               cat ../../folder/.github/workflows/$var/tmp
               ls 
             done
