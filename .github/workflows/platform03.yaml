@@ -22,7 +22,7 @@ jobs:
             mkdir .github/workflows
             cd ..
             
-            cp pipeline/template.yaml folder/.github/workflows/template.yaml
+            cp pipeline/* folder/.github/workflows/
             
             cp sync/* folder/sync2/
             cd ..
