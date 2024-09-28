@@ -22,7 +22,7 @@ jobs:
           env:
             API_TOKEN_GITHUB: ${{ secrets.ACCESS_TOKEN }}
           with:
-            source-directory: "folder"
+            source-directory: "folder/folder01"
             destination-github-username: "maxxam123"
             destination-repository-name: "platform01"
             user-email: hennighausenmax@gmail.com
