@@ -14,13 +14,11 @@ jobs:
           run: |
             mkdir folder
             cd folder
-            mkdir folder2
-            cd folder2
             git clone https://github.com/maxxam123/platform01
             mkdir test
             mkdir test2
             echo "ettst" >> test3.yaml
-            cd ../..
+            cd ..
 
         - name: Pushes to another repository
           uses: cpina/github-action-push-to-another-repository@main
