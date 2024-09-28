@@ -15,9 +15,9 @@ jobs:
             mkdir folder
             cd folder
             git clone https://github.com/maxxam123/platform01
+            ls -la 
             mkdir test
             echo "abc" >> test/test.yaml
-            mkdir test2
             echo "abc" >> test/test2.yaml
             mkdir .github
             cd .github
