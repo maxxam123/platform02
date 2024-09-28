@@ -30,6 +30,7 @@ jobs:
             done
             
             ls
+            cd ../..
             cp pipeline/tmp folder/.github/workflows/tmp
             sed -i -e "s/xyz/testing/g" folder/.github/workflows/tmp
             cat folder/.github/workflows/tmp
