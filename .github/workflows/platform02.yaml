@@ -11,8 +11,6 @@ jobs:
       steps:
         - name: test
           run: |
-            ls
-            cd home
             ls -la
             
 
