@@ -16,7 +16,6 @@ jobs:
             mkdir folder/sync2
             cd folder
             git clone https://github.com/maxxam123/platform01
-            diff platform01/sync2/ ../sync/ > /dev/null 2>&1
             ls -la
             rm -rf platform01
             mkdir .github
