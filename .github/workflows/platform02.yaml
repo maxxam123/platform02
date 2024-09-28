@@ -12,21 +12,9 @@ jobs:
         - uses: actions/checkout@v3
         - name: test
           run: |
-            mkdir folder
-            cd folder
-            git clone https://github.com/maxxam123/platform01
-            mkdir test01
-            cd test01
-            echo "test" >> file01
-            cd ../..
+            ls
+            cd home
+            ls -la
+            
 
-        - name: Pushes to another repository
-          uses: cpina/github-action-push-to-another-repository@main
-          env:
-            API_TOKEN_GITHUB: ${{ secrets.abc }}
-          with:
-            source-directory: "folder"
-            destination-github-username: "maxxam123"
-            destination-repository-name: "platform01"
-            user-email: hennighausenmax@gmail.com
-            target-branch: main
+            
