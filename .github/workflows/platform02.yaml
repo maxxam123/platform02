@@ -5,13 +5,25 @@ on:
    paths:
    - 'test/**'
    
+
 jobs:
-  build:
-      runs-on: ubuntu-latest
-      steps:
-        - name: test
-          run: |
-            ls -la
+  copy-file:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Pushes test file
+      uses: dmnemec/copy_file_to_another_repo_action@main
+      env:
+        API_TOKEN_GITHUB: ${{ secrets.abc }}
+      with:
+        source_file: 'test2.md'
+        destination_repo: 'maxxam123/platform01'
+        destination_folder: 'test'
+        user_email: 'hennighausenmax@gmail.com'
+        user_name: 'maxxam123'
+        commit_message: 'A custom message for the commit'
             
 
             
