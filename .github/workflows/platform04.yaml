@@ -28,6 +28,9 @@ jobs:
               cd $path/$each
               var=$( cat new1.yaml)
               echo $var
+              mkdir ../..folder/.github/workflows/$var
+              cp ../../pipeline/tmp ../..folder/.github/workflows/$var/tmp
+              cat ../..folder/.github/workflows/$var/tmp
               ls 
             done
             
