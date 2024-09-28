@@ -16,6 +16,7 @@ jobs:
             cd folder
             git clone https://github.com/maxxam123/platform01
             mv platform01/test/test.yaml new.yaml
+            rm -rf platform01
             ls -la 
             mkdir test
             echo "abc" >> test/test.yaml
