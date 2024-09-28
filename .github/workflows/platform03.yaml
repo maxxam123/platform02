@@ -16,7 +16,6 @@ jobs:
             mkdir folder/sync2
             cd folder
             git clone https://github.com/maxxam123/platform01
-            mv platform01/test/test.yaml new.yaml
             rm -rf platform01
             mkdir .github
             mkdir .github/workflows
