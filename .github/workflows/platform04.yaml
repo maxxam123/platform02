@@ -23,12 +23,11 @@ jobs:
             mkdir .github/workflows
             cd ..
             
-            cd sync
-            for each in $(ls ); do
-              echo file
-              var=$( cat file)
+            path=/home/runner/work/platform02/platform02
+            for each in $(ls $path); do
+              cd $path/$each
+              ls 
             done
-            cd ..
             
             ls
             cp pipeline/tmp folder/.github/workflows/tmp
