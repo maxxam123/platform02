@@ -1,1 +1,28 @@
-a
+on:
+ push:
+   branches:
+   - main
+   paths:
+   - 'test1/**'
+
+jobs:
+  build:
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v3
+        - name: test
+          run: |
+            mkdir folder
+            mkdir folder/sync2
+            cd folder
+            git clone https://github.com/maxxam123/platform01
+            ls -la
+            rm -rf platform01
+            mkdir .github
+            mkdir .github/workflows
+            cd ..
+            
+            cp pipeline/* folder/.github/workflows/
+            
+            cp sync/* folder/sync2/
+            cd ..
