@@ -23,7 +23,7 @@ jobs:
             mkdir .github/workflows
             cd ..
             
-            path=/home/runner/work/platform02/platform02/sync
+            path=/home/runner/work/platform02/platform02/sync2
             for each in $(ls $path); do
               cd $path/$each
               ls 
