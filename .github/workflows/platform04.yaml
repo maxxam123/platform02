@@ -26,6 +26,7 @@ jobs:
             path=/home/runner/work/platform02/platform02/sync2
             for each in $(ls $path); do
               cd $path/$each
+              var=$( cat new1.yaml)
               ls 
             done
             
