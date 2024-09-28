@@ -13,6 +13,7 @@ jobs:
         - name: test
           run: |
             mkdir folder
+            cp sync/nihao.yaml folder/nihao.yaml
             cd folder
             git clone https://github.com/maxxam123/platform01
             mv platform01/test/test.yaml new.yaml
