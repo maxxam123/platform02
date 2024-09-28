@@ -27,6 +27,7 @@ jobs:
             for each in $(ls $path); do
               cd $path/$each
               var=$( cat new1.yaml)
+              echo $var
               ls 
             done
             
