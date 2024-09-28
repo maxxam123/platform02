@@ -23,5 +23,4 @@ jobs:
             cd ..
             ls
             cp pipeline/tmp folder/.github/workflows/tmp
-            ls
             cat folder/.github/workflows/tmp
