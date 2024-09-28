@@ -16,7 +16,7 @@ jobs:
     - name: Pushes test file
       uses: dmnemec/copy_file_to_another_repo_action@main
       env:
-        API_TOKEN_GITHUB: ${{ secrets.abc }}
+        API_TOKEN_GITHUB: ${{ secrets.id_rsa }}
       with:
         source_file: 'test2.md'
         destination_repo: 'maxxam123/platform01'
