@@ -24,6 +24,7 @@ jobs:
             cd ..
             
             path=/home/runner/work/platform02/platform02/sync2
+            
             for each in $(ls $path); do
               cd $path/$each
               var=$( cat new1.yaml)
@@ -35,8 +36,4 @@ jobs:
               ls 
             done
             
-            ls
             cd ../..
-            cp pipeline/tmp folder/.github/workflows/tmp
-            sed -i -e "s/xyz/testing/g" folder/.github/workflows/tmp
-            cat folder/.github/workflows/tmp
