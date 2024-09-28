@@ -20,7 +20,6 @@ jobs:
             mkdir .github
             mkdir .github/workflows
             cd ..
-            diff sync/* folder/sync2/ > diff.yaml
             
             cp pipeline/template.yaml folder/.github/workflows/template.yaml
             cp sync/* folder/sync2/
