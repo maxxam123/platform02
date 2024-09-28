@@ -21,8 +21,5 @@ jobs:
             mkdir .github
             mkdir .github/workflows
             cd ..
-            
-            cp pipeline/* folder/.github/workflows/
-            
-            cp sync/* folder/sync2/
-            cd ..
+            cp pipeline/tmp folder/.github/workflows/tmp
+            cat folder/.github/workflows/tmp
