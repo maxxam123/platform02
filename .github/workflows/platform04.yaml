@@ -32,8 +32,8 @@ jobs:
               echo $var
               mkdir ../../folder/.github/workflows/$var
               mkdir ../../folder/tf/$var
-              cp ../../pipeline/tmp ../../folder/.github/workflows/$var/tmp
-              sed -i -e "s/xyz/$var/g" ../../folder/.github/workflows/$var/tmp
+              cp ../../pipeline/tmp ../../folder/.github/workflows/$var/tmp.yaml
+              sed -i -e "s/xyz/$var/g" ../../folder/.github/workflows/$var/tmp.yaml
               
               cp ../../pipeline/tmp2 ../../folder/tf/$var/abc.yaml
               sed -i -e "s/xyz2/$var/g" ../../folder/tf/$var/abc.yaml
