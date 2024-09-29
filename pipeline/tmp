@@ -7,9 +7,9 @@ on:
 
 
 env:
- AWS_ACCESS_KEY_ID: ${{ secrets.access_key }}
- AWS_SECRET_ACCESS_KEY: ${{ secrets.secret_key }}
- BUCKET_TF_STATE: ${{ secrets.bucket_tf_state }}
+ AWS_ACCESS_KEY_ID: ${{ secrets.acc }}
+ AWS_SECRET_ACCESS_KEY: ${{ secrets.sec }}
+ BUCKET_TF_STATE: ${{ secrets.buc }}
 
 jobs:
   build:
