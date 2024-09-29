@@ -14,13 +14,6 @@ jobs:
           run: |
             mkdir -p folder/.github/workflows
             mkdir -p folder/cluster
-            #cd folder
-            #git clone https://github.com/maxxam123/platform01
-            #rm -rf platform01
-            #mkdir .github
-            #mkdir cluster
-            #mkdir .github/workflows
-            #cd ..
             
             path=/home/runner/work/platform02/platform02/cluster
             
