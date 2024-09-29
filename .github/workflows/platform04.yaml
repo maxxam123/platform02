@@ -42,19 +42,20 @@ jobs:
               #################
               
                 ### PROVIDER
-              cp ../../templates/terraform/provider $path2/$var/provider.yaml
+              #cp ../../templates/terraform/provider $path2/$var/provider.yaml
+              cp ../../templates/terraform/* $path2/$var/
               sed -i -e "s/PROVIDER/$var/g" $path2/$var/provider.yaml
 
                 ### EKS
-              cp ../../templates/terraform/vpc $path2/$var/cluster.yaml
+              #cp ../../templates/terraform/vpc $path2/$var/cluster.yaml
               sed -i -e "s/NAME/$var/g" $path2/$var/cluster.yaml
 
                 ### ARGO
-              cp ../../templates/terraform/argo $path2/$var/argo.yaml
+              #cp ../../templates/terraform/argo $path2/$var/argo.yaml
               sed -i -e "s/NAME/$var/g" $path2/$var/argo.yaml
 
                 ### APPLICATIONSET
-              cp ../../templates/terraform/applicationset $path2/$var/applicationset.yaml
+              #cp ../../templates/terraform/applicationset $path2/$var/applicationset.yaml
               sed -i -e "s/NAME/$var/g" $path2/$var/applicationset.yaml
 
               ### GITOPS ###
