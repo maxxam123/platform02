@@ -27,9 +27,9 @@ jobs:
               ami=$( sed -n 2p cluster.yaml)
               ins=$( sed -n 3p cluster.yaml)
               sub=$( sed -n 4p cluster.yaml)
-              echo $ami
-              echo $ins
-              echo $sub
+              acc=$( sed -n 6p cluster.yaml)
+              sec=$( sed -n 7p cluster.yaml)
+              buc=$( sed -n 8p cluster.yaml)
               
               mkdir $path1/$var && mkdir $path2/$var
               #mkdir $path2/$var
@@ -37,8 +37,9 @@ jobs:
               cp ../../pipeline/tmp $path1/$var.yaml && sed -i -e "s/xyz/$var/g" $path1/$var.yaml
               #sed -i -e "s/xyz/$var/g" $path1/$var.yaml
               
-              cp ../../pipeline/tmp2 $path2/$var/cluster.yaml && sed -i -e "s/xyz2/$var/g" $path2/$var/cluster.yaml
-              #sed -i -e "s/xyz2/$var/g" $path2/$var/cluster.yaml
+              cp ../../pipeline/tmp2 $path2/$var/cluster.yaml
+              sed -i -e "s/NAME/$var/g" $path2/$var/cluster.yaml
+              sed -i -e "s/AMI/$var/g" $path2/$ami/cluster.yaml
               
             done
 
