@@ -20,7 +20,8 @@ jobs:
             ls -la
             rm -rf platform01
             mkdir .github
-            mkdir tf
+            #mkdir tf
+            mkdir cluster
             mkdir .github/workflows
             cd ..
             
@@ -36,8 +37,8 @@ jobs:
               cp ../../pipeline/tmp ../../folder/.github/workflows/$var.yaml
               sed -i -e "s/xyz/$var/g" ../../folder/.github/workflows/$var.yaml
               
-              cp ../../pipeline/tmp2 ../../folder/tf/$var/abc.yaml
-              sed -i -e "s/xyz2/$var/g" ../../folder/tf/$var/abc.yaml
+              cp ../../pipeline/tmp2 ../../folder/cluster/$var/abc.yaml
+              sed -i -e "s/xyz2/$var/g" ../../folder/cluster/$var/abc.yaml
               
               ls 
             done
