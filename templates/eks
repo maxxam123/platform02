@@ -1,9 +1,0 @@
-
-resource "aws_instance" "NAME" {
-  ami = "AMI"
-  instance_type = "INS"
-  subnet_id = "SUB"
-  tags = {
-    Name = "TAG"
-  }
-}
