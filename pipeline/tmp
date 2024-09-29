@@ -3,7 +3,7 @@ on:
    branches:
    - main
    paths:
-   - 'tf/xyz/abc.yaml'
+   - 'cluster/xyz/abc.yaml'
 jobs:
   build:
     runs-on: ubuntu-latest
