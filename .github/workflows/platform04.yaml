@@ -34,7 +34,8 @@ jobs:
               buc=$( sed -n 8p cluster.yaml)
               
               mkdir $path1/$var
-              mkdir $path2/$var
+              mkdir -p $path2/$var/provider
+              mkdir -p $path2/$var/vm
               mkdir $path3/$var
               
               cp ../../pipeline/tmp $path1/$var.yaml
@@ -42,12 +43,15 @@ jobs:
               sed -i -e "s/acc/$acc/g" $path1/$var.yaml
               sed -i -e "s/secc/$sec/g" $path1/$var.yaml
               sed -i -e "s/buc/$buc/g" $path1/$var.yaml
+
+              cp ../../pipeline/provider $path2/$var/provider/provider.yaml
+              sed -i -e "s/NAME/$var/g" $path2/$var/provider/provider.yaml
               
-              cp ../../pipeline/tmp2 $path2/$var/cluster.yaml
-              sed -i -e "s/NAME/$var/g" $path2/$var/cluster.yaml
-              sed -i -e "s/AMI/$ami/g" $path2/$var/cluster.yaml
-              sed -i -e "s/INS/$ins/g" $path2/$var/cluster.yaml
-              sed -i -e "s/SUB/$sub/g" $path2/$var/cluster.yaml
+              cp ../../pipeline/tmp2 $path2/$var/vm/cluster.yaml
+              sed -i -e "s/NAME/$var/g" $path2/$var/vm/cluster.yaml
+              sed -i -e "s/AMI/$ami/g" $path2/$var/vm/cluster.yaml
+              sed -i -e "s/INS/$ins/g" $path2/$var/vm/cluster.yaml
+              sed -i -e "s/SUB/$sub/g" $path2/$var/vm/cluster.yaml
 
               cp ../../pipeline/gitops $path3/$var/ingress.yaml
               sed -i -e "s/NAME/$var/g" $path3/$var/ingress.yaml
