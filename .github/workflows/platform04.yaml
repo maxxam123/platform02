@@ -12,12 +12,12 @@ jobs:
         - uses: actions/checkout@v3
         - name: test
           run: |
-            pwd
+            #pwd
             mkdir folder
-            mkdir folder/sync2
+            #mkdir folder/sync2
             cd folder
             git clone https://github.com/maxxam123/platform01
-            ls -la
+            #ls -la
             rm -rf platform01
             mkdir .github
             #mkdir tf
@@ -31,7 +31,7 @@ jobs:
             for each in $(ls $path); do
               cd $path/$each
               var=$( cat cluster.yaml)
-              echo $var
+              #echo $var
               mkdir ../../folder/.github/workflows/$var
               mkdir ../../folder/cluster/$var
               cp ../../pipeline/tmp ../../folder/.github/workflows/$var.yaml
@@ -40,7 +40,7 @@ jobs:
               cp ../../pipeline/tmp2 ../../folder/cluster/$var/cluster.yaml
               sed -i -e "s/xyz2/$var/g" ../../folder/cluster/$var/cluster.yaml
               
-              ls 
+              #ls 
             done
             
             cd ../..
