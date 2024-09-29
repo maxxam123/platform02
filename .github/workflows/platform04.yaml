@@ -16,11 +16,14 @@ jobs:
             mkdir -p folder/cluster
             
             path=/home/runner/work/platform02/platform02/cluster
+            path1=../../folder/.github/workflows
+            path2=../../folder/cluster
             
             for each in $(ls $path); do
               cd $path/$each
               var=$( cat cluster.yaml)
-              mkdir ../../folder/.github/workflows/$var
+              #mkdir ../../folder/.github/workflows/$var
+              mkdir $path1/$var
               mkdir ../../folder/cluster/$var
               cp ../../pipeline/tmp ../../folder/.github/workflows/$var.yaml
               sed -i -e "s/xyz/$var/g" ../../folder/.github/workflows/$var.yaml
@@ -28,8 +31,6 @@ jobs:
               cp ../../pipeline/tmp2 ../../folder/cluster/$var/cluster.yaml
               sed -i -e "s/xyz2/$var/g" ../../folder/cluster/$var/cluster.yaml
             done
-            
-            #cd ../..
 
         - name: Pushes to another repository
           uses: cpina/github-action-push-to-another-repository@main
