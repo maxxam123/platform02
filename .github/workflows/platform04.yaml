@@ -20,6 +20,7 @@ jobs:
             ls -la
             rm -rf platform01
             mkdir .github
+            mkdir tf
             mkdir .github/workflows
             cd ..
             
@@ -30,8 +31,13 @@ jobs:
               var=$( cat new1.yaml)
               echo $var
               mkdir ../../folder/.github/workflows/$var
+              mkdir ../../folder/tf/$var
               cp ../../pipeline/tmp ../../folder/.github/workflows/$var/tmp
               sed -i -e "s/xyz/$var/g" ../../folder/.github/workflows/$var/tmp
+              
+              cp ../../pipeline/tmp2 ../../folder/tf/$var/tmp2
+              sed -i -e "s/xyz2/$var/g" ../../folder/tf/$var/tmp2
+              
               cat ../../folder/.github/workflows/$var/tmp
               ls 
             done
