@@ -24,9 +24,12 @@ jobs:
               var=$( cat cluster.yaml)
               #mkdir ../../folder/.github/workflows/$var
               mkdir $path1/$var
-              mkdir ../../folder/cluster/$var
-              cp ../../pipeline/tmp ../../folder/.github/workflows/$var.yaml
-              sed -i -e "s/xyz/$var/g" ../../folder/.github/workflows/$var.yaml
+              #mkdir ../../folder/cluste/$var
+              mkdir $path2/$var
+              #cp ../../pipeline/tmp ../../folder/.github/workflows/$var.yaml
+              cp ../../pipeline/tmp $path1/$var.yaml
+              #sed -i -e "s/xyz/$var/g" ../../folder/.github/workflows/$var.yaml
+              sed -i -e "s/xyz/$var/g" $path1/$var.yaml
               
               cp ../../pipeline/tmp2 ../../folder/cluster/$var/cluster.yaml
               sed -i -e "s/xyz2/$var/g" ../../folder/cluster/$var/cluster.yaml
