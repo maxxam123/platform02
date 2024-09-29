@@ -33,7 +33,7 @@ jobs:
               var=$( cat abc.yaml)
               echo $var
               mkdir ../../folder/.github/workflows/$var
-              mkdir ../../folder/tf/$var
+              mkdir ../../folder/cluster/$var
               cp ../../pipeline/tmp ../../folder/.github/workflows/$var.yaml
               sed -i -e "s/xyz/$var/g" ../../folder/.github/workflows/$var.yaml
               
