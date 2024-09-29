@@ -26,37 +26,26 @@ jobs:
             for each in $(ls $path); do
               cd $path/$each
               var=$( sed -n 1p cluster.yaml)
-              ami=$( sed -n 2p cluster.yaml)
-              ins=$( sed -n 3p cluster.yaml)
-              sub=$( sed -n 4p cluster.yaml)
-              acc=$( sed -n 6p cluster.yaml)
-              sec=$( sed -n 7p cluster.yaml)
-              buc=$( sed -n 8p cluster.yaml)
               
               mkdir $path1/$var
-              mkdir -p $path2/$var/provider
-              mkdir -p $path2/$var/vm
-              mkdir $path3/$var
+              mkdir -p $path3/$var/ingress
 
               # TERRAFORM
               cp ../../templates/pipeline $path1/$var.yaml
               sed -i -e "s/xyz/$var/g" $path1/$var.yaml
-              sed -i -e "s/acc/$acc/g" $path1/$var.yaml
-              sed -i -e "s/secc/$sec/g" $path1/$var.yaml
-              sed -i -e "s/buc/$buc/g" $path1/$var.yaml
 
               # CLUSTER
                 ### PROVIDER
-              cp ../../templates/provider $path2/$var/provider/provider.yaml
-              sed -i -e "s/PROVIDER/$var/g" $path2/$var/provider/provider.yaml
+              cp ../../templates/provider $path2/$var/provider.yaml
+              sed -i -e "s/PROVIDER/$var/g" $path2/$var/provider.yaml
 
                 ### INFRASTRUCTURE
-              cp ../../templates/vpc $path2/$var/vm/cluster.yaml
-              sed -i -e "s/NAME/$var/g" $path2/$var/vm/cluster.yaml
+              cp ../../templates/vpc $path2/$var/cluster.yaml
+              sed -i -e "s/NAME/$var/g" $path2/$var/cluster.yaml
 
               # GITOPS
-              cp ../../templates/gitops $path3/$var/ingress.yaml
-              sed -i -e "s/NAME/$var/g" $path3/$var/ingress.yaml              
+              cp ../../templates/gitops $path3/$var/ingress/ingress.yaml
+              sed -i -e "s/NAME/$var/g" $path3/$var/ingress/ingress.yaml              
             done
 
         - name: Pushes to another repository
