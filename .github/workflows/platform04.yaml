@@ -39,7 +39,9 @@ jobs:
               
               cp ../../pipeline/tmp2 $path2/$var/cluster.yaml
               sed -i -e "s/NAME/$var/g" $path2/$var/cluster.yaml
-              #sed -i -e "s/AMI/$ami/g" $path2/$ami/cluster.yaml
+              sed -i -e "s/AMI/$ami/g" $path2/$var/cluster.yaml
+              sed -i -e "s/INS/$ins/g" $path2/$var/cluster.yaml
+              sed -i -e "s/SUB/$sub/g" $path2/$var/cluster.yaml
               
             done
 
