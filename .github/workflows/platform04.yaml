@@ -25,11 +25,11 @@ jobs:
               cd $path/$each
               var=$( sed -n 1p cluster.yaml)
               ami=$( sed -n 2p cluster.yaml)
-              inst=$( sed -n 3p cluster.yaml)
-              subn=$( sed -n 4p cluster.yaml)
+              ins=$( sed -n 3p cluster.yaml)
+              sub=$( sed -n 4p cluster.yaml)
               echo $ami
-              echo $inst
-              echo $subn
+              echo $ins
+              echo $sub
               
               mkdir $path1/$var && mkdir $path2/$var
               #mkdir $path2/$var
