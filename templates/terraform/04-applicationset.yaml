@@ -25,7 +25,7 @@ spec:
     name: https://kubernetes.default.svc
   project: default
   source:
-    path: gitops/NAME
+    path: gitops/NAME/app
     repoURL: https://gitlab.com/maxxam123/platform01.git
     targetRevision: main
     helm:
