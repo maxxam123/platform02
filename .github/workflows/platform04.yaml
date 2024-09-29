@@ -47,7 +47,7 @@ jobs:
               sed -i -e "s/PROVIDER/$var/g" $path2/$var/provider.yaml
 
                 ### EKS
-              #cp ../../templates/terraform/vpc $path2/$var/cluster.yaml
+              #cp ../../templates/terraform/cluster $path2/$var/cluster.yaml
               sed -i -e "s/NAME/$var/g" $path2/$var/cluster.yaml
 
                 ### ARGO
