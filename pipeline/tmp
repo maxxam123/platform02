@@ -3,7 +3,7 @@ on:
     branches:
     - main
     paths:
-    - 'tf/xyz.yaml'
+    - 'tf/xyz'
 jobs:
   build:
     runs-on: ubuntu-latest
