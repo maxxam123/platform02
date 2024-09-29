@@ -30,6 +30,7 @@ jobs:
               mkdir $path1/$var
               mkdir $path2/$var
               mkdir -p $path3/$var/ingress
+              mkdir -p $path3/$var/velero
 
               # TERRAFORM
               cp ../../templates/pipeline $path1/$var.yaml
@@ -45,8 +46,13 @@ jobs:
               sed -i -e "s/NAME/$var/g" $path2/$var/cluster.yaml
 
               # GITOPS
+                ### INGRESS
               cp ../../templates/git/ingress.yaml $path3/$var/ingress/ingress.yaml
-              sed -i -e "s/NAME/$var/g" $path3/$var/ingress/ingress.yaml              
+              sed -i -e "s/NAME/$var/g" $path3/$var/ingress/ingress.yaml
+
+                ### VELERO
+              cp ../../templates/git/ingress.yaml $path3/$var/velero/ingress.yaml
+              sed -i -e "s/NAME/$var/g" $path3/$var/velero/ingress.yaml  
             done
 
         - name: Pushes to another repository
