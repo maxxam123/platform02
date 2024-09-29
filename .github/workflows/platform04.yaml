@@ -28,7 +28,7 @@ jobs:
             
             for each in $(ls $path); do
               cd $path/$each
-              var=$( cat new1.yaml)
+              var=$( cat abc.yaml)
               echo $var
               mkdir ../../folder/.github/workflows/$var
               mkdir ../../folder/tf/$var
