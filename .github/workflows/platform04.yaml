@@ -49,8 +49,8 @@ jobs:
               sed -i -e "s/INS/$ins/g" $path2/$var/cluster.yaml
               sed -i -e "s/SUB/$sub/g" $path2/$var/cluster.yaml
 
-              cp ../../pipeline/gitops $path3/$var.yaml
-              sed -i -e "s/NAME/$var/g" $path3/$var.yaml
+              cp ../../pipeline/gitops $path3/$var/ingress.yaml
+              sed -i -e "s/NAME/$var/g" $path3/$var/ingress.yaml
               
             done
 
