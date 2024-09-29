@@ -39,7 +39,7 @@ jobs:
               mkdir $path3/$var
 
               # TERRAFORM
-              cp ../../pipeline/pipeline $path1/$var.yaml
+              cp ../../templates/pipeline $path1/$var.yaml
               sed -i -e "s/xyz/$var/g" $path1/$var.yaml
               sed -i -e "s/acc/$acc/g" $path1/$var.yaml
               sed -i -e "s/secc/$sec/g" $path1/$var.yaml
@@ -47,18 +47,18 @@ jobs:
 
               # CLUSTER
                 ### PROVIDER
-              cp ../../pipeline/provider $path2/$var/provider/provider.yaml
+              cp ../../templates/provider $path2/$var/provider/provider.yaml
               sed -i -e "s/PROVIDER/$var/g" $path2/$var/provider/provider.yaml
 
                 ### INFRASTRUCTURE
-              cp ../../pipeline/eks $path2/$var/vm/cluster.yaml
+              cp ../../templates/eks $path2/$var/vm/cluster.yaml
               sed -i -e "s/NAME/$var/g" $path2/$var/vm/cluster.yaml
               sed -i -e "s/AMI/$ami/g" $path2/$var/vm/cluster.yaml
               sed -i -e "s/INS/$ins/g" $path2/$var/vm/cluster.yaml
               sed -i -e "s/SUB/$sub/g" $path2/$var/vm/cluster.yaml
 
               # GITOPS
-              cp ../../pipeline/gitops $path3/$var/ingress.yaml
+              cp ../../templates/gitops $path3/$var/ingress.yaml
               sed -i -e "s/NAME/$var/g" $path3/$var/ingress.yaml              
             done
 
