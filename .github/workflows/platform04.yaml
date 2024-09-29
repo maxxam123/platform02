@@ -30,15 +30,15 @@ jobs:
             
             for each in $(ls $path); do
               cd $path/$each
-              var=$( cat abc.yaml)
+              var=$( cat cluster.yaml)
               echo $var
               mkdir ../../folder/.github/workflows/$var
               mkdir ../../folder/cluster/$var
               cp ../../pipeline/tmp ../../folder/.github/workflows/$var.yaml
               sed -i -e "s/xyz/$var/g" ../../folder/.github/workflows/$var.yaml
               
-              cp ../../pipeline/tmp2 ../../folder/cluster/$var/abc.yaml
-              sed -i -e "s/xyz2/$var/g" ../../folder/cluster/$var/abc.yaml
+              cp ../../pipeline/tmp2 ../../folder/cluster/$var/cluster.yaml
+              sed -i -e "s/xyz2/$var/g" ../../folder/cluster/$var/cluster.yaml
               
               ls 
             done
