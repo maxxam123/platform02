@@ -4,6 +4,13 @@ on:
    - main
    paths:
    - 'cluster/xyz/cluster.yaml'
+
+
+env:
+ AWS_ACCESS_KEY_ID: ${{ secrets.access_key }}
+ AWS_SECRET_ACCESS_KEY: ${{ secrets.secret_key }}
+ BUCKET_TF_STATE: ${{ secrets.bucket_tf_state }}
+
 jobs:
   build:
     runs-on: ubuntu-latest
