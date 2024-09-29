@@ -28,6 +28,7 @@ jobs:
               var=$( sed -n 1p cluster.yaml)
               
               mkdir $path1/$var
+              mkdir $path2/$var
               mkdir -p $path3/$var/ingress
 
               # TERRAFORM
@@ -39,7 +40,7 @@ jobs:
               cp ../../templates/provider $path2/$var/provider.yaml
               sed -i -e "s/PROVIDER/$var/g" $path2/$var/provider.yaml
 
-                ### INFRASTRUCTURE
+                ### EKS
               cp ../../templates/vpc $path2/$var/cluster.yaml
               sed -i -e "s/NAME/$var/g" $path2/$var/cluster.yaml
 
