@@ -1,0 +1,21 @@
+provider "aws" {
+  region = "eu-central-1"
+}
+
+terraform {
+  backend "s3" {
+    bucket         = "dunhuang-terraform-bucket"
+    key            = "dunhuang/terraform/s3/bucket03/terraform.tfstate"
+    region         = "eu-central-1"
+    dynamodb_table = "my-terraform-lock-table3"
+  }
+}
+
+resource "aws_instance" "xyz2" {
+  ami = "ami-01e444924a2233b07"
+  instance_type = "t2.micro"
+  subnet_id = "subnet-002308d00bad9957e"
+  tags = {
+    Name = "xyz2"
+  }
+}
