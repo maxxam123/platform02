@@ -45,7 +45,7 @@ jobs:
               sed -i -e "s/NAME/$var/g" $path2/$var/cluster.yaml
 
               # GITOPS
-              cp ../../templates/gitops $path3/$var/ingress/ingress.yaml
+              cp ../../templates/git/ingress.yaml $path3/$var/ingress/ingress.yaml
               sed -i -e "s/NAME/$var/g" $path3/$var/ingress/ingress.yaml              
             done
 
