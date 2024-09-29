@@ -29,8 +29,8 @@ jobs:
               
               mkdir $path1/$var
               mkdir $path2/$var
-              mkdir -p $path3/$var/ingress
-              mkdir -p $path3/$var/velero
+              mkdir -p $path3/$var/apps
+              mkdir -p $path3/$var/appofapps
 
               ### PIPELINE ###
               ################
@@ -60,14 +60,18 @@ jobs:
 
               ### GITOPS ###
               ##############
+
+                ### APP
+              cp ../../templates/git/app.yaml $path3/$var/appofapps/app.yaml
+              sed -i -e "s/NAME/$var/g" $path3/$var/appofapps/app.yaml
               
                 ### INGRESS
-              cp ../../templates/git/ingress.yaml $path3/$var/ingress/ingress.yaml
-              sed -i -e "s/NAME/$var/g" $path3/$var/ingress/ingress.yaml
+              cp ../../templates/git/ingress.yaml $path3/$var/apps/ingress.yaml
+              sed -i -e "s/NAME/$var/g" $path3/$var/apps/ingress.yaml
 
                 ### VELERO
-              cp ../../templates/git/velero.yaml $path3/$var/velero/velero.yaml
-              sed -i -e "s/NAME/$var/g" $path3/$var/velero/velero.yaml  
+              cp ../../templates/git/velero.yaml $path3/$var/apps/velero.yaml
+              sed -i -e "s/NAME/$var/g" $path3/$var/apps/velero.yaml  
             done
 
 #        - name: Pushes to another repository
