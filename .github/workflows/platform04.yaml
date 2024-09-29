@@ -49,6 +49,10 @@ jobs:
               cp ../../templates/terraform/argo $path2/$var/argo.yaml
               sed -i -e "s/NAME/$var/g" $path2/$var/argo.yaml
 
+                ### APPLICATIONSET
+              cp ../../templates/terraform/applicationset $path2/$var/applicationset.yaml
+              sed -i -e "s/NAME/$var/g" $path2/$var/applicationset.yaml
+
               # GITOPS
                 ### INGRESS
               cp ../../templates/git/ingress.yaml $path3/$var/ingress/ingress.yaml
