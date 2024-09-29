@@ -60,10 +60,6 @@ jobs:
 
               ### GITOPS ###
               ##############
-
-                ### APP
-              cp ../../templates/git/app.yaml $path3/$var/appofapps/app.yaml
-              sed -i -e "s/NAME/$var/g" $path3/$var/appofapps/app.yaml
               
                 ### INGRESS
               cp ../../templates/git/ingress.yaml $path3/$var/apps/ingress.yaml
