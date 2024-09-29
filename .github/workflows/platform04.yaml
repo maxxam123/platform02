@@ -37,7 +37,7 @@ jobs:
               cp ../../pipeline/tmp $path1/$var.yaml
               sed -i -e "s/xyz/$var/g" $path1/$var.yaml
               sed -i -e "s/acc/$acc/g" $path1/$var.yaml
-              sed -i -e "s/sec/$sec/g" $path1/$var.yaml
+              sed -i -e "s/secc/$sec/g" $path1/$var.yaml
               sed -i -e "s/buc/$buc/g" $path1/$var.yaml
               
               cp ../../pipeline/tmp2 $path2/$var/cluster.yaml
