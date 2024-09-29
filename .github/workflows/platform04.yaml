@@ -34,8 +34,11 @@ jobs:
               mkdir $path1/$var && mkdir $path2/$var
               #mkdir $path2/$var
               
-              cp ../../pipeline/tmp $path1/$var.yaml && sed -i -e "s/xyz/$var/g" $path1/$var.yaml
-              #sed -i -e "s/xyz/$var/g" $path1/$var.yaml
+              cp ../../pipeline/tmp $path1/$var.yaml
+              sed -i -e "s/xyz/$var/g" $path1/$var.yaml
+              sed -i -e "s/ACC/$acc/g" $path1/$var.yaml
+              sed -i -e "s/SEC/$sec/g" $path1/$var.yaml
+              sed -i -e "s/BUC/$buc/g" $path1/$var.yaml
               
               cp ../../pipeline/tmp2 $path2/$var/cluster.yaml
               sed -i -e "s/NAME/$var/g" $path2/$var/cluster.yaml
