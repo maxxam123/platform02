@@ -38,11 +38,11 @@ jobs:
 
               # CLUSTER
                 ### PROVIDER
-              cp ../../templates/provider $path2/$var/provider.yaml
+              cp ../../templates/terrform/provider $path2/$var/provider.yaml
               sed -i -e "s/PROVIDER/$var/g" $path2/$var/provider.yaml
 
                 ### EKS
-              cp ../../templates/vpc $path2/$var/cluster.yaml
+              cp ../../templates/terrform/vpc $path2/$var/cluster.yaml
               sed -i -e "s/NAME/$var/g" $path2/$var/cluster.yaml
 
               # GITOPS
