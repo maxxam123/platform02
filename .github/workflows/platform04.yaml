@@ -13,13 +13,15 @@ jobs:
         - name: test
           run: |
           
-            mkdir -p folder/.github/workflows && mkdir -p folder/cluster
-            #mkdir -p folder/cluster
+            mkdir -p folder/.github/workflows
+            mkdir -p folder/cluster
+            mkdir -p folder/gitops
             
             path=/home/runner/work/platform02/platform02/cluster
             
-            path1=../../folder/.github/workflows && path2=../../folder/cluster
-            #path2=../../folder/cluster
+            path1=../../folder/.github/workflows
+            path2=../../folder/cluster
+            path3=../../folder/gitops
             
             for each in $(ls $path); do
               cd $path/$each
@@ -31,8 +33,9 @@ jobs:
               sec=$( sed -n 7p cluster.yaml)
               buc=$( sed -n 8p cluster.yaml)
               
-              mkdir $path1/$var && mkdir $path2/$var
-              #mkdir $path2/$var
+              mkdir $path1/$var
+              mkdir $path2/$var
+              mkdir $path3/$var
               
               cp ../../pipeline/tmp $path1/$var.yaml
               sed -i -e "s/xyz/$var/g" $path1/$var.yaml
@@ -45,6 +48,9 @@ jobs:
               sed -i -e "s/AMI/$ami/g" $path2/$var/cluster.yaml
               sed -i -e "s/INS/$ins/g" $path2/$var/cluster.yaml
               sed -i -e "s/SUB/$sub/g" $path2/$var/cluster.yaml
+
+              cp ../../pipeline/tmp $path3/$var.yaml
+              sed -i -e "s/NAME/$var/g" $path13/$var.yaml
               
             done
 
