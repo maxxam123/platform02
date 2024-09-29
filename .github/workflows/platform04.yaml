@@ -24,6 +24,8 @@ jobs:
             for each in $(ls $path); do
               cd $path/$each
               var=$( sed -n 1p cluster.yaml)
+              var2=$( sed -n 12p cluster.yaml)
+              echo $var2
               
               mkdir $path1/$var && mkdir $path2/$var
               #mkdir $path2/$var
