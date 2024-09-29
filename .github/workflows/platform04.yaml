@@ -33,7 +33,7 @@ jobs:
               mkdir -p $path3/$var/velero
 
               # TERRAFORM
-              cp ../../templates/pipeline $path1/$var.yaml
+              cp ../../templates/pipelines/pipeline $path1/$var.yaml
               sed -i -e "s/xyz/$var/g" $path1/$var.yaml
 
               # CLUSTER
