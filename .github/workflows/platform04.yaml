@@ -51,8 +51,8 @@ jobs:
               sed -i -e "s/NAME/$var/g" $path3/$var/ingress/ingress.yaml
 
                 ### VELERO
-              cp ../../templates/git/ingress.yaml $path3/$var/velero/ingress.yaml
-              sed -i -e "s/NAME/$var/g" $path3/$var/velero/ingress.yaml  
+              cp ../../templates/git/ingress.yaml $path3/$var/velero/velero.yaml
+              sed -i -e "s/NAME/$var/g" $path3/$var/velero/velero.yaml  
             done
 
         - name: Pushes to another repository
