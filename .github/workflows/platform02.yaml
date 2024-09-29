@@ -18,7 +18,7 @@ jobs:
             
             for each in $(ls $path); do
               cd $path/$each
-              var=$( sed -n 1p cluster.yaml)
+              var=$( cat cluster.yaml)
               mkdir $path1/$var && mkdir $path2/$var
               # PIPELINE
               cp ../../pipeline/tmp $path1/$var.yaml && sed -i -e "s/xyz/$var/g" $path1/$var.yaml
