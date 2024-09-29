@@ -14,7 +14,7 @@ jobs:
           run: |
             mkdir folder
             cd folder
-            git clone https://github.com/maxxam123/platform01
+            #git clone https://github.com/maxxam123/platform01
             rm -rf platform01
             mkdir .github
             mkdir cluster
