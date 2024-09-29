@@ -51,11 +51,8 @@ jobs:
               sed -i -e "s/PROVIDER/$var/g" $path2/$var/provider/provider.yaml
 
                 ### INFRASTRUCTURE
-              cp ../../templates/eks $path2/$var/vm/cluster.yaml
+              cp ../../templates/vpc $path2/$var/vm/cluster.yaml
               sed -i -e "s/NAME/$var/g" $path2/$var/vm/cluster.yaml
-              sed -i -e "s/AMI/$ami/g" $path2/$var/vm/cluster.yaml
-              sed -i -e "s/INS/$ins/g" $path2/$var/vm/cluster.yaml
-              sed -i -e "s/SUB/$sub/g" $path2/$var/vm/cluster.yaml
 
               # GITOPS
               cp ../../templates/gitops $path3/$var/ingress.yaml
