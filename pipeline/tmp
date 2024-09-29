@@ -8,7 +8,7 @@ on:
 
 env:
  AWS_ACCESS_KEY_ID: ${{ secrets.acc }}
- AWS_SECRET_ACCESS_KEY: ${{ secrets.sec }}
+ AWS_SECRET_ACCESS_KEY: ${{ secrets.secc }}
  BUCKET_TF_STATE: ${{ secrets.buc }}
 
 jobs:
