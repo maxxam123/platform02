@@ -38,7 +38,6 @@ jobs:
               cp ../../pipeline/tmp2 ../../folder/tf/$var/tmp2
               sed -i -e "s/xyz2/$var/g" ../../folder/tf/$var/tmp2
               
-              cat ../../folder/.github/workflows/$var/tmp
               ls 
             done
             
