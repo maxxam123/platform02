@@ -32,11 +32,15 @@ jobs:
               mkdir -p $path3/$var/ingress
               mkdir -p $path3/$var/velero
 
-              # TERRAFORM
+              ### PIPELINE ###
+              ################
+              
               cp ../../templates/pipelines/pipeline $path1/$var.yaml
               sed -i -e "s/xyz/$var/g" $path1/$var.yaml
 
-              # CLUSTER
+              ### TERRAFORM ###
+              #################
+              
                 ### PROVIDER
               cp ../../templates/terraform/provider $path2/$var/provider.yaml
               sed -i -e "s/PROVIDER/$var/g" $path2/$var/provider.yaml
@@ -53,7 +57,9 @@ jobs:
               cp ../../templates/terraform/applicationset $path2/$var/applicationset.yaml
               sed -i -e "s/NAME/$var/g" $path2/$var/applicationset.yaml
 
-              # GITOPS
+              ### GITOPS ###
+              ##############
+              
                 ### INGRESS
               cp ../../templates/git/ingress.yaml $path3/$var/ingress/ingress.yaml
               sed -i -e "s/NAME/$var/g" $path3/$var/ingress/ingress.yaml
