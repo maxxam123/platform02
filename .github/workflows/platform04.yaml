@@ -29,7 +29,7 @@ jobs:
               sed -i -e "s/xyz2/$var/g" ../../folder/cluster/$var/cluster.yaml
             done
             
-            cd ../..
+            #cd ../..
 
         - name: Pushes to another repository
           uses: cpina/github-action-push-to-another-repository@main
