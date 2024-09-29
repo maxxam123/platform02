@@ -22,17 +22,13 @@ jobs:
             for each in $(ls $path); do
               cd $path/$each
               var=$( cat cluster.yaml)
-              #mkdir ../../folder/.github/workflows/$var
-              mkdir $path1/$var
-              #mkdir ../../folder/cluste/$var
+              mkdir $path1/$var 
               mkdir $path2/$var
-              #cp ../../pipeline/tmp ../../folder/.github/workflows/$var.yaml
               cp ../../pipeline/tmp $path1/$var.yaml
-              #sed -i -e "s/xyz/$var/g" ../../folder/.github/workflows/$var.yaml
               sed -i -e "s/xyz/$var/g" $path1/$var.yaml
               
-              cp ../../pipeline/tmp2 ../../folder/cluster/$var/cluster.yaml
-              sed -i -e "s/xyz2/$var/g" ../../folder/cluster/$var/cluster.yaml
+              cp ../../pipeline/tmp2 $path2/$var/cluster.yaml
+              sed -i -e "s/xyz2/$var/g" $path2/$var/cluster.yaml
             done
 
         - name: Pushes to another repository
