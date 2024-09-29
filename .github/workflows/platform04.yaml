@@ -45,6 +45,10 @@ jobs:
               cp ../../templates/terraform/vpc $path2/$var/cluster.yaml
               sed -i -e "s/NAME/$var/g" $path2/$var/cluster.yaml
 
+                ### ARGO
+              cp ../../templates/terraform/argo $path2/$var/argo.yaml
+              sed -i -e "s/NAME/$var/g" $path2/$var/argo.yaml
+
               # GITOPS
                 ### INGRESS
               cp ../../templates/git/ingress.yaml $path3/$var/ingress/ingress.yaml
