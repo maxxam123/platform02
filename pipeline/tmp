@@ -3,7 +3,7 @@ on:
     branches:
     - main
     paths:
-    - 'sync2/xyz.yaml'
+    - 'tf/xyz.yaml'
 jobs:
   build:
     runs-on: ubuntu-latest
