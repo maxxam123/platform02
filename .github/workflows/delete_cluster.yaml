@@ -21,14 +21,15 @@ jobs:
 
             cp ../templates/pipelines/delete_pipeline .github/workflows/$var.yaml
             sed -i -e "s/NAME/$var/g" .github/workflows/$var.yaml
+            cd ..
 
-#        - name: Pushes to another repository
-#          uses: cpina/github-action-push-to-another-repository@main
-#          env:
-#            API_TOKEN_GITHUB: ${{ secrets.ACCESS_TOKEN }}
-#          with:
-#            source-directory: "folder"
-#            destination-github-username: "maxxam123"
-#            destination-repository-name: "platform01"
-#            user-email: hennighausenmax@gmail.com
-#            target-branch: main#
+        - name: Pushes to another repository
+          uses: cpina/github-action-push-to-another-repository@main
+          env:
+            API_TOKEN_GITHUB: ${{ secrets.ACCESS_TOKEN }}
+          with:
+            source-directory: "folder"
+            destination-github-username: "maxxam123"
+            destination-repository-name: "platform01"
+            user-email: hennighausenmax@gmail.com
+            target-branch: main
