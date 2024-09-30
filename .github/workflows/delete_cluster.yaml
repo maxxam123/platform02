@@ -13,14 +13,13 @@ jobs:
         - name: test
           run: |
           
-            mkdir -p folder
             var=$( sed -n 1p test/DELETE )
-            cd folder
             git clone https://github.com/maxxam123/platform01.git
-            ls platform01
-            cp ../templates/pipelines/delete_pipeline .github/workflows/$var.yaml
-            sed -i -e "s/NAME/$var/g" .github/workflows/$var.yaml
-            cd ..
+            la -la
+            ls -la platform01
+            cp templates/pipelines/delete_pipeline platform01/.github/workflows/$var.yaml
+            sed -i -e "s/NAME/$var/g" platform01/.github/workflows/$var.yaml
+
 
         - name: Pushes to another repository
           uses: cpina/github-action-push-to-another-repository@main
