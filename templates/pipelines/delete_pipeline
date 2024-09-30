@@ -23,9 +23,9 @@ jobs:
           cd folder
           git clone https://github.com/maxxam123/platform01.git
           cd .github/workflows
-          rm -rf $name.yaml
+          rm -rf NAME.yaml
           cd ../../cluster
-          rm -rf $name
+          rm -rf NAME
           cd ..
 
       - name: Pushes to another repository
