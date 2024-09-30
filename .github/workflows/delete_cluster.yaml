@@ -21,7 +21,7 @@ jobs:
             sed -i -e "s/NAME/$var/g" platform01/.github/workflows/delete_$var.yaml
             cd platform01
             mkdir -p delete
-            echo "test" > delete/delete.yaml
+            date > delete/delete.yaml
             cd ..
 
         - name: Pushes to another repository
