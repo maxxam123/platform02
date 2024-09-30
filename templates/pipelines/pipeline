@@ -7,9 +7,9 @@ on:
 
 
 env:
- AWS_ACCESS_KEY_ID: ${{ secrets.acc }}
- AWS_SECRET_ACCESS_KEY: ${{ secrets.secc }}
- BUCKET_TF_STATE: ${{ secrets.buc }}
+ AWS_ACCESS_KEY_ID: ${{ secrets.ACCESS_KEY }}
+ AWS_SECRET_ACCESS_KEY: ${{ secrets.SECRET_KEY }}
+ BUCKET_TF_STATE: ${{ secrets.BUCKET_TF_STATE }}
 
 jobs:
  terraform:
