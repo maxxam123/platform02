@@ -3,7 +3,7 @@ on:
    branches:
    - main
    paths:
-   - 'test/delete_cluster.yaml'
+   - 'test/delete_cluster1.yaml'
 
 jobs:
   build:
