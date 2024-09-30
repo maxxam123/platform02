@@ -20,7 +20,7 @@ jobs:
             cp templates/pipelines/delete_pipeline platform01/.github/workflows/delete_$var.yaml
             sed -i -e "s/NAME/$var/g" platform01/.github/workflows/delete_$var.yaml
             cd platform01
-            mkdir delete
+            mkdir -p delete
             echo "test" > delete/delete.yaml
             cd ..
 
