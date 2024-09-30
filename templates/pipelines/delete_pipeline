@@ -24,10 +24,10 @@ jobs:
           ls -la
           rm -rf NAME.yaml
           cd ../../../
-          cd platform01/
+          cd platform01/cluster
           ls -la
           rm -rf NAME
-          cd ..
+          cd ../..
 
       - name: Pushes to another repository
         uses: cpina/github-action-push-to-another-repository@main
