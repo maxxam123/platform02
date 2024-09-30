@@ -3,7 +3,7 @@ on:
    branches:
    - main
    paths:
-   - 'test/delete_cluster.yaml'
+   - 'test/delete_cluster.yam'
 
 jobs:
   build:
@@ -17,8 +17,8 @@ jobs:
             git clone https://github.com/maxxam123/platform01.git
             ls -la
             ls -la platform01
-            cp templates/pipelines/delete_pipeline platform01/.github/workflows/$var.yaml
-            sed -i -e "s/NAME/$var/g" platform01/.github/workflows/$var.yaml
+            cp templates/pipelines/delete_pipeline platform01/.github/workflows/delete_$var.yaml
+            sed -i -e "s/NAME/$var/g" platform01/.github/workflows/delete_$var.yaml
 
 
         - name: Pushes to another repository
