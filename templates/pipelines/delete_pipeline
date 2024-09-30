@@ -21,9 +21,11 @@ jobs:
           ls -la
           git clone https://github.com/maxxam123/platform01.git
           cd platform01/.github/workflows
+          ls -la
           rm -rf NAME.yaml
           cd ../../../
           cd platform01/
+          ls -la
           rm -rf NAME
           cd ..
 
