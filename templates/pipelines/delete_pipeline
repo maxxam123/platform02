@@ -19,6 +19,14 @@ jobs:
       - name: test
         run: |
           ls -la
+          mkdir folder
+          cd folder
+          git clone https://github.com/maxxam123/platform01.git
+          cd .github/workflows
+          rm -rf $name.yaml
+          cd ../../cluster
+          rm -rf $name
+          cd ..
 
       - name: Pushes to another repository
         uses: cpina/github-action-push-to-another-repository@main
@@ -29,4 +37,4 @@ jobs:
           destination-github-username: "maxxam123"
           destination-repository-name: "platform01"
           user-email: hennighausenmax@gmail.com
-          target-branch: main#
+          target-branch: main
