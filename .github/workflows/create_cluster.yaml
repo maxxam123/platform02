@@ -79,4 +79,4 @@ jobs:
             destination-github-username: "maxxam123"
             destination-repository-name: "platform01"
             user-email: hennighausenmax@gmail.com
-            target-branch: main#
+            target-branch: main
