@@ -3,7 +3,7 @@ on:
    branches:
    - main
    paths:
-   - 'cluster/xyz/cluster.yaml'
+   - 'cluster/xyz/cluster1.yaml'
 
 
 env:
