@@ -21,10 +21,10 @@ jobs:
           ls -la
           git clone https://github.com/maxxam123/platform01.git
           cd platform01/.github/workflows
-          rm -rf NAME.yaml
+          #rm -rf NAME.yaml
           cd ../../../
           cd platform01/
-          rm -rf NAME
+          #rm -rf NAME
           cd ..
 
       - name: Pushes to another repository
