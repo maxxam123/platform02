@@ -19,7 +19,10 @@ jobs:
             ls -la platform01
             cp templates/pipelines/delete_pipeline platform01/.github/workflows/delete_$var.yaml
             sed -i -e "s/NAME/$var/g" platform01/.github/workflows/delete_$var.yaml
-
+            cd platform01
+            mkdir delete
+            echo "test" > delete/delete.yaml
+            cd ..
 
         - name: Pushes to another repository
           uses: cpina/github-action-push-to-another-repository@main
