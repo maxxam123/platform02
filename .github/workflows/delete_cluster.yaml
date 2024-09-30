@@ -13,62 +13,14 @@ jobs:
         - name: test
           run: |
           
-            mkdir -p folder/.github/workflows
-            mkdir -p folder/cluster
-            mkdir -p folder/gitops
-            
-            path=/home/runner/work/platform02/platform02/cluster
-            
-            path1=../../folder/.github/workflows
-            path2=../../folder/cluster
-            path3=../../folder/gitops
-            
-            for each in $(ls $path); do
-              cd $path/$each
-              var=$( sed -n 1p cluster.yaml)
-              
-              mkdir $path1/$var
-              mkdir $path2/$var
-              mkdir -p $path3/$var/apps
-              mkdir -p $path3/$var/appofapps
+            mkdir -p folder
+            var=$( sed -n 1p test/DELETE )
+            cd folder
+            git clone https://github.com/maxxam123/platform01.git
+            rm -rf .github/workflows/$var.yaml
 
-              ### PIPELINE ###
-              ################
-              
-              cp ../../templates/pipelines/pipeline $path1/$var.yaml
-              sed -i -e "s/xyz/$var/g" $path1/$var.yaml
-
-              ### TERRAFORM ###
-              #################
-              
-                ### PROVIDER
-              #cp ../../templates/terraform/provider $path2/$var/provider.yaml
-              cp ../../templates/terraform/* $path2/$var/
-              sed -i -e "s/PROVIDER/$var/g" $path2/$var/01-provider.yaml
-
-                ### EKS
-              #cp ../../templates/terraform/cluster $path2/$var/cluster.yaml
-              sed -i -e "s/NAME/$var/g" $path2/$var/02-cluster.yaml
-
-                ### ARGO
-              #cp ../../templates/terraform/argo $path2/$var/argo.yaml
-              sed -i -e "s/NAME/$var/g" $path2/$var/03-argo.yaml
-
-                ### APPLICATIONSET
-              #cp ../../templates/terraform/applicationset $path2/$var/applicationset.yaml
-              sed -i -e "s/NAME/$var/g" $path2/$var/04-applicationset.yaml
-
-              ### GITOPS ###
-              ##############
-              
-                ### INGRESS
-              cp ../../templates/git/ingress.yaml $path3/$var/apps/ingress.yaml
-              sed -i -e "s/NAME/$var/g" $path3/$var/apps/ingress.yaml
-
-                ### VELERO
-              cp ../../templates/git/velero.yaml $path3/$var/apps/velero.yaml
-              sed -i -e "s/NAME/$var/g" $path3/$var/apps/velero.yaml  
-            done
+            cp ../templates/pipelines/delete_pipeline .github/workflows/$var.yaml
+            sed -i -e "s/NAME/$var/g" .github/workflows/$var.yaml
 
 #        - name: Pushes to another repository
 #          uses: cpina/github-action-push-to-another-repository@main
