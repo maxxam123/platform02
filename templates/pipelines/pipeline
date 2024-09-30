@@ -18,7 +18,7 @@ jobs:
      run:
        shell: bash
        # We keep Terraform files in the terraform directory.
-       working-directory: cluster/NAME
+       working-directory: cluster/xyz
 
    steps:
      - name: Checkout the repository to the runner
@@ -31,7 +31,7 @@ jobs:
 
 #     - name: Terraform init
 #       id: init
-#       run: terraform init -backend-config="bucket=dunhuang/terraform/s3/NAME/terraform.tfstate"
+#       run: terraform init -backend-config="bucket=dunhuang/terraform/s3/xyz/terraform.tfstate"
        
 #     - name: Terraform Apply
 #       run: terraform apply -auto-approve -input=false
