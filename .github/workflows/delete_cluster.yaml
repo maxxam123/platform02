@@ -17,9 +17,7 @@ jobs:
             var=$( sed -n 1p test/DELETE )
             cd folder
             git clone https://github.com/maxxam123/platform01.git
-            cd .github/workflows
-            rm -rf $var.yaml
-            cd ../..
+            ls -la
             cp ../templates/pipelines/delete_pipeline .github/workflows/$var.yaml
             sed -i -e "s/NAME/$var/g" .github/workflows/$var.yaml
             cd ..
