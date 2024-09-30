@@ -3,7 +3,7 @@ on:
    branches:
    - main
    paths:
-   - 'cluster/xyz/cluster.yaml'
+   - 'delete/**'
 
 
 env:
@@ -19,12 +19,11 @@ jobs:
       - name: test
         run: |
           ls -la
-          mkdir folder
-          cd folder
           git clone https://github.com/maxxam123/platform01.git
-          cd .github/workflows
+          cd platform01/.github/workflows
           rm -rf NAME.yaml
-          cd ../../cluster
+          cd ../../../
+          cd platform01/
           rm -rf NAME
           cd ..
 
@@ -33,7 +32,7 @@ jobs:
         env:
           API_TOKEN_GITHUB: ${{ secrets.ACCESS_TOKEN }}
         with:
-          source-directory: "folder"
+          source-directory: "platform01"
           destination-github-username: "maxxam123"
           destination-repository-name: "platform01"
           user-email: hennighausenmax@gmail.com
