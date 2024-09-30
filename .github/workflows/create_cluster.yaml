@@ -3,7 +3,7 @@ on:
    branches:
    - main
    paths:
-   - 'test/create.yaml'
+   - 'test/create_cluster1.yaml'
 
 jobs:
   build:
