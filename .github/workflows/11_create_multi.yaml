@@ -53,7 +53,7 @@ jobs:
               for (( i=1 ; i<$user_amount ;i++ )) ; do
                 cat ../../templates/terraform/02-cluster.tf > single.tf
                 echo "this is 2"
-                sed -n "$ip" users.yaml > name.txt
+                sed -n "$i"p users.yaml > name.txt
                 echo "this is name.txt"
                 cat name.txt
                 user_name=$( cat name.txt )
