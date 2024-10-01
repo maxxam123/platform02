@@ -50,7 +50,7 @@ jobs:
 
                 ### EKS
               echo $user_amount
-              for (( i=1 ; i<5;i++ )) ; do
+              for (( i=1 ; i<$user_amount ;i++ )) ; do
                 cat ../../templates/terraform/02-cluster.tf > single.tf
                 echo "this is 2"
                 sed -n "$ip" users.yaml > name.txt
@@ -59,6 +59,7 @@ jobs:
                 sed -i -e "s/USER/$user_name/g" single.tf
                 cat single.tf >> $path2/$var/03-users.tf
               done
+              cat $path2/$var/03-users.tf
               
               #cp ../../templates/terraform/02-cluster.tf $path2/$var/02-cluster.tf
               #sed -i -e "s/NAME/$var/g" $path2/$var/02-cluster.tf
