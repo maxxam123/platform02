@@ -27,7 +27,6 @@ jobs:
               
               cat users.yaml | wc -l > user_amount.txt
               user_amount=$( sed -n 1p user_amount.txt )
-              echo "this is 1"
               
               mkdir $path1/$var
               mkdir $path2/$var
@@ -50,12 +49,11 @@ jobs:
 
                 ### EKS
               ((user_amount++))
-              echo "this is user_amount"
-              echo $user_amount
               for (( i=1 ; i<$user_amount ;i++ )) ; do
                 cat ../../templates/terraform/02-cluster.tf > single.tf
-                sed -n "$i"p users.yaml > name.txt
-                user_name=$( cat name.txt )
+                #sed -n "$i"p users.yaml > name.txt
+                #user_name=$( cat name.txt )
+                user_name=$( sed -n "$i"p users.yaml )
                 sed -i -e "s/USER/$user_name/g" single.tf
                 cat single.tf >> $path2/$var/03-users.tf
               done
