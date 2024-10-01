@@ -51,11 +51,11 @@ jobs:
           git clone https://github.com/maxxam123/platform01.git
           cd platform01/.github/workflows
           ls -la
-          rm -rf NAME.yaml
+          #rm -rf NAME.yaml
           cd ../../../
           cd platform01/cluster
           ls -la
-          rm -rf NAME
+          #rm -rf NAME
           cd ../..
 
       - name: Pushes to another repository
