@@ -49,16 +49,13 @@ jobs:
               #sed -i -e "s/BUCKET/$var/g" $path2/$var/01-provider.tf
 
                 ### EKS
+              ((user_amount++))
+              echo "this is user_amount"
               echo $user_amount
               for (( i=1 ; i<$user_amount ;i++ )) ; do
                 cat ../../templates/terraform/02-cluster.tf > single.tf
-                echo "this is 2"
                 sed -n "$i"p users.yaml > name.txt
-                echo "this is name.txt"
-                cat name.txt
                 user_name=$( cat name.txt )
-                echo "this is the varible name"
-                echo $user_name
                 sed -i -e "s/USER/$user_name/g" single.tf
                 cat single.tf >> $path2/$var/03-users.tf
               done
