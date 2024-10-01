@@ -47,7 +47,7 @@ jobs:
                 
               cp ../../templates/terraform/01-provider.tf $path2/$var/01-provider.tf
               sed -i -e "s/PROVIDER/$provider/g" $path2/$var/01-provider.tf
-              sed -i -e "s/PROVIDER02/$var/g" $path2/$var/01-provider.tf
+              sed -i -e "s/BUCKET/$var/g" $path2/$var/01-provider.tf
 
                 ### EKS
               cp ../../templates/terraform/02-cluster.tf $path2/$var/02-cluster.tf
