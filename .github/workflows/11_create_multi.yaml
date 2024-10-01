@@ -51,8 +51,9 @@ jobs:
                 ### EKS
               for (( i=0 ; 1<$user_amount;i++ )) ; do
                 cat ../../templates/terraform/02-cluster.tf > single.tf
-                sed -n $ip users.yaml > name.txt
                 echo "this is 2"
+                sed -n $ip users.yaml > name.txt
+                echo "this is 3"
                 user_name=$( cat name.txt )
                 sed -i -e "s/USER/$user_name/g" single.tf
                 cat single.tf >> $path2/$var/03-users.tf
@@ -62,14 +63,3 @@ jobs:
               #sed -i -e "s/NAME/$var/g" $path2/$var/02-cluster.tf
               
             done
-
-        - name: Pushes to another repository
-          uses: cpina/github-action-push-to-another-repository@main
-          env:
-            API_TOKEN_GITHUB: ${{ secrets.ACCESS_TOKEN }}
-          with:
-            source-directory: "folder"
-            destination-github-username: "maxxam123"
-            destination-repository-name: "platform01"
-            user-email: hennighausenmax@gmail.com
-            target-branch: main
