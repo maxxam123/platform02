@@ -7,6 +7,6 @@
 #  }
 #}
 
-resource "aws_iam_user" "demouser" {
-  name = "tuckerdemo"
+resource "aws_iam_user" "USER" {
+  name = "USER"
 }
