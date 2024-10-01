@@ -3,7 +3,7 @@ on:
    branches:
    - main
    paths:
-   - 'cluster/xyz/cluster1.yaml'
+   - 'cluster/xyz/01-provider1.tf'
 
 
 env:
