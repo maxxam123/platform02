@@ -49,7 +49,8 @@ jobs:
               #sed -i -e "s/BUCKET/$var/g" $path2/$var/01-provider.tf
 
                 ### EKS
-              for (( i=0 ; 1<$user_amount;i++ )) ; do
+              cat $user_amount
+              for (( i=1 ; i<5;i++ )) ; do
                 cat ../../templates/terraform/02-cluster.tf > single.tf
                 echo "this is 2"
                 sed -n "$ip" users.yaml > name.txt
