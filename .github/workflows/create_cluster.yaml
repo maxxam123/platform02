@@ -44,19 +44,19 @@ jobs:
                 ### PROVIDER
               #cp ../../templates/terraform/* $path2/$var/
                 
-              cp ../../templates/terraform/01-provider.tf $path2/$var/provider.tf
+              cp ../../templates/terraform/01-provider.tf $path2/$var/01-provider.tf
               sed -i -e "s/PROVIDER/$var/g" $path2/$var/01-provider.tf
 
                 ### EKS
-              cp ../../templates/terraform/02-cluster.tf $path2/$var/cluster.tf
+              cp ../../templates/terraform/02-cluster.tf $path2/$var/02-cluster.tf
               sed -i -e "s/NAME/$var/g" $path2/$var/02-cluster.tf
 
                 ### ARGO
-              #cp ../../templates/terraform/03-argo.tf $path2/$var/argo.tf
+              #cp ../../templates/terraform/03-argo.tf $path2/$var/03-argo.tf
               #sed -i -e "s/NAME/$var/g" $path2/$var/03-argo.tf
 
                 ### APPLICATIONSET
-              #cp ../../templates/terraform/04-applicationset.tf $path2/$var/applicationset.tf
+              #cp ../../templates/terraform/04-applicationset.tf $path2/$var/04-applicationset.tf
               #sed -i -e "s/NAME/$var/g" $path2/$var/04-applicationset.tf
 
               ### GITOPS ###
