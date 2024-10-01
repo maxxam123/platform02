@@ -25,7 +25,8 @@ jobs:
             
             for each in $(ls $path); do
               cd $path/$each
-              var=$( sed -n 1p cluster.yaml)
+              var=$( sed -n 1p cluster.yaml )
+              provider=$( sed -n 2p cluster.yaml )
               
               mkdir $path1/$var
               mkdir $path2/$var
@@ -45,7 +46,7 @@ jobs:
               #cp ../../templates/terraform/* $path2/$var/
                 
               cp ../../templates/terraform/01-provider.tf $path2/$var/01-provider.tf
-              sed -i -e "s/PROVIDER/$var/g" $path2/$var/01-provider.tf
+              sed -i -e "s/PROVIDER/$provider/g" $path2/$var/01-provider.tf
 
                 ### EKS
               cp ../../templates/terraform/02-cluster.tf $path2/$var/02-cluster.tf
