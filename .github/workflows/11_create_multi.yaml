@@ -22,11 +22,17 @@ jobs:
             
             for each in $(ls $path); do
               cd $path/$each
+
+              
               var=$( sed -n 1p cluster.yaml )
               provider=$( sed -n 2p cluster.yaml )
               
               cat users.yaml | wc -l > user_amount.txt
               user_amount=$( sed -n 1p user_amount.txt )
+
+              cat vm.yaml | wc -l > vm_amount.txt
+              vm_amount=$( sed -n 1p vm_amount.txt )
+
               
               mkdir $path1/$var
               mkdir $path2/$var
@@ -34,8 +40,8 @@ jobs:
               ### PIPELINE ###
               ################
               
-              cp ../../templates/pipelines/pipeline $path1/$var.yaml
-              sed -i -e "s/xyz/$var/g" $path1/$var.yaml
+              #cp ../../templates/pipelines/pipeline $path1/$var.yaml
+              #sed -i -e "s/xyz/$var/g" $path1/$var.yaml
 
               ### TERRAFORM ###
               #################
@@ -43,11 +49,24 @@ jobs:
                 ### PROVIDER
               #cp ../../templates/terraform/* $path2/$var/
                 
-              cp ../../templates/terraform/01-provider.tf $path2/$var/01-provider.tf
-              sed -i -e "s/PROVIDER/$provider/g" $path2/$var/01-provider.tf
-              sed -i -e "s/BUCKET/$var/g" $path2/$var/01-provider.tf
+              #cp ../../templates/terraform/01-provider.tf $path2/$var/01-provider.tf
+              #sed -i -e "s/PROVIDER/$provider/g" $path2/$var/01-provider.tf
+              #sed -i -e "s/BUCKET/$var/g" $path2/$var/01-provider.tf
 
-                ### EKS
+                ### INSTANCES
+              ((vm_amount++))
+              # i<$vm_amount
+              for (( i=1 ; i<5 ;i++ )) ; do
+                cat ../../templates/terraform/03-vm.tf > single1.tf
+                #sed -n "$i"p vm.yaml > name1.txt
+                #vm_name=$( cat name1.txt )
+                vm_name=$( sed -n "$i"p vm.yaml )
+                
+                sed -i -e "s/VM/$vm_name/g" single1.tf
+                cat single1.tf >> $path2/$var/02-vm.tf
+              done
+
+                ### USERS
               ((user_amount++))
               for (( i=1 ; i<$user_amount ;i++ )) ; do
                 cat ../../templates/terraform/02-cluster.tf > single.tf
@@ -64,14 +83,3 @@ jobs:
               #sed -i -e "s/NAME/$var/g" $path2/$var/02-cluster.tf
               
             done
-
-        - name: Pushes to another repository
-          uses: cpina/github-action-push-to-another-repository@main
-          env:
-            API_TOKEN_GITHUB: ${{ secrets.ACCESS_TOKEN }}
-          with:
-            source-directory: "folder"
-            destination-github-username: "maxxam123"
-            destination-repository-name: "platform01"
-            user-email: hennighausenmax@gmail.com
-            target-branch: main
