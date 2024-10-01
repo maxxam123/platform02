@@ -29,9 +29,9 @@ jobs:
        with:
          terraform_version: 1.3.0
 
-#     - name: Terraform init
-#       id: init
-#       run: terraform init -backend-config="bucket=dunhuang/terraform/s3/xyz/terraform.tfstate"
+     - name: Terraform init
+       id: init
+       run: terraform init -backend-config="bucket=dunhuang/terraform/s3/xyz/terraform.tfstate"
        
-#     - name: Terraform Apply
-#       run: terraform apply -auto-approve -input=false
+#     - name: Terraform Plan
+#       run: terraform plan -auto-approve -input=false
