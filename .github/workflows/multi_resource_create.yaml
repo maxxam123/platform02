@@ -3,7 +3,7 @@ on:
    branches:
    - main
    paths:
-   - 'test/create_cluster.yaml'
+   - 'test/create_cluster1.yaml'
 
 jobs:
   build:
@@ -49,12 +49,15 @@ jobs:
 
                 ### EKS
               for (( i=0 ; 1<$user_amount;i++ )) ; do
-              echo "$i"
-              
+                cat ../../templates/terraform/02-cluster.tf > single.tf
+                sed -n $ip users.yaml > name.txt
+                user_name=$( cat name.txt )
+                sed -i -e "s/USER/$user_name/g" single.tf
+                cat single.tf >> $path2/$var/03-users.tf
               done
               
-              cp ../../templates/terraform/02-cluster.tf $path2/$var/02-cluster.tf
-              sed -i -e "s/NAME/$var/g" $path2/$var/02-cluster.tf
+              #cp ../../templates/terraform/02-cluster.tf $path2/$var/02-cluster.tf
+              #sed -i -e "s/NAME/$var/g" $path2/$var/02-cluster.tf
               
             done
 
