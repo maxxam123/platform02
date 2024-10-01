@@ -54,8 +54,12 @@ jobs:
                 #sed -n "$i"p users.yaml > name.txt
                 #user_name=$( cat name.txt )
                 user_name=$( sed -n "$i"p users.yaml )
-                sed -i -e "s/USER/$user_name/g" single.tf
-                cat single.tf >> $path2/$var/03-users.tf
+                
+                #sed -i -e "s/USER/$user_name/g" single.tf
+                #cat single.tf >> $path2/$var/03-users.tf
+                
+                sed -i -e "s/USER/$user_name/g" single.tf >> $path2/$var/03-users.tf
+                
               done
               cat $path2/$var/03-users.tf
               
