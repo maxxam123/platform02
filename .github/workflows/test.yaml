@@ -19,11 +19,13 @@ jobs:
             start=$( sed -n 1p 03_trigger/trigger )
             var=$( sed -n 1p 01_infra/$start/values )
             var2=$( sed -n 3p 01_infra/$start/values )
+            var3=$( sed -n 2p 01_infra/$start/values )
             mkdir -p platf04/.github/workflows
             mkdir -p platf04/01_infra/$var
 
             cp 02_tmp/terraform/01_terraform.tfvars .
-            cp 02_tmp/terraform/02_provider.tf .
+            cp 02_tmp/terraform/providers/$var3/02_provider.tf .
+            # cp 02_tmp/terraform/02_provider.tf .
             sed -i -e "s/NAME/$var/g" 01_terraform.tfvars
             sed -i -e "s/COUNT/$var2/g" 01_terraform.tfvars
             sed -i -e "s/BUCKET/$var/g" 02_provider.tf
