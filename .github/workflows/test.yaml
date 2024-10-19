@@ -13,13 +13,23 @@ jobs:
         - name: test
           run: |
           
-            echo "LS"
-            ls -la
-            echo "LS CLUSTER"
             ls cluster
             var=$( sed -n 1p test2 )
             echo $var
             cat zzz/$var/$var
+
+        - name: Pushes to another repository
+          uses: cpina/github-action-push-to-another-repository@main
+          env:
+            API_TOKEN_GITHUB: ${{ secrets.PLAT04 }}
+          with:
+            source-directory: "folder"
+            destination-github-username: "maxxam123"
+            destination-repository-name: "platf04"
+            user-email: hennighausenmax@gmail.com
+            target-branch: main
+
+            
 
             # for each in $(ls cluster); do
             #   echo "THIS IS INSIDE CLUSTER"
