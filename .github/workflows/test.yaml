@@ -21,7 +21,8 @@ jobs:
             for each in $(ls cluster); do
             #  cd $bootstrap/$each
               echo "THIS IS INSIDE CLUSTER"
-              cat $echo
+              cat $each
+              echo $each
               done
               
               
