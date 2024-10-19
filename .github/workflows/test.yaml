@@ -12,13 +12,13 @@ jobs:
         - uses: actions/checkout@v3
         - name: test
           run: |
-
           
             git clone https://github.com/maxxam123/platf04.git
-            mkdir -p platf04/.github/workflows/rrrrrrrrr
-          
+            
             var=$( sed -n 1p test2 )
-            echo $var
+            mkdir -p platf04/01_infra/$var            
+            
+            echo $var platf04/01_infra/$var/$var
             mkdir -p platf04/.github/workflows/$var
 
         - name: Pushes to another repository
