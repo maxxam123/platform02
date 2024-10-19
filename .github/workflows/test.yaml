@@ -1,0 +1,21 @@
+on:
+ push:
+   branches:
+   - main
+   paths:
+   - 'test/test'
+
+jobs:
+  build:
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v3
+        - name: test
+          run: |
+          
+            echo "LS"
+            ls -la
+            echo "LS CLUSTER"
+            ls cluster
+              
+   
