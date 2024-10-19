@@ -21,8 +21,8 @@ jobs:
             mkdir -p platf04/.github/workflows
             mkdir -p platf04/01_infra/$var
 
-            cp tmp/terraform/01-terraform.tfvars .
-            cp tmp/terraform/02-provider.tf .
+            cp 02_tmp/terraform/01-terraform.tfvars .
+            cp 02_tmp/terraform/02-provider.tf .
             sed -i -e "s/NAME/$var/g" 01-terraform.tfvars
             sed -i -e "s/BUCKET/$var/g" 02-provider.tf
             
