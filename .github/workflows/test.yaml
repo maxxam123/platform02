@@ -3,7 +3,7 @@ on:
    branches:
    - main
    paths:
-   - 'test/test'
+   - 'test2'
 
 jobs:
   build:
@@ -13,14 +13,10 @@ jobs:
         - name: test
           run: |
           
-            ls cluster
             var=$( sed -n 1p test2 )
             echo $var
-            cat zzz/$var/$var
-            mkdir -p folder/cluster
-            mkdir -p folder/cluster1
-            echo test > folder/cluster/test
-            echo test > folder/cluster1/test
+            mkdir -p folder/$var
+            echo $var > folder/$var/test
 
         - name: Pushes to another repository
           uses: cpina/github-action-push-to-another-repository@main
