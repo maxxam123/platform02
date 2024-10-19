@@ -19,7 +19,7 @@ jobs:
             ls cluster
             var=$( sed -n 1p test2 )
             echo $var
-            cat zzz/$var$var
+            cat zzz/$var/$var
 
             # for each in $(ls cluster); do
             #   echo "THIS IS INSIDE CLUSTER"
