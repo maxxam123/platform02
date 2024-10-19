@@ -18,7 +18,7 @@ jobs:
             echo "LS CLUSTER"
             ls cluster
 
-            diff cluster/test. cluster/test2
+            diff test. test2
 
             # for each in $(ls cluster); do
             #   echo "THIS IS INSIDE CLUSTER"
