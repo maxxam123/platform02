@@ -18,10 +18,12 @@ jobs:
             var=$( sed -n 1p test2 )
             mkdir -p platf04/.github/workflows
             mkdir -p platf04/01_infra/$var
+
+            cp templates/terraform/01-provider.tf .
             sed -i -e "s/BUCKET/$var/g" 01-provider.tf
             
-            touch platf04/.github/workflows/$var
-            touch platf04/01_infra/$var/$var
+            touch platf04/.github/workflows/$var.yaml
+            cp 01-provider.tf platf04/01_infra/$var/01-provider.tf  
             
         - name: Pushes to another repository
           uses: cpina/github-action-push-to-another-repository@main
