@@ -17,7 +17,8 @@ jobs:
 
             var=$( sed -n 1p test2 )
             mkdir -p platf04/.github/workflows
-            touch platf04/.github/workflows/onetwo
+            mkdir -p platf04/01_infra/$var
+            touch platf04/.github/workflows/$var
             
             
 
