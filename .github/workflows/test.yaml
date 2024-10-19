@@ -16,10 +16,10 @@ jobs:
           
             git clone https://github.com/maxxam123/platf04.git
 
-            START=$( sed -n 1p 03_trigger/trigger )
-            NAME=$( sed -n 1p 01_infra/$START/values )
-            COUNT=$( sed -n 3p 01_infra/$START/values )
-            PROVIDER=$( sed -n 2p 01_infra/$START/values )
+            START=$( sed -n 1p 03_trigger/vpc_trigger )
+            NAME=$( sed -n 1p 01_infra/vpc/$START/values )
+            COUNT=$( sed -n 3p 01_infra/vpc/$START/values )
+            PROVIDER=$( sed -n 2p 01_infra/vpc/$START/values )
             mkdir -p platf04/.github/workflows
             mkdir -p platf04/01_infra/$NAME
 
