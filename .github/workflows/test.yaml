@@ -16,23 +16,23 @@ jobs:
           
             git clone https://github.com/maxxam123/platf04.git
 
-            start=$( sed -n 1p 03_trigger/trigger )
-            var=$( sed -n 1p 01_infra/$start/values )
-            var2=$( sed -n 3p 01_infra/$start/values )
-            var3=$( sed -n 2p 01_infra/$start/values )
+            START=$( sed -n 1p 03_trigger/trigger )
+            NAME=$( sed -n 1p 01_infra/$START/values )
+            COUNT=$( sed -n 3p 01_infra/$START/values )
+            PROVIDER=$( sed -n 2p 01_infra/$START/values )
             mkdir -p platf04/.github/workflows
-            mkdir -p platf04/01_infra/$var
+            mkdir -p platf04/01_infra/$NAME
 
             cp 02_tmp/terraform/01_terraform.tfvars .
-            cp 02_tmp/terraform/providers/$var3/02_provider.tf .
+            cp 02_tmp/terraform/providers/$PROVIDER/02_provider.tf .
             # cp 02_tmp/terraform/02_provider.tf .
-            sed -i -e "s/NAME/$var/g" 01_terraform.tfvars
-            sed -i -e "s/COUNT/$var2/g" 01_terraform.tfvars
-            sed -i -e "s/BUCKET/$var/g" 02_provider.tf
+            sed -i -e "s/NAME/$NAME/g" 01_terraform.tfvars
+            sed -i -e "s/COUNT/$COUNT/g" 01_terraform.tfvars
+            sed -i -e "s/BUCKET/$NAME/g" 02_provider.tf
             
-            touch platf04/.github/workflows/$var.yaml
-            cp 01_terraform.tfvars platf04/01_infra/$var/01_terraform.tfvars
-            cp 02_provider.tf platf04/01_infra/$var/02_provider.tf
+            touch platf04/.github/workflows/$NAME.yaml
+            cp 01_terraform.tfvars platf04/01_infra/$NAME/01_terraform.tfvars
+            cp 02_provider.tf platf04/01_infra/$NAME/02_provider.tf
             
         - name: Pushes to another repository
           uses: cpina/github-action-push-to-another-repository@main
