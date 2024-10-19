@@ -1,2 +1,2 @@
-lambda="NAME"
-count="3"
+vpc="NAME"
+count="7"
