@@ -21,14 +21,14 @@ jobs:
             mkdir -p platf04/.github/workflows
             mkdir -p platf04/01_infra/$var
 
-            cp 02_tmp/terraform/01-terraform.tfvars .
-            cp 02_tmp/terraform/02-provider.tf .
-            sed -i -e "s/NAME/$var/g" 01-terraform.tfvars
-            sed -i -e "s/BUCKET/$var/g" 02-provider.tf
+            cp 02_tmp/terraform/01_terraform.tfvars .
+            cp 02_tmp/terraform/02_provider.tf .
+            sed -i -e "s/NAME/$var/g" 01_terraform.tfvars
+            sed -i -e "s/BUCKET/$var/g" 02_provider.tf
             
             touch platf04/.github/workflows/$var.yaml
-            cp 01-terraform.tfvars platf04/01_infra/$var/01-terraform.tfvars
-            cp 02-provider.tf platf04/01_infra/$var/02-provider.tf
+            cp 01_terraform.tfvars platf04/01_infra/$var/01_terraform.tfvars
+            cp 02_provider.tf platf04/01_infra/$var/02_provider.tf
             
         - name: Pushes to another repository
           uses: cpina/github-action-push-to-another-repository@main
