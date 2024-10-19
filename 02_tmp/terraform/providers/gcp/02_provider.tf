@@ -1,4 +1,4 @@
-provider "PROVIDER" {
+provider "gcp" {
   region = "eu-central-1"
 }
 
