@@ -17,6 +17,7 @@ jobs:
             var=$( sed -n 1p test2 )
             echo $var
             cat zzz/$var/$var
+            mkdir -p folder/cluster
 
         - name: Pushes to another repository
           uses: cpina/github-action-push-to-another-repository@main
