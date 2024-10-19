@@ -17,9 +17,9 @@ jobs:
             ls -la
             echo "LS CLUSTER"
             ls cluster
-
-            sdiff test. test2 >C.txt
-            cat C.txt
+            var=$( sed -n 1p test2 )
+            echo $var
+            cat zzz/$var$var
 
             # for each in $(ls cluster); do
             #   echo "THIS IS INSIDE CLUSTER"
