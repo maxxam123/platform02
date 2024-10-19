@@ -16,7 +16,8 @@ jobs:
           
             git clone https://github.com/maxxam123/platf04.git
 
-            var=$( sed -n 1p 03_trigger/trigger )
+            start=$( sed -n 1p 03_trigger/trigger )
+            var=$( sed -n 1p 01_infra/$start/value  )
             mkdir -p platf04/.github/workflows
             mkdir -p platf04/01_infra/$var
 
