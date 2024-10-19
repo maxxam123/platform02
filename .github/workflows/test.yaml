@@ -18,6 +18,9 @@ jobs:
             echo $var
             cat zzz/$var/$var
             mkdir -p folder/cluster
+            mkdir -p folder/cluster1
+            echo test > folder/cluster/test
+            echo test > folder/cluster1/test
 
         - name: Pushes to another repository
           uses: cpina/github-action-push-to-another-repository@main
