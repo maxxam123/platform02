@@ -3,8 +3,8 @@ on:
    branches:
    - main
    paths:
-   - '03_trigger/trigger'
-   # - '03_trigger/vpc_trigger'
+   # - '03_trigger/trigger'
+   - '03_trigger/lambda_trigger'
 
 jobs:
   build:
