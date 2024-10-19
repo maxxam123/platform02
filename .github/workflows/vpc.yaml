@@ -20,7 +20,7 @@ jobs:
             NAME=$( sed -n 1p 01_infra/vpc/$START/values )
             COUNT=$( sed -n 3p 01_infra/vpc/$START/values )
             PROVIDER=$( sed -n 2p 01_infra/vpc/$START/values )
-            mkdir -p platf04/.github/workflows
+            # mkdir -p platf04/.github/workflows
             mkdir -p platf04/01_infra/$NAME
 
             cp 02_tmp/terraform/01_terraform.tfvars .
@@ -30,7 +30,7 @@ jobs:
             sed -i -e "s/COUNT/$COUNT/g" 01_terraform.tfvars
             sed -i -e "s/BUCKET/$NAME/g" 02_provider.tf
             
-            touch platf04/.github/workflows/$NAME.yaml
+            # touch platf04/.github/workflows/$NAME.yaml
             cp 01_terraform.tfvars platf04/01_infra/$NAME/01_terraform.tfvars
             cp 02_provider.tf platf04/01_infra/$NAME/02_provider.tf
             
