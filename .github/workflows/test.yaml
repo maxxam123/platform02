@@ -18,7 +18,8 @@ jobs:
             echo "LS CLUSTER"
             ls cluster
 
-            diff test. test2
+            diff test. test2 >C.txt
+            cat C.txt
 
             # for each in $(ls cluster); do
             #   echo "THIS IS INSIDE CLUSTER"
