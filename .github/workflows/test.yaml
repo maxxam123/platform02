@@ -18,11 +18,12 @@ jobs:
             echo "LS CLUSTER"
             ls cluster
 
-            for each in $(ls cluster); do
-            #  cd $bootstrap/$each
-              echo "THIS IS INSIDE CLUSTER"
-              echo $each
-              done
+            diff cluster/test. cluster/test2
+
+            # for each in $(ls cluster); do
+            #   echo "THIS IS INSIDE CLUSTER"
+            #   echo $each
+            #   done
               
               
    
