@@ -17,5 +17,12 @@ jobs:
             ls -la
             echo "LS CLUSTER"
             ls cluster
+
+            for each in $(ls cluster); do
+            #  cd $bootstrap/$each
+              echo "THIS IS INSIDE CLUSTER"
+              echo $echo
+              done
+              
               
    
