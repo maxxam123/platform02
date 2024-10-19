@@ -3,7 +3,8 @@ on:
    branches:
    - main
    paths:
-   - 'test2'
+   # - 'test2'
+   - '03_trigger/trigger'
 
 jobs:
   build:
@@ -15,18 +16,18 @@ jobs:
           
             git clone https://github.com/maxxam123/platf04.git
 
-            var=$( sed -n 1p test2 )
+            var=$( sed -n 1p 03_trigger/trigger )
             mkdir -p platf04/.github/workflows
             mkdir -p platf04/01_infra/$var
 
-            cp templates/terraform/01-provider.tf .
-            cp templates/terraform/00-terraform.tfvars .
-            sed -i -e "s/BUCKET/$var/g" 01-provider.tf
-            sed -i -e "s/NAME/$var/g" 00-terraform.tfvars
+            cp tmp/terraform/01-terraform.tfvars .
+            cp tmp/terraform/02-provider.tf .
+            sed -i -e "s/NAME/$var/g" 01-terraform.tfvars
+            sed -i -e "s/BUCKET/$var/g" 02-provider.tf
             
             touch platf04/.github/workflows/$var.yaml
-            cp 01-provider.tf platf04/01_infra/$var/01-provider.tf
-            cp 00-terraform.tfvars platf04/01_infra/$var/00-terraform.tfvars
+            cp 01-terraform.tfvars platf04/01_infra/$var/01-terraform.tfvars
+            cp 02-provider.tf platf04/01_infra/$var/02-provider.tf
             
         - name: Pushes to another repository
           uses: cpina/github-action-push-to-another-repository@main
