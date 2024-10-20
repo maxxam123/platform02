@@ -4,7 +4,7 @@ on:
    - main
    paths:
    # - '03_trigger/trigger'
-   - '03_trigger/lambda_trigger'
+   - '03_trigger/01_lambda_delete'
 
 jobs:
   build:
@@ -17,6 +17,9 @@ jobs:
             git clone https://github.com/maxxam123/platf04.git
 
             NAME=$( sed -n 1p 03_trigger/01_lambda_delete )
+
+            mkdir -p platf04/03_trigger
+            echo "test" > platf04/03_trigger/test
             
             mkdir -p platf04/.github/workflows
             cp 02_tmp/02_pipeline/01_lambda/main_delete.yaml $NAME_delete.yaml
