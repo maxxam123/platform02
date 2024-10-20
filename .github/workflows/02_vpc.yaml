@@ -15,7 +15,7 @@ jobs:
           
             git clone https://github.com/maxxam123/platf04.git
 
-            START=$( sed -n 1p 03_trigger/vpc_trigger )
+            START=$( sed -n 1p 03_trigger/02_vpc )
             NAME=$( sed -n 1p 01_infra/vpc/$START/values )
             COUNT=$( sed -n 3p 01_infra/vpc/$START/values )
             PROVIDER=$( sed -n 2p 01_infra/vpc/$START/values )
