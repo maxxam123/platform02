@@ -1,4 +1,4 @@
-function="NAME"
+function="FUNCTION"
 role="ROLE"
 runtime="RUNTIME"
 gateway="GATEWAY"
