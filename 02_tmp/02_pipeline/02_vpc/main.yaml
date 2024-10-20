@@ -32,7 +32,7 @@ jobs:
      - name: Terraform init
        id: init
        run: |
-         cp ../../02_tmp/02_vpc/*
+         cp ../../02_tmp/02_vpc/* .
          sed -i -e "s/RESOURCE/NAME/g" main.tf
          cat main.tf
          terraform init -backend-config="bucket=dunhuang-gansu-terraform-state"
