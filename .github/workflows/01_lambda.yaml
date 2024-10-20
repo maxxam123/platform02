@@ -4,7 +4,7 @@ on:
    - main
    paths:
    # - '03_trigger/trigger'
-   - '03_trigger/lambda_trigger'
+   - '03_trigger/01_lambda'
 
 jobs:
   build:
