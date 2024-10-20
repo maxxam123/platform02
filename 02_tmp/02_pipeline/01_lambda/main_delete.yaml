@@ -63,7 +63,7 @@ jobs:
      - name: Pushes to another repository
        uses: cpina/github-action-push-to-another-repository@main
        env:
-         API_TOKEN_GITHUB: ${{ secrets.ACCESS_TOKEN_2 }}
+         API_TOKEN_GITHUB: ${{ secrets.PLAT04 }}
        with:
          source-directory: "platf04"
          destination-github-username: "maxxam123"
