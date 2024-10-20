@@ -3,7 +3,7 @@ on:
    branches:
    - main
    paths:
-   - '01_infra/lambda/NAME/02_provider.tf'
+   - '03/trigger/*'
 
 env:
  AWS_ACCESS_KEY_ID: ${{ secrets.ACCESS_KEY }}
