@@ -28,14 +28,14 @@ jobs:
             
             mkdir -p platf04/01_infra/lambda/$NAME
 
-            cp 02_tmp/01_terraform/02_tfvars/01_lambda/01_terraform.tfvars .
+            cp 02_tmp/01_terraform/02_tfvars/01_lambda/01_terraform.tfvars terraform.tfvars
             cp 02_tmp/01_terraform/01_providers/$PROVIDER/02_provider.tf .
-            sed -i -e "s/NAME/$NAME/g" 01_terraform.tfvars
-            sed -i -e "s/COUNT/$COUNT/g" 01_terraform.tfvars
+            sed -i -e "s/NAME/$NAME/g" terraform.tfvars
+            sed -i -e "s/COUNT/$COUNT/g" terraform.tfvars
             sed -i -e "s/BUCKET/$NAME/g" 02_provider.tf
             
             # touch platf04/.github/workflows/$NAME.yaml
-            cp 01_terraform.tfvars platf04/01_infra/lambda/$NAME/01_terraform.tfvars
+            cp terraform.tfvars platf04/01_infra/lambda/$NAME/terraform.tfvars
             cp 02_provider.tf platf04/01_infra/lambda/$NAME/02_provider.tf
             
         - name: Pushes to another repository
