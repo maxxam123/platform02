@@ -1,4 +1,7 @@
 lambda02
 aws
-2
-lambda
+function02
+role02
+nodejs20.x
+gateway02
+path-to-app
