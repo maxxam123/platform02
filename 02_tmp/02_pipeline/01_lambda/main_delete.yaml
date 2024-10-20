@@ -41,3 +41,32 @@ jobs:
 
      - name: Terraform Destroy
        run: terraform destroy -auto-approve -input=false -lock=false
+
+ build:
+   runs-on: ubuntu-latest
+   needs: terraform
+   steps:
+     - uses: actions/checkout@v3
+     - name: test
+       run: |
+         ls -la
+         git clone https://github.com/maxxam123/platf04.git
+         cd platf04/.github/workflows
+         ls -la
+         rm -rf NAME.yaml
+         cd ../../../
+         cd platf04/01_infra/lambda
+         ls -la
+         rm -rf NAME
+         cd ../../..
+
+     - name: Pushes to another repository
+       uses: cpina/github-action-push-to-another-repository@main
+       env:
+         API_TOKEN_GITHUB: ${{ secrets.ACCESS_TOKEN_2 }}
+       with:
+         source-directory: "platform01"
+         destination-github-username: "maxxam123"
+         destination-repository-name: "platform01"
+         user-email: hennighausenmax@gmail.com
+         target-branch: main
