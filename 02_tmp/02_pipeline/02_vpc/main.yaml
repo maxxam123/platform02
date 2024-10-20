@@ -18,7 +18,7 @@ jobs:
      run:
        shell: bash
        # We keep Terraform files in the terraform directory.
-       working-directory: cluster/xyz
+       working-directory: 01_infra/vpc/NAME/
 
    steps:
      - name: Checkout the repository to the runner
