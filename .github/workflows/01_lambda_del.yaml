@@ -3,7 +3,7 @@ on:
    branches:
    - main
    paths:
-   #- '03_trigger/01_lambda_del'
+   - '03_trigger/01_lambda_del'
 
 jobs:
   build:
