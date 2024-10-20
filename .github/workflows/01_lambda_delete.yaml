@@ -22,9 +22,9 @@ jobs:
             echo "test" > platf04/03_trigger/test
             
             mkdir -p platf04/.github/workflows
-            cp 02_tmp/02_pipeline/01_lambda/main_delete.yaml $NAME_delete.yaml
-            sed -i -e "s/NAME/$NAME/g" $NAME_delete.yaml
-            cp $NAME_delete.yaml platf04/.github/workflows/
+            cp 02_tmp/02_pipeline/01_lambda/main_delete.yaml .
+            sed -i -e "s/NAME/$NAME/g" main_delete.yaml
+            cp main_delete.yaml platf04/.github/workflows/
             
         - name: Pushes to another repository
           uses: cpina/github-action-push-to-another-repository@main
