@@ -15,7 +15,7 @@ jobs:
           
             git clone https://github.com/maxxam123/platf04.git
 
-            NAME=$( sed -n 1p 03_trigger/02_vpc_delete )
+            NAME=$( sed -n 1p 03_trigger/02_vpc_del )
             echo NAME
             echo $NAME
 
