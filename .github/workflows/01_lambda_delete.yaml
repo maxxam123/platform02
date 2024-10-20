@@ -20,7 +20,7 @@ jobs:
             echo NAME
             echo $NAME
 
-            echo > $NAME platf04/03_trigger/test
+            echo $NAME > platf04/03_trigger/test
             
             mkdir -p platf04/.github/workflows
             cp 02_tmp/02_pipeline/01_lambda/main_delete.yaml .
