@@ -1,2 +1,6 @@
-ec2="NAME"
-number="COUNT"
+function="NAME"
+role="ROLE"
+runtime="RUNTIME"
+gateway="GATEWAY"
+path="PATH"
+
