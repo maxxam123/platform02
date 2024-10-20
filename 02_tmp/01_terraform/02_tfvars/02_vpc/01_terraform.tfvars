@@ -1,2 +1,2 @@
 vpc="NAME"
-count="7"
+count="COUNT"
