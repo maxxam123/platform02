@@ -24,6 +24,11 @@ jobs:
             cp 02_tmp/02_pipeline/01_lambda/main.yaml $NAME.yaml
             sed -i -e "s/NAME/$NAME/g" $NAME.yaml
             cp $NAME.yaml platf04/.github/workflows/
+
+            # cp 01_infra/lambda/$START/index.js .
+            # cp 01_infra/lambda/$START/lambda-policy.json .
+            # cp index.js platf04/01_infra/lambda/$NAME/index.js
+            # cp lambda-policy.json platf04/01_infra/lambda/$NAME/lambda-policy.json
             
             mkdir -p platf04/01_infra/lambda/$NAME
 
