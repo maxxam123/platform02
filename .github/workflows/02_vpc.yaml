@@ -20,8 +20,12 @@ jobs:
             NAME=$( sed -n 1p 01_infra/vpc/$START/values )
             COUNT=$( sed -n 3p 01_infra/vpc/$START/values )
             PROVIDER=$( sed -n 2p 01_infra/vpc/$START/values )
-            mkdir -p platf04/.github/workflows
             mkdir -p platf04/01_infra/vpc/$NAME
+
+            mkdir -p platf04/.github/workflows
+            cp 02_tmp/02_pipeline/02_vpc/main.yaml $NAME.yaml
+            sed -i -e "s/NAME/$NAME/g" $NAME.yaml
+            cp $NAME.yaml platf04/.github/workflows/
 
             cp 02_tmp/terraform/tfvars/vpc/01_terraform.tfvars .
 
