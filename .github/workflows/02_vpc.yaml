@@ -48,13 +48,4 @@ jobs:
             destination-repository-name: "platf04"
             user-email: hennighausenmax@gmail.com
             target-branch: main
-
             
-
-            # for each in $(ls cluster); do
-            #   echo "THIS IS INSIDE CLUSTER"
-            #   echo $each
-            #   done
-              
-              
-   
