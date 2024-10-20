@@ -1,11 +1,9 @@
-
 on:
  push:
    branches:
    - main
    paths:
    - '01_infra/lambda/NAME/02_provider.tf'
-
 
 env:
  AWS_ACCESS_KEY_ID: ${{ secrets.ACCESS_KEY }}
@@ -19,7 +17,7 @@ jobs:
      run:
        shell: bash
        # We keep Terraform files in the terraform directory.
-       working-directory: cluster/xyz
+       working-directory: cluster/NAME
 
    steps:
      - name: Checkout the repository to the runner
@@ -32,10 +30,11 @@ jobs:
 
      - name: Terraform init
        id: init
-       run: terraform init -backend-config="bucket=dunhuang-gansu-terraform-state"
+       run: |
+         terraform init -backend-config="bucket=dunhuang-gansu-terraform-state"
        
      - name: Terraform Plan
        run: terraform plan -lock=false
 
-#      - name: Terraform Apply
-#        run: terraform apply -auto-approve -input=false -lock=false
+     #- name: Terraform Apply
+     #  run: terraform apply -auto-approve -input=false -lock=false
