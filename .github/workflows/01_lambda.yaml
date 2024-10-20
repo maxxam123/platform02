@@ -21,7 +21,7 @@ jobs:
             COUNT=$( sed -n 3p 01_infra/lambda/$START/values )
             PROVIDER=$( sed -n 2p 01_infra/lambda/$START/values )
             # mkdir -p platf04/.github/workflows
-            mkdir -p platf04/01_infra/$NAME
+            mkdir -p platf04/01_infra/lambda/$NAME
 
             cp 02_tmp/terraform/tfvars/lambda/01_terraform.tfvars .
             cp 02_tmp/terraform/providers/$PROVIDER/02_provider.tf .
@@ -31,8 +31,8 @@ jobs:
             sed -i -e "s/BUCKET/$NAME/g" 02_provider.tf
             
             # touch platf04/.github/workflows/$NAME.yaml
-            cp 01_terraform.tfvars platf04/01_infra/$NAME/01_terraform.tfvars
-            cp 02_provider.tf platf04/01_infra/$NAME/02_provider.tf
+            cp 01_terraform.tfvars platf04/01_infra/lambda/$NAME/01_terraform.tfvars
+            cp 02_provider.tf platf04/01_infra/lambda/$NAME/02_provider.tf
             
         - name: Pushes to another repository
           uses: cpina/github-action-push-to-another-repository@main
