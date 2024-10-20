@@ -32,6 +32,7 @@ jobs:
      - name: Terraform init
        id: init
        run: |
+         echo "THIS IS GCP"
          cp ../../../02_tmp/02_vpc/* .
          sed -i -e "s/RESOURCE/NAME/g" main.tf
          cat main.tf
