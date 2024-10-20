@@ -4,7 +4,7 @@ on:
    branches:
    - main
    paths:
-   - '01_infra/lambda/NAME/'
+   - '01_infra/lambda/NAME/02_provider.tf'
 
 
 env:
