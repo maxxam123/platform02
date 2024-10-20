@@ -1,2 +1,2 @@
-lambda="NAME"
+ec2="NAME"
 count="COUNT"
