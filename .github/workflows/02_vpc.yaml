@@ -23,6 +23,7 @@ jobs:
 
             mkdir -p platf04/.github/workflows
             cp 02_tmp/02_pipeline/02_vpc/main.yaml $NAME.yaml
+            # cp 02_tmp/02_pipeline/02_vpc/$PROVIDER/main.yaml $NAME.yaml
             sed -i -e "s/NAME/$NAME/g" $NAME.yaml
             cp $NAME.yaml platf04/.github/workflows/
 
