@@ -25,8 +25,8 @@ jobs:
 
             cp 02_tmp/terraform/tfvars/vpc/01_terraform.tfvars .
 
-            cp 02_tmp/terraform/tfvars/vpc/01_terraform.tfvars .
-            cp 02_tmp/terraform/providers/$PROVIDER/02_provider.tf .
+            cp 02_tmp/01_terraform/02_tfvars/02_vpc/01_terraform.tfvars .
+            cp 02_tmp/01_terraform/01_providers/$PROVIDER/02_provider.tf .
             sed -i -e "s/NAME/$NAME/g" 01_terraform.tfvars
             sed -i -e "s/COUNT/$COUNT/g" 01_terraform.tfvars
             sed -i -e "s/BUCKET/$NAME/g" 02_provider.tf
