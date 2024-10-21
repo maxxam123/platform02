@@ -29,11 +29,12 @@ jobs:
             cp 02_tmp/02_pipeline/01_lambda/$PROVIDER/main.yaml $NAME.yaml
             sed -i -e "s/NAME/$NAME/g" $NAME.yaml
             cp $NAME.yaml platf04/.github/workflows/
+            
+            mkdir -p platf04/01_infra/lambda/$NAME
 
             cp 01_infra/lambda/$START/index.js .
             cp index.js platf04/01_infra/lambda/$NAME/index.js
             
-            mkdir -p platf04/01_infra/lambda/$NAME
 
             cp 02_tmp/01_terraform/02_tfvars/01_lambda/01_terraform.tfvars terraform.tfvars
             cp 02_tmp/01_terraform/01_providers/$PROVIDER/02_provider.tf .
