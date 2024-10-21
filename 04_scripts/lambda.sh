@@ -8,6 +8,7 @@
 
   NAME=$( sed -n 1p 03_trigger/01_lambda )
   PROVIDER=$( sed -n 2p 01_infra/lambda/$NAME/values )
+  echo $NAME
 
   d_pipeline="platf04/.github/workflows"
   d_infra="platf04/01_infra/lambda"
@@ -25,7 +26,7 @@
   mkdir -p platf04/01_infra/lambda/$NAME
   # mkdir -p $d_infra/$NAME
   
-  cp 01_infra/lambda/$START/index.js platf04/01_infra/lambda/$NAME/index.js
+  cp 01_infra/lambda/$NAME/index.js platf04/01_infra/lambda/$NAME/index.js
   # cp $infra/$START/index.js $d_infra/$NAME/index.js
   
   # cp index.js platf04/01_infra/lambda/$NAME/index.js
