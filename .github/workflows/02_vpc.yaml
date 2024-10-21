@@ -4,6 +4,7 @@ on:
    - main
    paths:
    - '03_trigger/02_vpc'
+   # - '03_trigger/02_vpc/02_vpc'
 
 jobs:
   build:
@@ -14,6 +15,7 @@ jobs:
           run: |
 
             sh 04_scripts/02_vpc.sh
+          # sh 04_scripts/02_vpc/02_vpc.sh
           
             # git clone https://github.com/maxxam123/platf04.git
 
