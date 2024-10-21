@@ -27,7 +27,7 @@
   mkdir -p $d_infra/$NAME
   
   # cp 01_infra/lambda/$NAME/index.js platf04/01_infra/lambda/$NAME/index.js
-  cp $infra/$START/index.js $d_infra/$NAME/index.js
+  cp $infra/$Name/index.js $d_infra/$NAME/index.js
   
   # cp index.js platf04/01_infra/lambda/$NAME/index.js
   
