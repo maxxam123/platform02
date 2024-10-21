@@ -41,6 +41,6 @@
   
   # cp 01_infra/lambda/$START/terraform.tfvars .
   # cp terraform.tfvars platf04/01_infra/lambda/$NAME/terraform.tfvars
-  cp 01_infra/lambda/$START/terraform.tfvars platf04/01_infra/lambda/$NAME/terraform.tfvars
+  cp 01_infra/lambda/$NAME/terraform.tfvars platf04/01_infra/lambda/$NAME/terraform.tfvars
   # cp $infra/$START/terraform.tfvars $d_infra/$NAME/terraform.tfvars
   
