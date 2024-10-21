@@ -1,4 +1,7 @@
 #!/bin/bash
+
+  git clone https://github.com/maxxam123/platf04.git
+
   NAME=$( sed -n 1p 03_trigger/02_vpc_del )
   PROVIDER=$( sed -n 2p 01_infra/vpc/$NAME/values )
 
