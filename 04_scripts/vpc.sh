@@ -8,7 +8,7 @@
   d_pipeline="platf04/.github/workflows"
   d_infra="platf04/01_infra/vpc"
   infra="01_infra/vpc"
-  pipeline="02_tmp/02_pipeline/01_vpc"
+  pipeline="02_tmp/02_pipeline/02_vpc"
   provider="02_tmp/01_terraform/01_providers"
   
   # mkdir -p platf04/01_infra/vpc/$NAME
