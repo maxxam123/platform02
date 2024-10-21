@@ -3,11 +3,11 @@
   git clone https://github.com/maxxam123/platf04.git
   
   NAME=$( sed -n 1p 03_trigger/02_vpc )
-  PROVIDER=$( sed -n 2p 01_infra/vpc/$NAME/values )
+  PROVIDER=$( sed -n 2p 01_infra/02_vpc/$NAME/values ) #### vpc
 
   d_pipeline="platf04/.github/workflows"
   d_infra="platf04/01_infra/vpc"
-  infra="01_infra/vpc"
+  infra="01_infra/02_vpc"  #### vpc
   pipeline="02_tmp/02_pipeline/02_vpc"
   provider="02_tmp/01_terraform/01_providers"
   
