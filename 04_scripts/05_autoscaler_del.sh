@@ -1,10 +1,10 @@
 #!/bin/bash
 
-  NAME=$( sed -n 1p 03_trigger/02_vpc_del )
-  PROVIDER=$( sed -n 2p 01_infra/vpc/$NAME/values )
+  NAME=$( sed -n 1p 03_trigger/05_autoscaler_del )
+  PROVIDER=$( sed -n 2p 01_infra/autoscaler/$NAME/values )
 
   d_pipeline="platf04/.github/workflows"
-  pipeline="02_tmp/02_pipeline/02_vpc"
+  pipeline="02_tmp/02_pipeline/05_autoscaler"
   
   echo $NAME > platf04/03_trigger/test
   
