@@ -19,7 +19,7 @@ jobs:
             NAME=$( sed -n 1p 01_infra/lambda/$START/values )
             PROVIDER=$( sed -n 2p 01_infra/lambda/$START/values )
             
-            #FUNCTION=$( sed -n 3p 01_infra/lambda/$START/values )
+            FUNCTION=$( sed -n 3p 01_infra/lambda/$START/values )
             #ROLE=$( sed -n 4p 01_infra/lambda/$START/values )
             #RUNTIME=$( sed -n 5p 01_infra/lambda/$START/values )
             #GATEWAY=$( sed -n 6p 01_infra/lambda/$START/values )
@@ -41,7 +41,7 @@ jobs:
             sed -i -e "s/NAME/$NAME/g" terraform.tfvars
             sed -i -e "s/COUNT/$COUNT/g" terraform.tfvars
             
-            #sed -i -e "s/FUNCION/$FUNCION/g" terraform.tfvars
+            sed -i -e "s/FUNCION/$FUNCION/g" terraform.tfvars
             #sed -i -e "s/ROLE/$ROLE/g" terraform.tfvars
             #sed -i -e "s/RUNTIME/$RUNTIME/g" terraform.tfvars
             #sed -i -e "s/GATEWAY/$GATEWAY/g" terraform.tfvars
