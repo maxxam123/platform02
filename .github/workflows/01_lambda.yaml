@@ -25,7 +25,7 @@ jobs:
             GATEWAY=$( sed -n 6p 01_infra/lambda/$START/values )
             PATH=$( sed -n 7p 01_infra/lambda/$START/values )
 
-            mkdir -p platf04/.github/workflows
+            # mkdir -p platf04/.github/workflows
             cp 02_tmp/02_pipeline/01_lambda/$PROVIDER/main.yaml $NAME.yaml
             sed -i -e "s/NAME/$NAME/g" $NAME.yaml
             cp $NAME.yaml platf04/.github/workflows/
