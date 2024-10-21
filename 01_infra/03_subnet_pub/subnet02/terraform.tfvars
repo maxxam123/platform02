@@ -1,6 +1,6 @@
 name="subnet_pub02"
 vpc_id="vpc-04cfa00a6fe95e10d"
-number="1"
-subnet="2"
+number="2"
+subnet="3"
 az="eu-central-1a"
 route_table="rtb-0ff6628b284fbf848"
