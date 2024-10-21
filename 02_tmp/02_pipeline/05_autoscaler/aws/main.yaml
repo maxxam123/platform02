@@ -3,7 +3,7 @@ on:
    branches:
    - main
    paths:
-   - '01_infra/vpc/NAME/02_provider.tf'
+   - '01_infra/autoscaler/NAME/02_provider.tf'
 
 
 env:
