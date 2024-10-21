@@ -1,2 +1,2 @@
-vpc="NAME"
+name="NAME"
 number="COUNT"
