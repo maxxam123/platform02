@@ -1,0 +1,41 @@
+on:
+ push:
+   branches:
+   - main
+   paths:
+   - '03_triggerrrrrrrrrrrrr/05_autoscaler_del'
+
+jobs:
+  build:
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v3
+        - name: test
+          run: |
+          
+            git clone https://github.com/maxxam123/platf04.git
+
+            sh 04_scripts/05_autoscaler_del.sh
+
+            # NAME=$( sed -n 1p 03_trigger/02_vpc_del )
+            # PROVIDER=$( sed -n 2p 01_infra/vpc/$NAME/values )
+
+            # echo $NAME > platf04/03_trigger/test
+            
+            # # mkdir -p platf04/.github/workflows
+            # cp 02_tmp/02_pipeline/02_vpc/$PROVIDER/main_delete.yaml .
+            # sed -i -e "s/NAME/$NAME/g" main_delete.yaml
+            # cp main_delete.yaml platf04/.github/workflows/
+            # # sed -e "s/NAME/$NAME/g" 02_tmp/02_pipeline/02_vpc/$PROVIDER/main_delete.yaml platf04/.github/workflows/
+            
+        - name: Pushes to another repository
+          uses: cpina/github-action-push-to-another-repository@main
+          env:
+            API_TOKEN_GITHUB: ${{ secrets.PLAT04 }}
+          with:
+            source-directory: "platf04"
+            destination-github-username: "maxxam123"
+            destination-repository-name: "platf04"
+            user-email: hennighausenmax@gmail.com
+            target-branch: main
+            
