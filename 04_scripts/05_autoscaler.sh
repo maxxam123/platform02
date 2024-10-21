@@ -2,13 +2,13 @@
 
   git clone https://github.com/maxxam123/platf04.git
   
-  NAME=$( sed -n 1p 03_trigger/03_subnet_pub )
-  PROVIDER=$( sed -n 2p 01_infra/03_subnet_pub/$NAME/values )
+  NAME=$( sed -n 1p 03_trigger/05_autoscaler )
+  PROVIDER=$( sed -n 2p 01_infra/05_autoscaler/$NAME/values )
 
   d_pipeline="platf04/.github/workflows"
-  d_infra="platf04/01_infra/subnet_pub"
-  infra="01_infra/03_subnet_pub"
-  pipeline="02_tmp/02_pipeline/03_subnet_pub"
+  d_infra="platf04/01_infra/autoscaler"
+  infra="01_infra/05_autoscaler"
+  pipeline="02_tmp/02_pipeline/05_autoscaler"
   provider="02_tmp/01_terraform/01_providers"
   mkdir -p $d_pipeline
   mkdir -p $d_infra/$NAME
