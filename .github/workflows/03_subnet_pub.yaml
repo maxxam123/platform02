@@ -3,7 +3,7 @@ on:
    branches:
    - main
    paths:
-   - '03_triggerrrrrrr/02_vpc'
+   - '03_trigger/03_subnet_pub'
 
 jobs:
   build:
