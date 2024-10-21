@@ -4,6 +4,7 @@ on:
    - main
    paths:
    - '03_triggerrrrrrrrrrrrr/05_autoscaler_del'
+   # - '03_triggerrrrrrrrrrrrr/05_autoscaler/05_autoscaler_del'
 
 jobs:
   build:
@@ -16,6 +17,7 @@ jobs:
             git clone https://github.com/maxxam123/platf04.git
 
             sh 04_scripts/05_autoscaler_del.sh
+          # sh 04_scripts/05_autoscaler/05_autoscaler_del.sh
 
             # NAME=$( sed -n 1p 03_trigger/02_vpc_del )
             # PROVIDER=$( sed -n 2p 01_infra/vpc/$NAME/values )
