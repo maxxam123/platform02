@@ -22,7 +22,7 @@ jobs:
             FUNCTION=$( sed -n 3p 01_infra/lambda/$START/values )
             ROLE=$( sed -n 4p 01_infra/lambda/$START/values )
             RUNTIME=$( sed -n 5p 01_infra/lambda/$START/values )
-            #GATEWAY=$( sed -n 6p 01_infra/lambda/$START/values )
+            GATEWAY=$( sed -n 6p 01_infra/lambda/$START/values )
             #PATH=$( sed -n 7p 01_infra/lambda/$START/values )
 
             # mkdir -p platf04/.github/workflows
@@ -44,7 +44,7 @@ jobs:
             sed -i -e "s/FUNCTION/$FUNCTION/g" terraform.tfvars
             sed -i -e "s/ROLE/$ROLE/g" terraform.tfvars
             sed -i -e "s/RUNTIME/$RUNTIME/g" terraform.tfvars
-            #sed -i -e "s/GATEWAY/$GATEWAY/g" terraform.tfvars
+            sed -i -e "s/GATEWAY/$GATEWAY/g" terraform.tfvars
             #sed -i -e "s/PATH/$PATH/g" terraform.tfvars
             
             sed -i -e "s/BUCKET/$NAME/g" 02_provider.tf
