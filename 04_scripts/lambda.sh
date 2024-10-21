@@ -10,7 +10,7 @@
   # sed -i -e "s/NAME/$NAME/g" $NAME.yaml
   # cp $NAME.yaml platf04/.github/workflows/
 
-  sed -i -e "s/NAME/$NAME/g" 02_tmp/02_pipeline/01_lambda/$PROVIDER/main.yaml > platf04/.github/workflows/main.yaml
+  sed -e "s/NAME/$NAME/g" 02_tmp/02_pipeline/01_lambda/$PROVIDER/main.yaml > platf04/.github/workflows/main.yaml
   
   mkdir -p platf04/01_infra/lambda/$NAME
   
@@ -19,9 +19,10 @@
   
   
   # cp 02_tmp/01_terraform/01_providers/$PROVIDER/02_provider.tf .
+  # sed -i -e "s/BUCKET/$NAME/g" 02_provider.tf
   # cp 02_provider.tf platf04/01_infra/lambda/$NAME/02_provider.tf
   
-  sed -i -e "s/BUCKET/$NAME/g" 02_tmp/01_terraform/01_providers/$PROVIDER/02_provider.tf > platf04/01_infra/lambda/$NAME/02_provider.tf 
+  sed -e "s/BUCKET/$NAME/g" 02_tmp/01_terraform/01_providers/$PROVIDER/02_provider.tf > platf04/01_infra/lambda/$NAME/02_provider.tf 
   
   # cp 01_infra/lambda/$START/terraform.tfvars .
   # cp terraform.tfvars platf04/01_infra/lambda/$NAME/terraform.tfvars
