@@ -41,7 +41,7 @@ jobs:
             sed -i -e "s/NAME/$NAME/g" terraform.tfvars
             sed -i -e "s/COUNT/$COUNT/g" terraform.tfvars
             
-            sed -i -e "s/FUNCION/$FUNCION/g" terraform.tfvars
+            sed -i -e "s/FUNCTION/$FUNCTION/g" terraform.tfvars
             #sed -i -e "s/ROLE/$ROLE/g" terraform.tfvars
             #sed -i -e "s/RUNTIME/$RUNTIME/g" terraform.tfvars
             #sed -i -e "s/GATEWAY/$GATEWAY/g" terraform.tfvars
