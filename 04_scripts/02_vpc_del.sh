@@ -1,5 +1,5 @@
 #!/bin/bash
-  NAME=$( sed -n 1p 03_trigger/01_vpc_del )
+  NAME=$( sed -n 1p 03_trigger/02_vpc_del )
   PROVIDER=$( sed -n 2p 01_infra/vpc/$NAME/values )
 
   d_pipeline="platf04/.github/workflows"
