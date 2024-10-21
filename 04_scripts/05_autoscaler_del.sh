@@ -1,7 +1,7 @@
 #!/bin/bash
 
   NAME=$( sed -n 1p 03_trigger/05_autoscaler_del )
-  PROVIDER=$( sed -n 2p 01_infra/autoscaler/$NAME/values )
+  PROVIDER=$( sed -n 2p 01_infra/05_autoscaler/$NAME/values )
 
   d_pipeline="platf04/.github/workflows"
   pipeline="02_tmp/02_pipeline/05_autoscaler"
