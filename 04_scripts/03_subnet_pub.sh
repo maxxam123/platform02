@@ -10,7 +10,7 @@
   infra="01_infra/03_subnet_pub"
   pipeline="02_tmp/02_pipeline/03_subnet_pub"
   provider="02_tmp/01_terraform/01_providers"
-  
+  mkdir -p $d_pipeline
   mkdir -p $d_infra/$NAME
   
   sed -e "s/NAME/$NAME/g" $pipeline/$PROVIDER/main.yaml > $d_pipeline/$NAME.yaml
