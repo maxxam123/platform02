@@ -1,4 +1,4 @@
-name="subnet_pub"
+name="subnet_pub01"
 vpc_id="vpc-04cfa00a6fe95e10d"
 number="1"
 subnet="2"
