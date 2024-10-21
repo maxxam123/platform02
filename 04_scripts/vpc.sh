@@ -28,5 +28,5 @@
   
   # cp 01_infra/vpc/$START/terraform.tfvars .
   # cp terraform.tfvars platf04/01_infra/vpc/$NAME/terraform.tfvars
-  cp 01_infra/vpc/$NAME/terraform.tfvars platf04/01_infra/vpc/$NAME/terraform.tfvars
-  # cp $infra/$NAME/terraform.tfvars $d_infra/$NAME/terraform.tfvars
+  # cp 01_infra/vpc/$NAME/terraform.tfvars platf04/01_infra/vpc/$NAME/terraform.tfvars
+  cp $infra/$NAME/terraform.tfvars $d_infra/$NAME/terraform.tfvars
