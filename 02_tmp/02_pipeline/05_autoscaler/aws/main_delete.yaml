@@ -34,13 +34,29 @@ jobs:
          cp ../../../02_tmp/05_autoscaler/* .
          sed -i -e "s/RESOURCE/NAME/g" main.tf
          cat main.tf
-     #    terraform init -backend-config="bucket=dunhuang-gansu-terraform-state"
+       # terraform init -backend-config="bucket=dunhuang-gansu-terraform-state"
        
-     #- name: Terraform Plan
+     # - name: Terraform Plan
      #  run: terraform plan -lock=false
 
-     #- name: Terraform Destroy
+     # - name: Terraform Destroy
      #  run: terraform destroy -auto-approve -input=false -lock=false
+
+     # cd ../../..
+     # git clone https://github.com/maxxam123/platf04.git
+     # rm -rf platf04/.github/workflows/NAME.yaml
+     # rm -rf platf04/01_infra/autoscaler/NAME
+ 
+     # - name: Pushes to another repository
+     #   uses: cpina/github-action-push-to-another-repository@main
+     #   env:
+     #     API_TOKEN_GITHUB: ${{ secrets.NEWPLAT }}
+     #   with:
+     #     source-directory: "platf04"
+     #     destination-github-username: "maxxam123"
+     #     destination-repository-name: "platf04"
+     #     user-email: hennighausenmax@gmail.com
+     #     target-branch: main
 
  build:
    runs-on: ubuntu-latest
