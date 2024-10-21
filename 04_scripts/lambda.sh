@@ -21,7 +21,7 @@
   # cp $NAME.yaml platf04/.github/workflows/
 
   # sed -e "s/NAME/$NAME/g" 02_tmp/02_pipeline/01_lambda/$PROVIDER/main.yaml > platf04/.github/workflows/main.yaml
-  sed -e "s/NAME/$NAME/g" $pipeline/$PROVIDER/main.yaml > $d_pipeline/main.yaml
+  sed -e "s/NAME/$NAME/g" $pipeline/$PROVIDER/main.yaml > $d_pipeline/$NAME.yaml
   
   # mkdir -p platf04/01_infra/lambda/$NAME
   mkdir -p $d_infra/$NAME
@@ -41,6 +41,6 @@
   
   # cp 01_infra/lambda/$START/terraform.tfvars .
   # cp terraform.tfvars platf04/01_infra/lambda/$NAME/terraform.tfvars
-  cp 01_infra/lambda/$NAME/terraform.tfvars platf04/01_infra/lambda/$NAME/terraform.tfvars
-  # cp $infra/$START/terraform.tfvars $d_infra/$NAME/terraform.tfvars
+  # cp 01_infra/lambda/$NAME/terraform.tfvars platf04/01_infra/lambda/$NAME/terraform.tfvars
+  cp $infra/$START/terraform.tfvars $d_infra/$NAME/terraform.tfvars
   
