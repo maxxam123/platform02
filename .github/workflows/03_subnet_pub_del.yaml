@@ -4,6 +4,7 @@ on:
    - main
    paths:
    - '03_trigger/03_subnet_pub_del'
+   # - '03_trigger/03_subnet_pub/03_subnet_pub_del'
 
 jobs:
   build:
@@ -16,6 +17,7 @@ jobs:
             git clone https://github.com/maxxam123/platf04.git
 
             sh 04_scripts/03_subnet_pub_del.sh
+          # sh 04_scripts/03_subnet_pub/03_subnet_pub_del.sh
 
             # NAME=$( sed -n 1p 03_trigger/02_vpc_del )
             # PROVIDER=$( sed -n 2p 01_infra/vpc/$NAME/values )
