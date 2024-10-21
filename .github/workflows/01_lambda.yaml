@@ -49,7 +49,7 @@ jobs:
             
             sed -i -e "s/BUCKET/$NAME/g" 02_provider.tf
 
-            cp 01_infra/lambda/$START/terrform.tfvars .
+            cp 01_infra/lambda/$START/terraform.tfvars .
             cp terraform.tfvars platf04/01_infra/lambda/$NAME/terraform.tfvars
             cp 02_provider.tf platf04/01_infra/lambda/$NAME/02_provider.tf
             
