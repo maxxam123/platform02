@@ -19,21 +19,19 @@ jobs:
             NAME=$( sed -n 1p 01_infra/lambda/$START/values )
             PROVIDER=$( sed -n 2p 01_infra/lambda/$START/values )
             
-            # FUNCTION=$( sed -n 3p 01_infra/lambda/$START/values )
-            # ROLE=$( sed -n 4p 01_infra/lambda/$START/values )
-            # RUNTIME=$( sed -n 5p 01_infra/lambda/$START/values )
-            # GATEWAY=$( sed -n 6p 01_infra/lambda/$START/values )
-            # PATH=$( sed -n 7p 01_infra/lambda/$START/values )
+            FUNCTION=$( sed -n 3p 01_infra/lambda/$START/values )
+            ROLE=$( sed -n 4p 01_infra/lambda/$START/values )
+            RUNTIME=$( sed -n 5p 01_infra/lambda/$START/values )
+            GATEWAY=$( sed -n 6p 01_infra/lambda/$START/values )
+            PATH=$( sed -n 7p 01_infra/lambda/$START/values )
 
             mkdir -p platf04/.github/workflows
             cp 02_tmp/02_pipeline/01_lambda/$PROVIDER/main.yaml $NAME.yaml
             sed -i -e "s/NAME/$NAME/g" $NAME.yaml
             cp $NAME.yaml platf04/.github/workflows/
 
-            # cp 01_infra/lambda/$START/index.js .
-            ### cp 01_infra/lambda/$START/lambda-policy.json .
-            # cp index.js platf04/01_infra/lambda/$NAME/index.js
-            ### cp lambda-policy.json platf04/01_infra/lambda/$NAME/lambda-policy.json
+            cp 01_infra/lambda/$START/index.js .
+            cp index.js platf04/01_infra/lambda/$NAME/index.js
             
             mkdir -p platf04/01_infra/lambda/$NAME
 
@@ -42,15 +40,14 @@ jobs:
             sed -i -e "s/NAME/$NAME/g" terraform.tfvars
             sed -i -e "s/COUNT/$COUNT/g" terraform.tfvars
             
-            # sed -i -e "s/FUNCION/$FUNCION/g" terraform.tfvars
-            # sed -i -e "s/ROLE/$ROLE/g" terraform.tfvars
-            # sed -i -e "s/RUNTIME/$RUNTIME/g" terraform.tfvars
-            # sed -i -e "s/GATEWAY/$GATEWAY/g" terraform.tfvars
-            # sed -i -e "s/PATH/$PATH/g" terraform.tfvars
+            sed -i -e "s/FUNCION/$FUNCION/g" terraform.tfvars
+            sed -i -e "s/ROLE/$ROLE/g" terraform.tfvars
+            sed -i -e "s/RUNTIME/$RUNTIME/g" terraform.tfvars
+            sed -i -e "s/GATEWAY/$GATEWAY/g" terraform.tfvars
+            sed -i -e "s/PATH/$PATH/g" terraform.tfvars
             
             sed -i -e "s/BUCKET/$NAME/g" 02_provider.tf
             
-            # touch platf04/.github/workflows/$NAME.yaml
             cp terraform.tfvars platf04/01_infra/lambda/$NAME/terraform.tfvars
             cp 02_provider.tf platf04/01_infra/lambda/$NAME/02_provider.tf
             
