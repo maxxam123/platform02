@@ -3,17 +3,25 @@
   git clone https://github.com/maxxam123/platf04.git
 
   NAME=$( sed -n 1p 03_trigger/01_lambda )
-  PROVIDER=$( sed -n 2p 01_infra/01_lambda/$NAME/values ) #### lambda
-
+  PROVIDER=$( sed -n 2p 01_infra/01_lambda/$NAME/values )
+  # PROVIDER=$( sed -n 2p 03_trigger/01_lambda )
+  # SERVICE=$( sed -n 3p 03_trigger/01_lambda )
+  
   d_pipeline="platf04/.github/workflows"
   d_infra="platf04/01_infra/01_lambda"
-  infra="01_infra/01_lambda"  ######## lambda
+  infra="01_infra/01_lambda"
   pipeline="02_tmp/02_pipeline/01_lambda"
   provider="02_tmp/01_terraform/01_providers"
   
   mkdir -p $d_infra/$NAME
   
-  sed -e "s/NAME/$NAME/g" $pipeline/$PROVIDER/main.yaml > $d_pipeline/01_$NAME.yaml       ######### 01_$NAME.yaml
+  sed -e "s/NAME/$NAME/g" $pipeline/$PROVIDER/main.yaml > $d_pipeline/01_$NAME.yaml
+  # cp $pipeline/$PROVIDER/main.yaml > .
+  # sed -i -e "s/NAME/$NAME/g" main.yaml
+  # sed -i -e "s/PROVIDER/$PROVIDER/g" main.yaml
+  # sed -i -e "s/SERVIDE/$SERVIDE/g" main.yaml
+  # cp main.yaml $d_pipeline/01_$NAME.yaml
+  
   sed -e "s/BUCKET/$NAME/g" $provider/$PROVIDER/02_provider.tf > $d_infra/$NAME/02_provider.tf
   
   cp $infra/$NAME/index.js $d_infra/$NAME/index.js
