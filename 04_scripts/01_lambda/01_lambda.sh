@@ -27,9 +27,9 @@
   
   sed -e "s/BUCKET/$NAME/g" $provider/$PROVIDER/02_provider.tf > $d_infra/$NAME/02_provider.tf
   
-  cp $infra/$NAME/index.js $d_infra/$NAME/index.js
-  # cp $infra/$NAME/scripts/* $d_infra/$NAME/scripts/
-
+  # cp $infra/$NAME/index.js $d_infra/$NAME/index.js
+  cp $infra/$NAME/scripts/* $d_infra/$NAME/scripts/
+  cat $d_infra/$NAME/scripts/index.js
   cp $infra/$NAME/terraform.tfvars $d_infra/$NAME/terraform.tfvars
 
   
