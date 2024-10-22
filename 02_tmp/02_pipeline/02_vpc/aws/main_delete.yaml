@@ -17,7 +17,7 @@ jobs:
      run:
        shell: bash
        # We keep Terraform files in the terraform directory.
-       working-directory: 01_infra/vpc/NAME/
+       working-directory: 01_infra/02_vpc/NAME/
 
    steps:
      - name: Checkout the repository to the runner
@@ -55,7 +55,7 @@ jobs:
          ls -la
          rm -rf NAME.yaml
          cd ../../../
-         cd platf04/01_infra/vpc
+         cd platf04/01_infra/02_vpc
          ls -la
          rm -rf NAME
          cd ../../..
