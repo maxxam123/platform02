@@ -17,7 +17,7 @@ jobs:
      run:
        shell: bash
        # We keep Terraform files in the terraform directory.
-       working-directory: 01_infra/autoscaler/NAME/
+       working-directory: 01_infra/05_autoscaler/NAME/
 
    steps:
      - name: Checkout the repository to the runner
@@ -71,7 +71,7 @@ jobs:
          ls -la
          rm -rf NAME.yaml
          cd ../../../
-         cd platf04/01_infra/autoscaler
+         cd platf04/01_infra/05_autoscaler
          ls -la
          rm -rf NAME
          cd ../../..
