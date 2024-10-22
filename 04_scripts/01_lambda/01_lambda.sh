@@ -22,13 +22,14 @@
   sed -i -e "s/NAME/$NAME/g" main.yaml
   sed -i -e "s/PROVIDER/$PROVIDER/g" main.yaml
   sed -i -e "s/SERVICE/$SERVICE/g" main.yaml
-  cp main.yaml $d_pipeline/$SERVICE_$NAME.yaml
+  cp main.yaml $d_pipeline/$SERVICE-$NAME.yaml
   cat main.yaml
   
-  sed -e "s/BUCKET/$NAME/g" $provider/$PROVIDER/02_provider.tf > $d_infra/$SERVICE-$NAME/02_provider.tf
+  sed -e "s/BUCKET/$NAME/g" $provider/$PROVIDER/02_provider.tf > $d_infra/$NAME/02_provider.tf
   
   # cp $infra/$NAME/index.js $d_infra/$NAME/index.js
-  cp $infra/$NAME/scripts/* $d_infra/$NAME/scripts/
+  cp -r $infra/$NAME/scripts/* $d_infra/$NAME/scripts/
+  cp $infra/$NAME/* $d_infra/$NAME/
   cat $d_infra/$NAME/scripts/index.js
   cp $infra/$NAME/terraform.tfvars $d_infra/$NAME/terraform.tfvars
 
