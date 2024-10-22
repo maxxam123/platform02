@@ -3,7 +3,7 @@ on:
    branches:
    - main
    paths:
-   - '03_triggerrrrrrrrrrrrr/05_autoscaler_del'
+   - '03_trigger/05_autoscaler_del'
    # - '03_triggerrrrrrrrrrrrr/05_autoscaler/05_autoscaler_del'
 
 jobs:
