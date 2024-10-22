@@ -34,10 +34,10 @@ jobs:
          cp ../../../02_tmp/SERVICE/* .
          cp ../../../04_provider/PROVIDER/01_provider.tf .
          sed -i -e "s/RESOURCE/NAME/g" main.tf
-         sed -i -e "s/BUCKET/SERVICE/g" 01_provider.tf       
+         sed -i -e "s/BUCKET/SERVICE/g" 01_provider.tf
          
-         echo "MAIN.TF"
-         cat main.tf
+         echo "01_PROVIDER.TF"
+         cat 01_provider.tf
          echo "TFVARS"
          cat terraform.tfvars
      #    terraform init -backend-config="bucket=dunhuang-gansu-terraform-state"
