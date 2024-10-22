@@ -1,7 +1,0 @@
-number="1"
-number2="1"
-name="vpc001"
-vpc_id=""
-subnet="1"
-az="eu-central-1a"
-route_table=""
