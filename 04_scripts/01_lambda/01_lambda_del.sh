@@ -1,9 +1,11 @@
 #!/bin/bash
   NAME=$( sed -n 1p 03_trigger/01_lambda_del )
-  PROVIDER=$( sed -n 2p 01_infra/01_lambda/$NAME/values ) #### lambda
+  PROVIDER=$( sed -n 2p 03_trigger/01_lambda_del )
+  # PROVIDER=$( sed -n 2p 01_infra/01_lambda/$NAME/values ) #### lambda
 
   d_pipeline="platf04/.github/workflows"
-  pipeline="02_tmp/02_pipeline/01_lambda"
+  pipeline="02_tmp/02_pipeline"
+  # pipeline="02_tmp/02_pipeline/01_lambda"
   
   echo $NAME > platf04/03_trigger/test
   
