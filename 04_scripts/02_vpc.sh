@@ -13,7 +13,7 @@
   
   mkdir -p $d_infra/$NAME
   
-  sed -e "s/NAME/$NAME/g" $pipeline/$PROVIDER/main.yaml > $d_pipeline/$NAME.yaml    #### 02_vpc$NAME.yaml
+  sed -e "s/NAME/$NAME/g" $pipeline/$PROVIDER/main.yaml > $d_pipeline/$NAME.yaml    #### 02_$NAME.yaml
   sed -e "s/BUCKET/$NAME/g" $provider/$PROVIDER/02_provider.tf > $d_infra/$NAME/02_provider.tf
   
   cp $infra/$NAME/terraform.tfvars $d_infra/$NAME/terraform.tfvars
