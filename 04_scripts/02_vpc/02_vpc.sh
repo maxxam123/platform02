@@ -6,14 +6,14 @@
   PROVIDER=$( sed -n 2p 01_infra/02_vpc/$NAME/values ) #### vpc
 
   d_pipeline="platf04/.github/workflows"
-  d_infra="platf04/01_infra/vpc"
+  d_infra="platf04/01_infra/02_vpc"
   infra="01_infra/02_vpc"  #### vpc
   pipeline="02_tmp/02_pipeline/02_vpc"
   provider="02_tmp/01_terraform/01_providers"
   
   mkdir -p $d_infra/$NAME
   
-  sed -e "s/NAME/$NAME/g" $pipeline/$PROVIDER/main.yaml > $d_pipeline/$NAME.yaml
+  sed -e "s/NAME/$NAME/g" $pipeline/$PROVIDER/main.yaml > $d_pipeline/02_$NAME.yaml    #### 02_$NAME.yaml
   sed -e "s/BUCKET/$NAME/g" $provider/$PROVIDER/02_provider.tf > $d_infra/$NAME/02_provider.tf
   
   cp $infra/$NAME/terraform.tfvars $d_infra/$NAME/terraform.tfvars
