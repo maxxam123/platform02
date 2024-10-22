@@ -1,4 +1,4 @@
-name="subnet_pri01"
+name="subnet_pri02"
 vpc_id="vpc-04cfa00a6fe95e10d"
 number="2"
 subnet="1"
