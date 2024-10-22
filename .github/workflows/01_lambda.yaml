@@ -15,7 +15,7 @@ jobs:
           run: |
 
           # sh 04_scripts/01_lambda.sh
-          sh 04_scripts/01_lambda/01_lambda.sh
+            sh 04_scripts/01_lambda/01_lambda.sh
           
             # git clone https://github.com/maxxam123/platf04.git
 
