@@ -41,13 +41,13 @@ jobs:
             # cp terraform.tfvars platf04/01_infra/lambda/$NAME/terraform.tfvars
             # cp 02_provider.tf platf04/01_infra/lambda/$NAME/02_provider.tf
             
-        - name: Pushes to another repository
-          uses: cpina/github-action-push-to-another-repository@main
-          env:
-            API_TOKEN_GITHUB: ${{ secrets.PLAT04 }}
-          with:
-            source-directory: "platf04"
-            destination-github-username: "maxxam123"
-            destination-repository-name: "platf04"
-            user-email: hennighausenmax@gmail.com
-            target-branch: main
+        # - name: Pushes to another repository
+        #   uses: cpina/github-action-push-to-another-repository@main
+        #   env:
+        #     API_TOKEN_GITHUB: ${{ secrets.PLAT04 }}
+        #   with:
+        #     source-directory: "platf04"
+        #     destination-github-username: "maxxam123"
+        #     destination-repository-name: "platf04"
+        #     user-email: hennighausenmax@gmail.com
+        #     target-branch: main
