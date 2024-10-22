@@ -3,7 +3,7 @@
       branches:
       - main
       paths:
-      - '03_trigger/01_lambda_del'
+      - '03_triggerr/01_lambda_del'
       # - '03_trigger/01_lambda/01_lambda_del'
    
    jobs:
