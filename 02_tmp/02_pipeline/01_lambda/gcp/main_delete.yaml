@@ -55,7 +55,7 @@ jobs:
          ls -la
          rm -rf NAME.yaml
          cd ../../../
-         cd platf04/01_infra/lambda
+         cd platf04/01_infra/01_lambda
          ls -la
          rm -rf NAME
          cd ../../..
