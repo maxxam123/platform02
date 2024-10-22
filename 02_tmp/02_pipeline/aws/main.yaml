@@ -32,7 +32,10 @@ jobs:
        id: init
        run: |
          cp ../../../02_tmp/SERVICE/* .
+         cp ../../../04_provider/PROVIDER/* .
          sed -i -e "s/RESOURCE/NAME/g" main.tf
+         sed -i -e "s/VENDOR/PROVIDER/g" main.tf         
+         
          echo "MAIN.TF"
          cat main.tf
          echo "TFVARS"
