@@ -6,7 +6,7 @@
   PROVIDER=$( sed -n 2p 01_infra/01_lambda/$NAME/values ) #### lambda
 
   d_pipeline="platf04/.github/workflows"
-  d_infra="platf04/01_infra/lambda"
+  d_infra="platf04/01_infra/01_lambda"
   infra="01_infra/01_lambda"  ######## lambda
   pipeline="02_tmp/02_pipeline/01_lambda"
   provider="02_tmp/01_terraform/01_providers"
