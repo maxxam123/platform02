@@ -3,7 +3,7 @@ on:
    branches:
    - main
    paths:
-   - '03_trigger/03_subnet_pub_del'
+   - '03_triggerr/03_subnet_pub_del'
    # - '03_trigger/03_subnet_pub/03_subnet_pub_del'
 
 jobs:
