@@ -8,8 +8,8 @@
   SERVICE=$( sed -n 3p 03_trigger/01_lambda/01_lambda )
   
   d_pipeline="platf04/.github/workflows"
-  d_infra="platf04/01_infra/01_lambda"
-  infra="01_infra/01_lambda"
+  d_infra="platf04/01_infra/$SERVICE"  ### 01_lambda == $SERVICE
+  infra="01_infra/$SERVICE"  ### 01_lambda == $SERVICE
   # pipeline="02_tmp/02_pipeline/01_lambda"
   pipeline="02_tmp/02_pipeline"
   provider="02_tmp/01_terraform/01_providers"
