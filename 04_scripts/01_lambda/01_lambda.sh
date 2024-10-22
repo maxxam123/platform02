@@ -2,10 +2,10 @@
   
   git clone https://github.com/maxxam123/platf04.git
 
-  NAME=$( sed -n 1p 03_trigger/01_lambda )
+  NAME=$( sed -n 1p 03_trigger/01_lambda/01_lambda )
   # PROVIDER=$( sed -n 2p 01_infra/01_lambda/$NAME/values )
-  PROVIDER=$( sed -n 2p 03_trigger/01_lambda )
-  SERVICE=$( sed -n 3p 03_trigger/01_lambda )
+  PROVIDER=$( sed -n 2p 03_trigger/01_lambda/01_lambda )
+  SERVICE=$( sed -n 3p 03_trigger/01_lambda/01_lambda )
   
   d_pipeline="platf04/.github/workflows"
   d_infra="platf04/01_infra/01_lambda"
