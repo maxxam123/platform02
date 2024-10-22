@@ -1,6 +1,6 @@
 #!/bin/bash
-  NAME=$( sed -n 1p 03_trigger/01_lambda_del )
-  PROVIDER=$( sed -n 2p 03_trigger/01_lambda_del )
+  NAME=$( sed -n 1p 03_trigger/01_lambda/01_lambda_del )
+  PROVIDER=$( sed -n 2p 03_trigger/01_lambda/01_lambda_del )
   # PROVIDER=$( sed -n 2p 01_infra/01_lambda/$NAME/values ) #### lambda
 
   d_pipeline="platf04/.github/workflows"
