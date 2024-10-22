@@ -3,7 +3,7 @@ on:
    branches:
    - main
    paths:
-   - '01_infra/vpc/NAME/02_provider.tf'
+   - '01_infra/02_vpc/NAME/02_provider.tf'
 
 
 env:
@@ -18,7 +18,7 @@ jobs:
      run:
        shell: bash
        # We keep Terraform files in the terraform directory.
-       working-directory: 01_infra/vpc/NAME/
+       working-directory: 01_infra/02_vpc/NAME/
 
    steps:
      - name: Checkout the repository to the runner
