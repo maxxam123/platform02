@@ -17,7 +17,7 @@ jobs:
      run:
        shell: bash
        # We keep Terraform files in the terraform directory.
-       working-directory: 01_infra/subnet_pub/NAME/
+       working-directory: 01_infra/03_subnet_pub/NAME/
 
    steps:
      - name: Checkout the repository to the runner
@@ -55,7 +55,7 @@ jobs:
          ls -la
          rm -rf NAME.yaml
          cd ../../../
-         cd platf04/01_infra/subnet_pub
+         cd platf04/01_infra/03_subnet_pub
          ls -la
          rm -rf NAME
          cd ../../..
