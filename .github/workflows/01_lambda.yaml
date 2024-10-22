@@ -3,7 +3,7 @@ on:
    branches:
    - main
    paths:
-   - '03_trigger/01_lambda'
+   - '03_triggerr/01_lambda'
    # - '03_trigger/01_lambda/01_lambda'
 
 jobs:
