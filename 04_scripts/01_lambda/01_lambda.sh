@@ -18,7 +18,7 @@
   mkdir -p $d_infra/$NAME/scripts
   
   # sed -e "s/NAME/$NAME/g" $pipeline/$PROVIDER/main.yaml > $d_pipeline/01_$NAME.yaml
-  cp $pipeline/$PROVIDER/main.yaml > .
+  cp $pipeline/$PROVIDER/main.yaml .
   sed -i -e "s/NAME/$NAME/g" main.yaml
   sed -i -e "s/PROVIDER/$PROVIDER/g" main.yaml
   sed -i -e "s/SERVICE/$SERVICE/g" main.yaml
