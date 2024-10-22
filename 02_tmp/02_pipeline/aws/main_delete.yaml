@@ -38,7 +38,10 @@ jobs:
          sed -i -e "s/RESOURCE/NAME/g" main.tf
          sed -i -e "s/BUCKET/SERVICE/g" 01_provider.tf
 
-                  cd ../../..
+         echo "01_PROVIDER.TF"
+         cat 01_provider.tf
+
+         cd ../../..
          git clone https://github.com/maxxam123/platf04.git
          rm -rf platf04/.github/workflows/SERVICE-NAME.yaml
          rm -rf platf04/01_infra/SERVICE/NAME
