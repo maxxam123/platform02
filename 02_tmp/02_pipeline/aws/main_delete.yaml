@@ -33,7 +33,10 @@ jobs:
        run: |
          cp ../../../02_tmp/SERVICE/* . 
          sed -i -e "s/RESOURCE/NAME/g" main.tf
-         cat main.tf
+         
+         cp ../../../04_provider/PROVIDER/01_provider.tf .
+         sed -i -e "s/RESOURCE/NAME/g" main.tf
+         sed -i -e "s/BUCKET/SERVICE/g" 01_provider.tf
 
                   cd ../../..
          git clone https://github.com/maxxam123/platf04.git
