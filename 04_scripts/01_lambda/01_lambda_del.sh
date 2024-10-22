@@ -10,8 +10,8 @@
   
   echo $NAME > platf04/03_trigger/test
   cp $pipeline/$PROVIDER/main_delete.yaml .
-  sed -e "s/SERVICE/$SERVICE/g" main_delete.yaml
-  sed -e "s/NAME/$NAME/g" $pipeline/$PROVIDER/main_delete.yaml > $d_pipeline/main_delete.yaml
+  sed -i -e "s/SERVICE/$SERVICE/g" main_delete.yaml
+  sed -e "s/NAME/$NAME/g" main_delete.yaml > $d_pipeline/main_delete.yaml
 
   # cp 02_tmp/02_pipeline/01_lambda/$PROVIDER/main_delete.yaml .
   # sed -i -e "s/NAME/$NAME/g" main_delete.yaml
