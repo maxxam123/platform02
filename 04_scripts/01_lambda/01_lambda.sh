@@ -11,6 +11,7 @@
   d_infra="platf04/01_infra/01_lambda"
   infra="01_infra/01_lambda"
   pipeline="02_tmp/02_pipeline/01_lambda"
+  # pipeline="02_tmp/02_pipeline"
   provider="02_tmp/01_terraform/01_providers"
   
   mkdir -p $d_infra/$NAME
