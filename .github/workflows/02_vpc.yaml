@@ -4,7 +4,7 @@ on:
    - main
    paths:
    - '03_trigger/02_vpc/02_vpc'
-   # - '03_triggerr/02_vpc'
+   # - '03_trigger/02_vpc'
 
 jobs:
   build:
