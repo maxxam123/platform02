@@ -21,7 +21,7 @@
   cp $pipeline/$PROVIDER/main.yaml > .
   sed -i -e "s/NAME/$NAME/g" main.yaml
   sed -i -e "s/PROVIDER/$PROVIDER/g" main.yaml
-  sed -i -e "s/SERVIDE/$SERVIDE/g" main.yaml
+  sed -i -e "s/SERVICE/$SERVICE/g" main.yaml
   cp main.yaml $d_pipeline/$SERVICE_$NAME.yaml
   cat main.yaml
   
