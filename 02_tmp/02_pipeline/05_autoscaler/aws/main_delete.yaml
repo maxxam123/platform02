@@ -34,19 +34,19 @@ jobs:
          cp ../../../02_tmp/05_autoscaler/* .
          sed -i -e "s/RESOURCE/NAME/g" main.tf
          cat main.tf
-       # terraform init -backend-config="bucket=dunhuang-gansu-terraform-state"
-       
-     - name: Terraform Plan
-      run: terraform plan -lock=false
-
-     - name: Terraform Destroy
-      run: terraform destroy -auto-approve -input=false -lock=false
 
          cd ../../..
          git clone https://github.com/maxxam123/platf04.git
          rm -rf platf04/.github/workflows/NAME.yaml
          rm -rf platf04/01_infra/05_autoscaler/NAME
          echo "LAST........................."
+       # terraform init -backend-config="bucket=dunhuang-gansu-terraform-state"
+       
+     # - name: Terraform Plan
+     #  run: terraform plan -lock=false
+
+     # - name: Terraform Destroy
+     #  run: terraform destroy -auto-approve -input=false -lock=false
      
      - name: Pushes to another repository
        uses: cpina/github-action-push-to-another-repository@main
