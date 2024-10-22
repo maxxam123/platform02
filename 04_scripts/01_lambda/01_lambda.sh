@@ -23,6 +23,7 @@
   # sed -i -e "s/PROVIDER/$PROVIDER/g" main.yaml
   # sed -i -e "s/SERVIDE/$SERVIDE/g" main.yaml
   # cp main.yaml $d_pipeline/$SERVICE_$NAME.yaml
+  # cat main.yaml
   
   sed -e "s/BUCKET/$NAME/g" $provider/$PROVIDER/02_provider.tf > $d_infra/$NAME/02_provider.tf
   
@@ -31,7 +32,7 @@
 
   cp $infra/$NAME/terraform.tfvars $d_infra/$NAME/terraform.tfvars
 
-
+  
 
   # cp 02_tmp/02_pipeline/01_lambda/$PROVIDER/main.yaml $NAME.yaml
   # sed -i -e "s/NAME/$NAME/g" $NAME.yaml
