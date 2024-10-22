@@ -3,8 +3,8 @@ on:
    branches:
    - main
    paths:
-   - '03_triggerr/05_autoscaler'
-   # - '03_trigger/05_autoscaler/05_autoscaler'
+   - '03_trigger/05_autoscaler/05_autoscaler'
+   # - '03_trigger/05_autoscaler'
 
 jobs:
   build:
