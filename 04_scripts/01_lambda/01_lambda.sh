@@ -15,6 +15,7 @@
   provider="02_tmp/01_terraform/01_providers"
   
   mkdir -p $d_infra/$NAME
+  # mkdir -p $d_infra/$NAME/scripts
   
   sed -e "s/NAME/$NAME/g" $pipeline/$PROVIDER/main.yaml > $d_pipeline/01_$NAME.yaml
   # cp $pipeline/$PROVIDER/main.yaml > .
@@ -26,7 +27,10 @@
   sed -e "s/BUCKET/$NAME/g" $provider/$PROVIDER/02_provider.tf > $d_infra/$NAME/02_provider.tf
   
   cp $infra/$NAME/index.js $d_infra/$NAME/index.js
+  # cp $infra/$NAME/scripts/* $d_infra/$NAME/scripts/
+
   cp $infra/$NAME/terraform.tfvars $d_infra/$NAME/terraform.tfvars
+
 
 
   # cp 02_tmp/02_pipeline/01_lambda/$PROVIDER/main.yaml $NAME.yaml
