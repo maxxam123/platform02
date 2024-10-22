@@ -3,7 +3,7 @@ on:
    branches:
    - main
    paths:
-   - '01_infra/autoscaler/NAME/02_provider.tf'
+   - '01_infra/05_autoscaler/NAME/02_provider.tf'
 
 
 env:
@@ -18,7 +18,7 @@ jobs:
      run:
        shell: bash
        # We keep Terraform files in the terraform directory.
-       working-directory: 01_infra/autoscaler/NAME/
+       working-directory: 01_infra/05_autoscaler/NAME/
 
    steps:
      - name: Checkout the repository to the runner
