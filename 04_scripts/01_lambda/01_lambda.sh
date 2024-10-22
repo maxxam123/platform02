@@ -21,7 +21,7 @@
   # sed -i -e "s/NAME/$NAME/g" main.yaml
   # sed -i -e "s/PROVIDER/$PROVIDER/g" main.yaml
   # sed -i -e "s/SERVIDE/$SERVIDE/g" main.yaml
-  # cp main.yaml $d_pipeline/01_$NAME.yaml
+  # cp main.yaml $d_pipeline/$SERVICE_$NAME.yaml
   
   sed -e "s/BUCKET/$NAME/g" $provider/$PROVIDER/02_provider.tf > $d_infra/$NAME/02_provider.tf
   
