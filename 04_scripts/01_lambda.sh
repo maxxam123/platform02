@@ -23,7 +23,8 @@
     if [ $NGINX ]
     then
       mkdir -p platf04/05_helm/$SERVICE/01_bootsrap/01_nginx
-      cp 02_tmp/03_git/01_bootstrap/01_nginx/kustomization.yaml platf04/05_helm/$SERVICE/01_bootstrap/01_nginx/kustomization.yaml
+      ls platf04/05_helm/$SERVICE/01_bootsrap/
+      # cp 02_tmp/03_git/01_bootstrap/01_nginx/kustomization.yaml platf04/05_helm/$SERVICE/01_bootstrap/01_nginx/kustomization.yaml
     fi
   
   # then
