@@ -5,9 +5,39 @@
   NGINX=$( sed -n 4p 03_trigger/01_lambda )
   CERTMANAGER=$( sed -n 5p 03_trigger/01_lambda )
   ESO=$( sed -n 6p 03_trigger/01_lambda )
+
+  d_helm="platf04/05_helm"
+  git="02_tmp/03_git/01_bootstrap"
   
-  mkdir -p platf04/05_helm/$SERVICE
+  mkdir -p $d_helm/$SERVICE
   # cp -r 02_tmp/03_git/* platf04/05_helm/$SERVICE/
+
+  ############ BOOTSTRAP #####################
+  if [ $NGINX == "nginx" ]
+  then
+    mkdir -p $d_helm/$SERVICE/01_bootsrap/01_nginx
+    cp -r $git/01_nginx/* $d_helm/$SERVICE/01_bootstrap/01_nginx/
+  fi
+  
+  if [ $CERTMANAGER == "certmanager" ]
+  then
+    mkdir -p $d_helm/$SERVICE/01_bootsrap/02_certmanager
+    cp -r $git/02_certmanager/* $d_helm/$SERVICE/01_bootstrap/02_certmanager/
+  fi
+  
+  if [ $ESO == "eso" ]
+  then
+    mkdir -p $d_helm/$SERVICE/01_bootsrap/03_eso
+    cp -r $git/03_eso/* $d_helm/$SERVICE/01_bootstrap/03_eso/
+  fi
+
+  ########### GITOPS #####################
+  if [ $PROMETHEUS == "prometheus" ]
+  then
+    mkdir -p $d_helm/$SERVICE/02_monitor/01_prometheus
+    cp -r $git/01_prometheus/* $d_helm/$SERVICE/02_monitor/01_prometheus/
+  fi
+
   
   
   # NAME=$( sed -n 1p 03_trigger/01_lambda )
