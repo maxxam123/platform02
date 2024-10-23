@@ -16,9 +16,13 @@
   pipeline="02_tmp/02_pipeline"
   provider="02_tmp/01_terraform/01_providers"
 
+  
+
   if [ $SVC ]
-  then
-    sh 04_scripts/02_eks.sh
+
+  
+  # then
+  #   sh 04_scripts/02_eks.sh
   fi
   
   # mkdir -p $d_infra/$NAME
