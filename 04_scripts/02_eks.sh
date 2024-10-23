@@ -62,10 +62,15 @@
   ############### ApplicationSet #############
 
     mkdir -p $d_helm/$NAME/03_applicationset/01_bootstrap
-    cp -r $applicationset/01_bootstrap/* $d_helm/$NAME/03_applicationset/01_bootstrap/
+    cp $applicationset/01_bootstrap/applicationset.yaml .
+    sed -e "s/NAME/$NAME/g" applicationset.yaml > $d_helm/$NAME/03_applicationset/01_bootstrap/applicationset.yaml
+    rm -rf applicationset.yaml
+    # cp -r $applicationset/01_bootstrap/* $d_helm/$NAME/03_applicationset/01_bootstrap/
     
     mkdir -p $d_helm/$NAME/03_applicationset/02_monitor
-    cp -r $applicationset/02_monitor/* $d_helm/$NAME/02_applicationset/02_monitor/
+    cp $applicationset/02_monitor/applicationset.yaml .
+    sed -e "s/NAME/$NAME/g" applicationset.yaml > $d_helm/$NAME/03_applicationset/02_monitor/applicationset.yaml
+    # cp -r $applicationset/02_monitor/* $d_helm/$NAME/02_applicationset/02_monitor/
   
   # NAME=$( sed -n 1p 03_trigger/01_lambda )
   # PROVIDER=$( sed -n 2p 03_trigger/01_lambda )
