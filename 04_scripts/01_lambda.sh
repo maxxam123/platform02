@@ -7,7 +7,7 @@
   PROVIDER=$( sed -n 2p 03_trigger/01_lambda )
   SERVICE=$( sed -n 3p 03_trigger/01_lambda )
   # SVC=$( sed -n 4p 03_trigger/01_lambda )          #################### TESTS ######################
-  SVC=$( sed -n 4p 03_trigger/01_lambda | awk '{print $2}' )
+  EKS=$( sed -n 4p 03_trigger/01_lambda | awk '{print $2}' )
   
   d_pipeline="platf04/.github/workflows"
   d_infra="platf04/01_infra/$SERVICE"  ### 01_lambda == $SERVICE
@@ -16,37 +16,29 @@
   pipeline="02_tmp/02_pipeline"
   provider="02_tmp/01_terraform/01_providers"
 
-  if [ $SVC ]
+  if [ $EKS ]
   then
     sh 04_scripts/02_eks.sh
-  # then
-  #   NGINX=$( sed -n 5p 03_trigger/01_lambda | awk '{print $2}' )
-  #   mkdir -p platf04/05_helm/$SERVICE
-  #   if [ $NGINX ]
-  #   then
-  #     mkdir -p platf04/05_helm/$SERVICE/01_bootstrap/01_nginx
-  #     cp 02_tmp/03_git/01_bootstrap/01_nginx/* platf04/05_helm/$SERVICE/01_bootstrap/01_nginx/
-  #   fi
   fi
   
-  # mkdir -p $d_infra/$NAME
-  # mkdir -p $d_infra/$NAME/scripts
+  mkdir -p $d_infra/$NAME
+  mkdir -p $d_infra/$NAME/scripts
   
-  # # sed -e "s/NAME/$NAME/g" $pipeline/$PROVIDER/main.yaml > $d_pipeline/01_$NAME.yaml ###################
-  # cp $pipeline/$PROVIDER/main.yaml .
-  # sed -i -e "s/NAME/$NAME/g" main.yaml
-  # sed -i -e "s/PROVIDER/$PROVIDER/g" main.yaml
-  # sed -i -e "s/SERVICE/$SERVICE/g" main.yaml
-  # cp main.yaml $d_pipeline/$SERVICE-$NAME.yaml
-  # cat main.yaml
+  # sed -e "s/NAME/$NAME/g" $pipeline/$PROVIDER/main.yaml > $d_pipeline/01_$NAME.yaml ###################
+  cp $pipeline/$PROVIDER/main.yaml .
+  sed -i -e "s/NAME/$NAME/g" main.yaml
+  sed -i -e "s/PROVIDER/$PROVIDER/g" main.yaml
+  sed -i -e "s/SERVICE/$SERVICE/g" main.yaml
+  cp main.yaml $d_pipeline/$SERVICE-$NAME.yaml
+  cat main.yaml
   
-  # sed -e "s/BUCKET/$NAME/g" $provider/$PROVIDER/02_provider.tf > $d_infra/$NAME/02_provider.tf
+  sed -e "s/BUCKET/$NAME/g" $provider/$PROVIDER/02_provider.tf > $d_infra/$NAME/02_provider.tf
   
-  # # cp $infra/$NAME/index.js $d_infra/$NAME/index.js ################
-  # cp -r $infra/$NAME/scripts/* $d_infra/$NAME/scripts/
-  # cp $infra/$NAME/* $d_infra/$NAME/
-  # cat $d_infra/$NAME/scripts/index.js
-  # cp $infra/$NAME/terraform.tfvars $d_infra/$NAME/terraform.tfvars
+  # cp $infra/$NAME/index.js $d_infra/$NAME/index.js ################
+  cp -r $infra/$NAME/scripts/* $d_infra/$NAME/scripts/
+  cp $infra/$NAME/* $d_infra/$NAME/
+  cat $d_infra/$NAME/scripts/index.js
+  cp $infra/$NAME/terraform.tfvars $d_infra/$NAME/terraform.tfvars
 
 
 
