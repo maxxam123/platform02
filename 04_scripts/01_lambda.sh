@@ -16,29 +16,29 @@
   pipeline="02_tmp/02_pipeline"
   provider="02_tmp/01_terraform/01_providers"
 
-  if [ $EKS ]
-  then
-    sh 04_scripts/02_eks.sh
-  fi
+  # if [ $EKS ]
+  # then
+  #   sh 04_scripts/02_eks.sh
+  # fi
   
-  # mkdir -p $d_infra/$NAME
-  # mkdir -p $d_infra/$NAME/scripts
+  mkdir -p $d_infra/$NAME
+  mkdir -p $d_infra/$NAME/scripts
   
-  # # sed -e "s/NAME/$NAME/g" $pipeline/$PROVIDER/main.yaml > $d_pipeline/01_$NAME.yaml ###################
-  # cp $pipeline/$PROVIDER/main.yaml .
-  # sed -i -e "s/NAME/$NAME/g" main.yaml
-  # sed -i -e "s/PROVIDER/$PROVIDER/g" main.yaml
-  # sed -i -e "s/SERVICE/$SERVICE/g" main.yaml
-  # cp main.yaml $d_pipeline/$SERVICE-$NAME.yaml
-  # cat main.yaml
+  # sed -e "s/NAME/$NAME/g" $pipeline/$PROVIDER/main.yaml > $d_pipeline/01_$NAME.yaml ###################
+  cp $pipeline/$PROVIDER/main.yaml .
+  sed -i -e "s/NAME/$NAME/g" main.yaml
+  sed -i -e "s/PROVIDER/$PROVIDER/g" main.yaml
+  sed -i -e "s/SERVICE/$SERVICE/g" main.yaml
+  cp main.yaml $d_pipeline/$SERVICE-$NAME.yaml
+  cat main.yaml
   
-  # sed -e "s/BUCKET/$NAME/g" $provider/$PROVIDER/02_provider.tf > $d_infra/$NAME/02_provider.tf
+  sed -e "s/BUCKET/$NAME/g" $provider/$PROVIDER/02_provider.tf > $d_infra/$NAME/02_provider.tf
   
-  # # cp $infra/$NAME/index.js $d_infra/$NAME/index.js ################
-  # cp -r $infra/$NAME/scripts/* $d_infra/$NAME/scripts/
-  # cp $infra/$NAME/* $d_infra/$NAME/
-  # cat $d_infra/$NAME/scripts/index.js
-  # cp $infra/$NAME/terraform.tfvars $d_infra/$NAME/terraform.tfvars
+  # cp $infra/$NAME/index.js $d_infra/$NAME/index.js ################
+  cp -r $infra/$NAME/scripts/* $d_infra/$NAME/scripts/
+  cp $infra/$NAME/* $d_infra/$NAME/
+  cat $d_infra/$NAME/scripts/index.js
+  cp $infra/$NAME/terraform.tfvars $d_infra/$NAME/terraform.tfvars
 
 
 
