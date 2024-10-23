@@ -17,8 +17,9 @@
   provider="02_tmp/01_terraform/01_providers"
 
   if [ $SVC ]
-      NGINX=$( sed -n 5p 03_trigger/01_lambda | awk '{print $2}' )
-      mkdir -p platf04/05_helm/$SERVICE
+  then
+    NGINX=$( sed -n 5p 03_trigger/01_lambda | awk '{print $2}' )
+    mkdir -p platf04/05_helm/$SERVICE
     if [ $NGINX ]
     then
       mkdir -p platf04/05_helm/$SERVICE/01_bootsrap/01_nginx
