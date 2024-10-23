@@ -19,7 +19,8 @@
   
 
   if [ $SVC ]
-
+      NGINX=$( sed -n 5p 03_trigger/01_lambda | awk '{print $2}' )
+      
   
   # then
   #   sh 04_scripts/02_eks.sh
