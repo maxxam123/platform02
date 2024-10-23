@@ -7,6 +7,8 @@
   PROVIDER=$( sed -n 2p 03_trigger/01_lambda )
   SERVICE=$( sed -n 3p 03_trigger/01_lambda )
   # SVC=$( sed -n 4p 03_trigger/01_lambda )          #################### TESTS ######################
+
+  # EKS=$( sed -n 4p 01_infra/$SERVICE/$NAME/values.yaml | awk '{print $2}' )
   EKS=$( sed -n 4p 03_trigger/01_lambda | awk '{print $2}' )
   
   d_pipeline="platf04/.github/workflows"
