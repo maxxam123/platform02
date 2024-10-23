@@ -7,6 +7,7 @@
   CERTMANAGER=$( sed -n 6p 03_trigger/01_lambda | awk '{print $2}' )
   ESO=$( sed -n 7p 03_trigger/01_lambda | awk '{print $2}' )
   PROMETHEUS=$( sed -n 8p 03_trigger/01_lambda | awk '{print $2}' )
+  GRAFANA=$( sed -n 9p 03_trigger/01_lambda | awk '{print $2}' )
   
   d_helm="platf04/05_helm"
   bootstrap="02_tmp/03_git/01_bootstrap"
@@ -16,6 +17,7 @@
   mkdir -p $d_helm/$NAME
 
   ############ BOOTSTRAP #####################
+  
   if [ $NGINX ]
   then
     mkdir -p $d_helm/$NAME/01_bootstrap/01_nginx
@@ -36,10 +38,17 @@
   fi
 
   ########### GITOPS #####################
+  
   if [ $PROMETHEUS ]
   then
     mkdir -p $d_helm/$NAME/02_monitor/01_prometheus
     cp -r $monitor/01_prometheus/* $d_helm/$NAME/02_monitor/01_prometheus/
+  fi
+    
+  if [ $GRAFANA ]
+  then
+    mkdir -p $d_helm/$NAME/02_monitor/02_grafana
+    cp -r $monitor/02_grafana/* $d_helm/$NAME/02_monitor/02_grafana/
   fi
 
   
