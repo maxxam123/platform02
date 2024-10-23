@@ -12,10 +12,6 @@
   monitor="02_tmp/03_git/02_monitor"
 
   echo $SERVICE
-  echo LS
-  ls
-  echo "LS platf04"
-  ls platf04
   mkdir -p $d_helm/$SERVICE
 
   ############ BOOTSTRAP #####################
@@ -23,7 +19,7 @@
   then
     mkdir -p $d_helm/$SERVICE/01_bootsrap/01_nginx
     
-    cp $bootstrap/01_nginx/kustomization.yaml platf04/05_helm/eks01/01_bootstrap/01_nginx/kustomization.yaml
+    cp $bootstrap/01_nginx/kustomization.yaml $d_helm/$SERVICE/01_bootstrap/01_nginx/kustomization.yaml
   fi
   
   # if [ $CERTMANAGER ]
