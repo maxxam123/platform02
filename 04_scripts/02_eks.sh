@@ -7,7 +7,8 @@
   ESO=$( sed -n 6p 03_trigger/01_lambda )
   
   mkdir -p platf04/05_helm/$SERVICE
-  cp -r 02_tmp/03_git/* platf04/05_helm/$SERVICE/
+  # cp -r 02_tmp/03_git/* platf04/05_helm/$SERVICE/
+  
   
   # NAME=$( sed -n 1p 03_trigger/01_lambda )
   # PROVIDER=$( sed -n 2p 03_trigger/01_lambda )
