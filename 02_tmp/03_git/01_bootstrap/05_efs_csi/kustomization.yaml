@@ -1,0 +1,8 @@
+
+helmCharts:
+  - name: aws_efs_csi_driver
+    version: 3.0.3
+    repo: https://kubernetes-sigs.github.io/aws-efs-csi-driver/
+    valuesFile: values.yaml
+    namespace: aws_efs_csi_driver
+    releaseName: aws_efs_csi_driver
