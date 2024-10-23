@@ -1,10 +1,10 @@
-eks03
+eks01
 aws
 06_eks
 eks         true
 nginx       true
 certmanager true
-eso
+eso         true
 prometheus  true
 grafana     true
 none
