@@ -2,6 +2,15 @@
 
   NAME=$( sed -n 1p 03_trigger/01_lambda )
   SERVICE=$( sed -n 3p 03_trigger/01_lambda )
+
+  # NGINX=$( sed -n 5p 06_eks/$NAME/values.yaml | awk '{print $2}' )
+  # CERTMANAGER=$( sed -n 6p 06_eks/$NAME/values.yaml | awk '{print $2}' )
+  # ESO=$( sed -n 7p 06_eks/$NAME/values.yaml | awk '{print $2}' )
+  # AUTOSCALER=$( sed -n 8p 06_eks/$NAME/values.yaml | awk '{print $2}' )
+  # EFS=$( sed -n 9p 06_eks/$NAME/values.yaml | awk '{print $2}' )
+  # PROMETHEUS=$( sed -n 10p 06_eks/$NAME/values.yaml | awk '{print $2}' )
+  # GRAFANA=$( sed -n 11p 06_eks/$NAME/values.yaml | awk '{print $2}' )
+  # LOKI=$( sed -n 12p 06_eks/$NAME/values.yaml | awk '{print $2}' )
   
   NGINX=$( sed -n 5p 03_trigger/01_lambda | awk '{print $2}' )
   CERTMANAGER=$( sed -n 6p 03_trigger/01_lambda | awk '{print $2}' )
