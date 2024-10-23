@@ -23,10 +23,10 @@
     if [ $NGINX ]
     then
       mkdir -p platf04/05_helm/$SERVICE/01_bootstrap/01_nginx
-      ls platf04/05_helm/$SERVICE/01_bootstrap/
-      echo test > platf04/05_helm/$SERVICE/01_bootstrap/test.txt
-      cat platf04/05_helm/$SERVICE/01_bootstrap/test.txt
-      # cp 02_tmp/03_git/01_bootstrap/01_nginx/kustomization.yaml platf04/05_helm/$SERVICE/01_bootstrap/01_nginx/kustomization.yaml
+      # ls platf04/05_helm/$SERVICE/01_bootstrap/
+      # echo test > platf04/05_helm/$SERVICE/01_bootstrap/test.txt
+      # cat platf04/05_helm/$SERVICE/01_bootstrap/test.txt
+      cp 02_tmp/03_git/01_bootstrap/01_nginx/kustomization.yaml platf04/05_helm/$SERVICE/01_bootstrap/01_nginx/kustomization.yaml
     fi
   
   # then
