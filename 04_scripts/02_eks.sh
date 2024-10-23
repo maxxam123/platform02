@@ -13,33 +13,32 @@
 
   echo $SERVICE
   mkdir -p $d_helm/$SERVICE
-  echo test > $d_helm/$SERVICE/test.txt
 
-  # ############ BOOTSTRAP #####################
-  # if [ $NGINX == "nginx" ]
-  # then
-  #   mkdir -p $d_helm/$SERVICE/01_bootsrap/01_nginx
-  #   cp -r $bootstrap/01_nginx/* $d_helm/$SERVICE/01_bootstrap/01_nginx/
-  # fi
+  ############ BOOTSTRAP #####################
+  if [ $NGINX ]
+  then
+    mkdir -p $d_helm/$SERVICE/01_bootsrap/01_nginx
+    cp -r $bootstrap/01_nginx/* $d_helm/$SERVICE/01_bootstrap/01_nginx/
+  fi
   
-  # if [ $CERTMANAGER == "certmanager" ]
-  # then
-  #   mkdir -p $d_helm/$SERVICE/01_bootsrap/02_certmanager
-  #   cp -r $bootstrap/02_certmanager/* $d_helm/$SERVICE/01_bootstrap/02_certmanager/
-  # fi
+  if [ $CERTMANAGER ]
+  then
+    mkdir -p $d_helm/$SERVICE/01_bootsrap/02_certmanager
+    cp -r $bootstrap/02_certmanager/* $d_helm/$SERVICE/01_bootstrap/02_certmanager/
+  fi
   
-  # if [ $ESO == "eso" ]
-  # then
-  #   mkdir -p $d_helm/$SERVICE/01_bootsrap/03_eso
-  #   cp -r $bootstrap/03_eso/* $d_helm/$SERVICE/01_bootstrap/03_eso/
-  # fi
+  if [ $ESO ]
+  then
+    mkdir -p $d_helm/$SERVICE/01_bootsrap/03_eso
+    cp -r $bootstrap/03_eso/* $d_helm/$SERVICE/01_bootstrap/03_eso/
+  fi
 
-  # ########### GITOPS #####################
-  # if [ $PROMETHEUS == "prometheus" ]
-  # then
-  #   mkdir -p $d_helm/$SERVICE/02_monitor/01_prometheus
-  #   cp -r $monitor/01_prometheus/* $d_helm/$SERVICE/02_monitor/01_prometheus/
-  # fi
+  ########### GITOPS #####################
+  if [ $PROMETHEUS ]
+  then
+    mkdir -p $d_helm/$SERVICE/02_monitor/01_prometheus
+    cp -r $monitor/01_prometheus/* $d_helm/$SERVICE/02_monitor/01_prometheus/
+  fi
 
   
   
