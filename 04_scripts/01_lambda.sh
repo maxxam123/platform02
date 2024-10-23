@@ -16,7 +16,7 @@
 
   # if [ $PROVIDER == "eks" ]
   # then
-  #   sh eks.sh
+  #   sh 02_eks.sh
   # fi
   
   mkdir -p $d_infra/$NAME
