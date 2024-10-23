@@ -8,6 +8,7 @@
   ESO=$( sed -n 7p 03_trigger/01_lambda | awk '{print $2}' )
   PROMETHEUS=$( sed -n 8p 03_trigger/01_lambda | awk '{print $2}' )
   GRAFANA=$( sed -n 9p 03_trigger/01_lambda | awk '{print $2}' )
+  LOKI=$( sed -n 10p 03_trigger/01_lambda | awk '{print $2}' )
   
   d_helm="platf04/05_helm"
   bootstrap="02_tmp/03_git/01_bootstrap"
@@ -49,6 +50,12 @@
   then
     mkdir -p $d_helm/$NAME/02_monitor/02_grafana
     cp -r $monitor/02_grafana/* $d_helm/$NAME/02_monitor/02_grafana/
+  fi
+
+  if [ $LOKI ]
+  then
+    mkdir -p $d_helm/$NAME/02_monitor/03_loki
+    cp -r $monitor/03_loki/* $d_helm/$NAME/02_monitor/03_loki/
   fi
 
   
