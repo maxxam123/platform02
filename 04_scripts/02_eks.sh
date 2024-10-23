@@ -13,6 +13,7 @@
 
   echo $SERVICE
   mkdir -p $d_helm/$SERVICE
+  echo test > $d_helm/$SERVICE/test.txt
 
   # ############ BOOTSTRAP #####################
   # if [ $NGINX == "nginx" ]
