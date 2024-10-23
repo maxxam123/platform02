@@ -20,9 +20,9 @@ jobs:
           env:
             API_TOKEN_GITHUB: ${{ secrets.ACCESS_TOKEN }}
           with:
-            source-directory: "platform03"
+            source-directory: "platf04"
             destination-github-username: "maxxam123"
-            destination-repository-name: "platform03"
+            destination-repository-name: "platf04"
             user-email: hennighausenmax@gmail.com
             target-branch: main
             
