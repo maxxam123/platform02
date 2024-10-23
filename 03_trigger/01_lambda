@@ -1,11 +1,11 @@
 eks01
 aws
 06_eks
-eks
-nginx
-certmanager
-eso
-prometheus
+eks         true
+nginx       true
+certmanager true
+eso         true
+prometheus  true
 none
 none
 none
