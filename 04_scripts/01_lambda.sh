@@ -6,6 +6,7 @@
   # PROVIDER=$( sed -n 2p 01_infra/01_lambda/$NAME/values )
   PROVIDER=$( sed -n 2p 03_trigger/01_lambda )
   SERVICE=$( sed -n 3p 03_trigger/01_lambda )
+  SVC=$( sed -n 4p 03_trigger/01_lambda )
   
   d_pipeline="platf04/.github/workflows"
   d_infra="platf04/01_infra/$SERVICE"  ### 01_lambda == $SERVICE
@@ -14,7 +15,7 @@
   pipeline="02_tmp/02_pipeline"
   provider="02_tmp/01_terraform/01_providers"
 
-  if [ $PROVIDER == "eks" ]
+  if [ $SVC == "eks" ]
   then
     sh 02_eks.sh
   fi
