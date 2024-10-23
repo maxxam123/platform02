@@ -1,9 +1,9 @@
-eks01
+eks02
 aws
 06_eks
 eks         true
 nginx       true
-certmanager true
+certmanager
 eso         true
 prometheus  true
 none
