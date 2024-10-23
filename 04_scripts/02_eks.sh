@@ -6,9 +6,13 @@
   NGINX=$( sed -n 5p 03_trigger/01_lambda | awk '{print $2}' )
   CERTMANAGER=$( sed -n 6p 03_trigger/01_lambda | awk '{print $2}' )
   ESO=$( sed -n 7p 03_trigger/01_lambda | awk '{print $2}' )
-  PROMETHEUS=$( sed -n 8p 03_trigger/01_lambda | awk '{print $2}' )
-  GRAFANA=$( sed -n 9p 03_trigger/01_lambda | awk '{print $2}' )
-  LOKI=$( sed -n 10p 03_trigger/01_lambda | awk '{print $2}' )
+  AUTOSCALER=$( sed -n 8p 03_trigger/01_lambda | awk '{print $2}' )
+  EFS=$( sed -n 9p 03_trigger/01_lambda | awk '{print $2}' )
+  PROMETHEUS=$( sed -n 10p 03_trigger/01_lambda | awk '{print $2}' )
+  GRAFANA=$( sed -n 11p 03_trigger/01_lambda | awk '{print $2}' )
+  LOKI=$( sed -n 12p 03_trigger/01_lambda | awk '{print $2}' )
+
+  # ARN=$( sed -n 12p 01_infra/06_eks/$NAME/scripts/values.yaml | awk '{print $2}' )
   
   d_helm="platf04/05_helm"
   bootstrap="02_tmp/03_git/01_bootstrap"
@@ -38,6 +42,20 @@
     mkdir -p $d_helm/$NAME/01_bootstrap/03_eso
     cp -r $bootstrap/03_eso/* $d_helm/$NAME/01_bootstrap/03_eso/
   fi
+    
+  if [ $AUTOSCALER ]
+  then
+    mkdir -p $d_helm/$NAME/01_bootstrap/04_autoscaler
+    cp -r $bootstrap/04_autoscaler/* $d_helm/$NAME/01_bootstrap/04_autoscaler/
+  fi
+
+  if [ $EFS ]
+  then
+    mkdir -p $d_helm/$NAME/01_bootstrap/05_efs_csi
+    cp -r $bootstrap/05_efs_csi/kustomization.yaml $d_helm/$NAME/01_bootstrap/05_efs_csi/kustomization.yaml
+    sed -e "s/ARN/$ARN/g" $bootstrap/05_efs_csi/values.yaml > $d_helm/$NAME/01_bootstrap/05_efs_csi/values.yaml
+  fi
+  
 
   ########### GITOPS #####################
   
