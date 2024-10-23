@@ -1,0 +1,9 @@
+
+awsRegion: eu-central-1
+
+autoDiscovery:
+  clusterName: CLUSTER-NAME
+
+rbac:
+  serviceAccount:
+    name: "cluster-autoscaler"
