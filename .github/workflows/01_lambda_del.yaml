@@ -3,7 +3,7 @@
       branches:
       - main
       paths:
-      - '03_trigger/01_lambda/01_lambda_del'
+      - '03_trigger/01_lambda_del'
       # - '03_trigger/01_lambda_del'
    
    jobs:
@@ -16,7 +16,7 @@
              
                git clone https://github.com/maxxam123/platf04.git
 
-               sh 04_scripts/01_lambda/01_lambda_del.sh
+               sh 04_scripts/01_lambda_del.sh
                # sh 04_scripts/01_lambda_del.sh
    
                # NAME=$( sed -n 1p 03_trigger/01_lambda_del )
