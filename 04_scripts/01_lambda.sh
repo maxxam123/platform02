@@ -6,7 +6,8 @@
   # PROVIDER=$( sed -n 2p 01_infra/01_lambda/$NAME/values )
   PROVIDER=$( sed -n 2p 03_trigger/01_lambda )
   SERVICE=$( sed -n 3p 03_trigger/01_lambda )
-  SVC=$( sed -n 4p 03_trigger/01_lambda )
+  # SVC=$( sed -n 4p 03_trigger/01_lambda )          #################### TESTS ######################
+  SVC=$( sed -n 4p 03_trigger/01_lambda | awk '{print $2}' )
   
   d_pipeline="platf04/.github/workflows"
   d_infra="platf04/01_infra/$SERVICE"  ### 01_lambda == $SERVICE
