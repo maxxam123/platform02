@@ -13,6 +13,7 @@
   d_helm="platf04/05_helm"
   bootstrap="02_tmp/03_git/01_bootstrap"
   monitor="02_tmp/03_git/02_monitor"
+  applicationset="02_tmp/03_git/03_applicationset"
 
   echo $NAME
   mkdir -p $d_helm/$NAME
@@ -58,7 +59,13 @@
     cp -r $monitor/03_loki/* $d_helm/$NAME/02_monitor/03_loki/
   fi
 
-  
+  ############### ApplicationSet #############
+
+    mkdir -p $d_helm/$NAME/03_applicationset/01_bootstrap
+    cp -r $applicationset/01_bootstrap/* $d_helm/$NAME/03_applicationset/01_bootstrap/
+    
+    mkdir -p $d_helm/$NAME/03_applicationset/02_monitor
+    cp -r $applicationset/02_monitor/* $d_helm/$NAME/02_applicationset/02_monitor/
   
   # NAME=$( sed -n 1p 03_trigger/01_lambda )
   # PROVIDER=$( sed -n 2p 03_trigger/01_lambda )
