@@ -2,7 +2,7 @@
 awsRegion: eu-central-1
 
 autoDiscovery:
-  clusterName: CLUSTER-NAME
+  clusterName: CLUSTERNAME
 
 rbac:
   serviceAccount:
