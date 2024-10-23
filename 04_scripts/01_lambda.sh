@@ -13,6 +13,11 @@
   # pipeline="02_tmp/02_pipeline/01_lambda"
   pipeline="02_tmp/02_pipeline"
   provider="02_tmp/01_terraform/01_providers"
+
+  # if [ $PROVIDER == "eks" ]
+  # then
+  #   sh eks.sh
+  # fi
   
   mkdir -p $d_infra/$NAME
   mkdir -p $d_infra/$NAME/scripts
