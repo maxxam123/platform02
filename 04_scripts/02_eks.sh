@@ -2,10 +2,10 @@
 
   SERVICE=$( sed -n 3p 03_trigger/01_lambda )
   
-  NGINX=$( sed -n 4p 03_trigger/01_lambda )
-  CERTMANAGER=$( sed -n 5p 03_trigger/01_lambda )
-  ESO=$( sed -n 6p 03_trigger/01_lambda )
-  PROMETHEUS=$( sed -n 7p 03_trigger/01_lambda )
+  NGINX=$( sed -n 5p 03_trigger/01_lambda )
+  CERTMANAGER=$( sed -n 6p 03_trigger/01_lambda )
+  ESO=$( sed -n 7p 03_trigger/01_lambda )
+  PROMETHEUS=$( sed -n 8p 03_trigger/01_lambda )
   
   d_helm="platf04/05_helm"
   bootstrap="02_tmp/03_git/01_bootstrap"
