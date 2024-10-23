@@ -15,7 +15,7 @@
   pipeline="02_tmp/02_pipeline"
   provider="02_tmp/01_terraform/01_providers"
 
-  if [ $SVC == "eks" ]
+  if [ $SVC ]
   then
     sh 02_eks.sh
   fi
