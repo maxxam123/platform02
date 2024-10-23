@@ -4,7 +4,7 @@ on:
    branches:
    - main
    paths:
-   - '03_trigger/01_lambda'
+   - '03_trigger/01_lambda_del'
 
 jobs:
   build:
@@ -13,7 +13,8 @@ jobs:
         - uses: actions/checkout@v3
         - name: main pipeline
           run: |
-            sh 04_scripts/01_lambda.sh
+            git clone https://github.com/maxxam123/platf04.git
+            sh 04_scripts/01_lambda_del.sh
             
         - name: Pushes to another repository
           uses: cpina/github-action-push-to-another-repository@main
