@@ -1,11 +1,16 @@
 #!/bin/bash
+
+  SERVICE=$( sed -n 3p 03_trigger/01_lambda )
   
-  NAME=$( sed -n 1p 03_trigger/01_lambda/01_lambda )
-  PROVIDER=$( sed -n 2p 03_trigger/01_lambda/01_lambda )
-  SERVICE=$( sed -n 3p 03_trigger/01_lambda/01_lambda )
+  mkdir -p platf04/05_helm/$SERVICE
+  cp -r 02_tmp/03_git/* platf04/05_helm/$SERVICE/
+  
+  NAME=$( sed -n 1p 03_trigger/01_lambda )
+  PROVIDER=$( sed -n 2p 03_trigger/01_lambda )
   
   d_pipeline="platf04/.github/workflows"
   d_infra="platf04/01_infra/$SERVICE"
+  d_helm="platf04/05_helm/$SERVICE"
   infra="01_infra/$SERVICE"
   pipeline="02_tmp/02_pipeline"
   provider="02_tmp/01_terraform/01_providers"
