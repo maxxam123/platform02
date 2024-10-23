@@ -3,7 +3,7 @@ on:
    branches:
    - main
    paths:
-   - '01_infra/SERVICE/NAME/02_provider.tf'   #### 01_lambda == SERVICE
+   - '01_infra/SERVICE/PROVIDER/NAME/*'   #### 01_lambda == SERVICE
 
 env:
  AWS_ACCESS_KEY_ID: ${{ secrets.ACCESS_KEY }}
@@ -17,7 +17,7 @@ jobs:
      run:
        shell: bash
        # We keep Terraform files in the terraform directory.
-       working-directory: 01_infra/SERVICE/NAME/  #### 01_lambda == SERVICE
+       working-directory: 01_infra/SERVICE/PROVIDER/NAME/  #### 01_lambda == SERVICE
 
    steps:
      - name: Checkout the repository to the runner
@@ -31,13 +31,11 @@ jobs:
      - name: Terraform init
        id: init
        run: |
-         cp ../../../02_tmp/SERVICE/* .
-         cp ../../../04_provider/PROVIDER/01_provider.tf .
-         sed -i -e "s/RESOURCE/NAME/g" main.tf
-         sed -i -e "s/BUCKET/SERVICE/g" 01_provider.tf
+         cp ../../../../02_tmp/SERVICE/PROVIDER/* .
+         cp ../../../03_pro/PROVIDER/02_provider.tf .
          
          echo "01_PROVIDER.TF"
-         cat 01_provider.tf
+         cat 02_provider.tf
          echo "TFVARS"
          cat terraform.tfvars
      #    terraform init -backend-config="bucket=dunhuang-gansu-terraform-state"
