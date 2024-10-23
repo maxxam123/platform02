@@ -12,14 +12,19 @@
   monitor="02_tmp/03_git/02_monitor"
 
   echo $SERVICE
+  echo LS
+  ls
   mkdir -p $d_helm/$SERVICE
 
   ############ BOOTSTRAP #####################
   if [ $NGINX ]
   then
     mkdir -p $d_helm/$SERVICE/01_bootsrap/01_nginx
-    cp -r $bootstrap/01_nginx/kustomization.yaml $d_helm/$SERVICE/01_bootstrap/01_nginx/kustomization.yaml
-    cp -r $bootstrap/01_nginx/values.yaml $d_helm/$SERVICE/01_bootstrap/01_nginx/values.yaml
+    touch $d_helm/$SERVICE/01_bootstrap/01_nginx/kustomization.yaml
+    touch $d_helm/$SERVICE/01_bootstrap/01_nginx/values.yaml
+    
+    cp  $bootstrap/01_nginx/kustomization.yaml $d_helm/$SERVICE/01_bootstrap/01_nginx/kustomization.yaml
+    cp  $bootstrap/01_nginx/values.yaml $d_helm/$SERVICE/01_bootstrap/01_nginx/values.yaml
   fi
   
   # if [ $CERTMANAGER ]
