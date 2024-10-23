@@ -20,20 +20,13 @@
   
   mkdir -p $d_i/$NAM/scripts
   
-  # sed -e "s/NAME/$NAME/g" $pipeline/$PROVIDER/main.yaml > $d_pipeline/01_$NAME.yaml ###################
   cp $s_p/$PRO/main.yaml .
   sed -i -e "s/NAME/$NAM/g" main.yaml
   sed -i -e "s/PROVIDER/$PRO/g" main.yaml
   sed -i -e "s/SERVICE/$SER/g" main.yaml
   cp main.yaml $d_p/$SER-$NAM.yaml
-  cat main.yaml
   
-  sed -e "s/BUCKET/$NAM/g" $s_p/$PRO/02_provider.tf > $d_i/$NAM/02_provider.tf
-  
-  # cp $infra/$NAME/index.js $d_infra/$NAME/index.js ################
   cp -r $s_i/$NAM/scripts/* $d_i/$NAM/scripts/
-  cp $s_i/$NAM/* $d_i/$NAM/
-  cat $d_i/$NAM/scripts/index.js
   cp $s_i/$NAM/terraform.tfvars $d_i/$NAM/terraform.tfvars
 
 
