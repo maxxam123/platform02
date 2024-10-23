@@ -1,3 +1,4 @@
+name="function01"
 function="function01"
 role="rolefunction01"
 runtime="nodejs20.x"
