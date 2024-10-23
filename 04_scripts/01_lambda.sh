@@ -18,7 +18,7 @@
   sed -i -e "s/NAME/$NAM/g" main.yaml
   sed -i -e "s/PROVIDER/$PRO/g" main.yaml
   sed -i -e "s/SERVICE/$SER/g" main.yaml
-  cp main.yaml $d_p/$NAM.yaml
+  cp main.yaml $d_p/$SER-$NAM.yaml
   
   cp -r $s_i/$NAM/scripts/* $d_i/$NAM/scripts/
   cp $s_i/$NAM/terraform.tfvars $d_i/$NAM/terraform.tfvars
