@@ -1,5 +1,6 @@
 #!/bin/bash
 
+  NAME=$( sed -n 1p 03_trigger/01_lambda )
   SERVICE=$( sed -n 3p 03_trigger/01_lambda )
   
   NGINX=$( sed -n 5p 03_trigger/01_lambda | awk '{print $2}' )
@@ -11,34 +12,34 @@
   bootstrap="02_tmp/03_git/01_bootstrap"
   monitor="02_tmp/03_git/02_monitor"
 
-  echo $SERVICE
-  mkdir -p $d_helm/$SERVICE
+  echo $NAME
+  mkdir -p $d_helm/$NAME
 
   ############ BOOTSTRAP #####################
   if [ $NGINX ]
   then
-    mkdir -p $d_helm/$SERVICE/01_bootstrap/01_nginx
+    mkdir -p $d_helm/$NAME/01_bootstrap/01_nginx
     
-    cp $bootstrap/01_nginx/* $d_helm/$SERVICE/01_bootstrap/01_nginx/
+    cp $bootstrap/01_nginx/* $d_helm/$NAME/01_bootstrap/01_nginx/
   fi
   
   if [ $CERTMANAGER ]
   then
-    mkdir -p $d_helm/$SERVICE/01_bootstrap/02_certmanager
-    cp -r $bootstrap/02_certmanager/* $d_helm/$SERVICE/01_bootstrap/02_certmanager/
+    mkdir -p $d_helm/$NAME/01_bootstrap/02_certmanager
+    cp -r $bootstrap/02_certmanager/* $d_helm/$NAME/01_bootstrap/02_certmanager/
   fi
   
   if [ $ESO ]
   then
-    mkdir -p $d_helm/$SERVICE/01_bootstrap/03_eso
-    cp -r $bootstrap/03_eso/* $d_helm/$SERVICE/01_bootstrap/03_eso/
+    mkdir -p $d_helm/$NAME/01_bootstrap/03_eso
+    cp -r $bootstrap/03_eso/* $d_helm/$NAME/01_bootstrap/03_eso/
   fi
 
   ########### GITOPS #####################
   if [ $PROMETHEUS ]
   then
-    mkdir -p $d_helm/$SERVICE/02_monitor/01_prometheus
-    cp -r $monitor/01_prometheus/* $d_helm/$SERVICE/02_monitor/01_prometheus/
+    mkdir -p $d_helm/$NAME/02_monitor/01_prometheus
+    cp -r $monitor/01_prometheus/* $d_helm/$NAME/02_monitor/01_prometheus/
   fi
 
   
