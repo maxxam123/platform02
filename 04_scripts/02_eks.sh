@@ -7,7 +7,8 @@
   ESO=$( sed -n 6p 03_trigger/01_lambda )
 
   d_helm="platf04/05_helm"
-  git="02_tmp/03_git/01_bootstrap"
+  bootstrap="02_tmp/03_git/01_bootstrap"
+  monitor="02_tmp/03_git/02_monitor"
   
   mkdir -p $d_helm/$SERVICE
   # cp -r 02_tmp/03_git/* platf04/05_helm/$SERVICE/
@@ -16,26 +17,26 @@
   if [ $NGINX == "nginx" ]
   then
     mkdir -p $d_helm/$SERVICE/01_bootsrap/01_nginx
-    cp -r $git/01_nginx/* $d_helm/$SERVICE/01_bootstrap/01_nginx/
+    cp -r $bootstrap/01_nginx/* $d_helm/$SERVICE/01_bootstrap/01_nginx/
   fi
   
   if [ $CERTMANAGER == "certmanager" ]
   then
     mkdir -p $d_helm/$SERVICE/01_bootsrap/02_certmanager
-    cp -r $git/02_certmanager/* $d_helm/$SERVICE/01_bootstrap/02_certmanager/
+    cp -r $bootstrap/02_certmanager/* $d_helm/$SERVICE/01_bootstrap/02_certmanager/
   fi
   
   if [ $ESO == "eso" ]
   then
     mkdir -p $d_helm/$SERVICE/01_bootsrap/03_eso
-    cp -r $git/03_eso/* $d_helm/$SERVICE/01_bootstrap/03_eso/
+    cp -r $bootstrap/03_eso/* $d_helm/$SERVICE/01_bootstrap/03_eso/
   fi
 
   ########### GITOPS #####################
   if [ $PROMETHEUS == "prometheus" ]
   then
     mkdir -p $d_helm/$SERVICE/02_monitor/01_prometheus
-    cp -r $git/01_prometheus/* $d_helm/$SERVICE/02_monitor/01_prometheus/
+    cp -r $monitor/01_prometheus/* $d_helm/$SERVICE/02_monitor/01_prometheus/
   fi
 
   
