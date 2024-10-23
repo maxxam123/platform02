@@ -18,19 +18,15 @@
 
   if [ $SVC ]
   then
-    NGINX=$( sed -n 5p 03_trigger/01_lambda | awk '{print $2}' )
-    mkdir -p platf04/05_helm/$SERVICE
-    if [ $NGINX ]
-    then
-      mkdir -p platf04/05_helm/$SERVICE/01_bootstrap/01_nginx
-      # ls platf04/05_helm/$SERVICE/01_bootstrap/
-      # echo test > platf04/05_helm/$SERVICE/01_bootstrap/test.txt
-      # cat platf04/05_helm/$SERVICE/01_bootstrap/test.txt
-      cp 02_tmp/03_git/01_bootstrap/01_nginx/kustomization.yaml platf04/05_helm/$SERVICE/01_bootstrap/01_nginx/kustomization.yaml
-    fi
-  
+    sh 04_scripts/02_eks.sh
   # then
-  #   sh 04_scripts/02_eks.sh
+  #   NGINX=$( sed -n 5p 03_trigger/01_lambda | awk '{print $2}' )
+  #   mkdir -p platf04/05_helm/$SERVICE
+  #   if [ $NGINX ]
+  #   then
+  #     mkdir -p platf04/05_helm/$SERVICE/01_bootstrap/01_nginx
+  #     cp 02_tmp/03_git/01_bootstrap/01_nginx/* platf04/05_helm/$SERVICE/01_bootstrap/01_nginx/
+  #   fi
   fi
   
   # mkdir -p $d_infra/$NAME
