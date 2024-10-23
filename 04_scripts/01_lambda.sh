@@ -17,7 +17,7 @@
 
   if [ $SVC ]
   then
-    sh 02_eks.sh
+    sh 04_scripts/02_eks.sh
   fi
   
   # mkdir -p $d_infra/$NAME
