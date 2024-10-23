@@ -2,12 +2,6 @@
   
   git clone https://github.com/maxxam123/platf04.git
 
-  # EKS=$( sed -n 4p 01_infra/$SERVICE/$NAME/values.yaml | awk '{print $2}' )
-  EKS=$( sed -n 4p 03_trigger/01_lambda | awk '{print $2}' )
-  # if [ $EKS ]
-  # then
-  #   sh 04_scripts/02_eks.sh
-  # fi
 
   NAM=$( sed -n 1p 03_trigger/01_lambda )
   PRO=$( sed -n 2p 03_trigger/01_lambda )
@@ -30,6 +24,12 @@
   cp $s_i/$NAM/terraform.tfvars $d_i/$NAM/terraform.tfvars
 
 
+  # EKS=$( sed -n 4p 01_infra/$SERVICE/$NAME/values.yaml | awk '{print $2}' )
+  EKS=$( sed -n 4p 03_trigger/01_lambda | awk '{print $2}' )
+  # if [ $EKS ]
+  # then
+  #   sh 04_scripts/02_eks.sh
+  # fi
 
 
   
