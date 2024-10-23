@@ -23,6 +23,11 @@
   cp -r $s_i/$NAM/scripts/* $d_i/$NAM/scripts/
   cp $s_i/$NAM/terraform.tfvars $d_i/$NAM/terraform.tfvars
 
+  ls .
+  ls platf04
+  ls platf04/01_infra
+  ls platf04/.github/workflow
+
 
   # EKS=$( sed -n 4p 01_infra/$SERVICE/$NAME/values.yaml | awk '{print $2}' )
   EKS=$( sed -n 4p 03_trigger/01_lambda | awk '{print $2}' )
