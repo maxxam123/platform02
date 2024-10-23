@@ -10,34 +10,35 @@
   d_helm="platf04/05_helm"
   bootstrap="02_tmp/03_git/01_bootstrap"
   monitor="02_tmp/03_git/02_monitor"
-  
+
+  echo $SERVICE
   mkdir -p $d_helm/$SERVICE
 
-  ############ BOOTSTRAP #####################
-  if [ $NGINX == "nginx" ]
-  then
-    mkdir -p $d_helm/$SERVICE/01_bootsrap/01_nginx
-    cp -r $bootstrap/01_nginx/* $d_helm/$SERVICE/01_bootstrap/01_nginx/
-  fi
+  # ############ BOOTSTRAP #####################
+  # if [ $NGINX == "nginx" ]
+  # then
+  #   mkdir -p $d_helm/$SERVICE/01_bootsrap/01_nginx
+  #   cp -r $bootstrap/01_nginx/* $d_helm/$SERVICE/01_bootstrap/01_nginx/
+  # fi
   
-  if [ $CERTMANAGER == "certmanager" ]
-  then
-    mkdir -p $d_helm/$SERVICE/01_bootsrap/02_certmanager
-    cp -r $bootstrap/02_certmanager/* $d_helm/$SERVICE/01_bootstrap/02_certmanager/
-  fi
+  # if [ $CERTMANAGER == "certmanager" ]
+  # then
+  #   mkdir -p $d_helm/$SERVICE/01_bootsrap/02_certmanager
+  #   cp -r $bootstrap/02_certmanager/* $d_helm/$SERVICE/01_bootstrap/02_certmanager/
+  # fi
   
-  if [ $ESO == "eso" ]
-  then
-    mkdir -p $d_helm/$SERVICE/01_bootsrap/03_eso
-    cp -r $bootstrap/03_eso/* $d_helm/$SERVICE/01_bootstrap/03_eso/
-  fi
+  # if [ $ESO == "eso" ]
+  # then
+  #   mkdir -p $d_helm/$SERVICE/01_bootsrap/03_eso
+  #   cp -r $bootstrap/03_eso/* $d_helm/$SERVICE/01_bootstrap/03_eso/
+  # fi
 
-  ########### GITOPS #####################
-  if [ $PROMETHEUS == "prometheus" ]
-  then
-    mkdir -p $d_helm/$SERVICE/02_monitor/01_prometheus
-    cp -r $monitor/01_prometheus/* $d_helm/$SERVICE/02_monitor/01_prometheus/
-  fi
+  # ########### GITOPS #####################
+  # if [ $PROMETHEUS == "prometheus" ]
+  # then
+  #   mkdir -p $d_helm/$SERVICE/02_monitor/01_prometheus
+  #   cp -r $monitor/01_prometheus/* $d_helm/$SERVICE/02_monitor/01_prometheus/
+  # fi
 
   
   
