@@ -2,45 +2,39 @@
   
   git clone https://github.com/maxxam123/platf04.git
 
-  NAME=$( sed -n 1p 03_trigger/01_lambda )
-  # PROVIDER=$( sed -n 2p 01_infra/01_lambda/$NAME/values )
-  PROVIDER=$( sed -n 2p 03_trigger/01_lambda )
-  SERVICE=$( sed -n 3p 03_trigger/01_lambda )
-  # SVC=$( sed -n 4p 03_trigger/01_lambda )          #################### TESTS ######################
-
   # EKS=$( sed -n 4p 01_infra/$SERVICE/$NAME/values.yaml | awk '{print $2}' )
   EKS=$( sed -n 4p 03_trigger/01_lambda | awk '{print $2}' )
-  
-  d_pipeline="platf04/.github/workflows"
-  d_infra="platf04/01_infra/$SERVICE"  ### 01_lambda == $SERVICE
-  infra="01_infra/$SERVICE"  ### 01_lambda == $SERVICE
-  # pipeline="02_tmp/02_pipeline/01_lambda"
-  pipeline="02_tmp/02_pipeline"
-  provider="02_tmp/01_terraform/01_providers"
-
   # if [ $EKS ]
   # then
   #   sh 04_scripts/02_eks.sh
   # fi
+
+  NAM=$( sed -n 1p 03_trigger/01_lambda )
+  PRO=$( sed -n 2p 03_trigger/01_lambda )
+  SER=$( sed -n 3p 03_trigger/01_lambda )
   
-  mkdir -p $d_infra/$NAME
-  mkdir -p $d_infra/$NAME/scripts
+  d_p="platf04/.github/workflows"
+  d_i="platf04/01_infra/$SER/$PRO"
+  s_p="02_tmp/02_pipeline"
+  s_i="01_infra/$SER/$PRO"
+  
+  mkdir -p $d_i/$NAM/scripts
   
   # sed -e "s/NAME/$NAME/g" $pipeline/$PROVIDER/main.yaml > $d_pipeline/01_$NAME.yaml ###################
-  cp $pipeline/$PROVIDER/main.yaml .
-  sed -i -e "s/NAME/$NAME/g" main.yaml
-  sed -i -e "s/PROVIDER/$PROVIDER/g" main.yaml
-  sed -i -e "s/SERVICE/$SERVICE/g" main.yaml
-  cp main.yaml $d_pipeline/$SERVICE-$NAME.yaml
+  cp $s_p/$PRO/main.yaml .
+  sed -i -e "s/NAME/$NAM/g" main.yaml
+  sed -i -e "s/PROVIDER/$PRO/g" main.yaml
+  sed -i -e "s/SERVICE/$SER/g" main.yaml
+  cp main.yaml $d_p/$SER-$NAM.yaml
   cat main.yaml
   
-  sed -e "s/BUCKET/$NAME/g" $provider/$PROVIDER/02_provider.tf > $d_infra/$NAME/02_provider.tf
+  sed -e "s/BUCKET/$NAM/g" $s_p/$PRO/02_provider.tf > $d_i/$NAM/02_provider.tf
   
   # cp $infra/$NAME/index.js $d_infra/$NAME/index.js ################
-  cp -r $infra/$NAME/scripts/* $d_infra/$NAME/scripts/
-  cp $infra/$NAME/* $d_infra/$NAME/
-  cat $d_infra/$NAME/scripts/index.js
-  cp $infra/$NAME/terraform.tfvars $d_infra/$NAME/terraform.tfvars
+  cp -r $s_i/$NAM/scripts/* $d_i/$NAM/scripts/
+  cp $s_i/$NAM/* $d_i/$NAM/
+  cat $d_i/$NAM/scripts/index.js
+  cp $s_i/$NAM/terraform.tfvars $d_i/$NAM/terraform.tfvars
 
 
 
