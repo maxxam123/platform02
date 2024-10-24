@@ -38,8 +38,8 @@
   # ############ BOOTSTRAP #####################
   
   if [ $NGI ]; then
-    mkdir -p $d_g/$PRO/$NAME/01_bootstrap/01_nginx
-    cp $boo/01_nginx/* $d_g/$PRO/$NAME/01_bootstrap/01_nginx/
+    mkdir -p $d_g/$PRO/$NAM/01_bootstrap/01_nginx
+    cp $boo/01_nginx/* $d_g/$PRO/$NAM/01_bootstrap/01_nginx/
   fi
   
   if [ $CER ]; then
