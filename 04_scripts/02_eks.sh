@@ -12,12 +12,12 @@
 
   # # ARN=$( sed -n 12p 01_infra/06_eks/$NAME/scripts/values.yaml | awk '{print $2}' )
   if [ $AUT ]; then
-    aut="cp ..\/..\/..\/..\/02_tmp\/SERVICE\/PROVIDER\/09_autoscaler.tf ."
+    aut="cp ..\/..\/..\/..\/02_tmp\/SERVICE\/PROVIDER\/08_autoscaler.tf ."
     sed -i -e "s/AUTOSCALER/$aut/g" main.yaml
   fi
 
   if [ $EFS ]; then
-    efs="cp ..\/..\/..\/..\/02_tmp\/SERVICE\/PROVIDER\/08_efs.tf ."
+    efs="cp ..\/..\/..\/..\/02_tmp\/SERVICE\/PROVIDER\/09_efs.tf ."
     sed -i -e "s/EFS/$efs/g" main.yaml
   fi
 
