@@ -31,8 +31,8 @@ jobs:
      - name: Terraform init
        id: init
        run: |
-         cp ../../../../02_tmp/SERVICE/PROVIDER/main.tf .
-         cp ../../../../02_tmp/SERVICE/PROVIDER/variables.tf .
+         cp ../../../../02_tmp/SERVICE/PROVIDER/01_variables.tf .
+         cp ../../../../02_tmp/SERVICE/PROVIDER/02_main.tf .
          EFS
          AUTOSCALER
          SECRETCSI
