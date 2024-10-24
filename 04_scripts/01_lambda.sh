@@ -22,6 +22,10 @@
     sh 04_scripts/02_eks.sh
   fi
 
+  echo "cp ../../../../02_tmp/SERVICE/PROVIDER/01_variables.tf ." >> platf04/01_infra/$SER/$PRO/$NAM/scripts/script.sh
+  echo "cp ../../../../02_tmp/SERVICE/PROVIDER/03_main.tf" . >> platf04/01_infra/$SER/$PRO/$NAM/scripts/script.sh
+  echo "cp ../../../../03_pro/PROVIDER/02_provider.tf" . >> platf04/01_infra/$SER/$PRO/$NAM/scripts/script.sh
+
   sed -i -e "s/NAME/$NAM/g" main.yaml
   sed -i -e "s/PROVIDER/$PRO/g" main.yaml
   sed -i -e "s/SERVICE/$SER/g" main.yaml
