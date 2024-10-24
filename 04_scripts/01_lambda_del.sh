@@ -11,7 +11,7 @@
   CLS=$( sed -n 1p 01_infra/$SERVICE/$PROVIDER/$NAME/values.yaml | awk '{print $2}' )
   if [ $CLS ]
   then
-    touch platf04/01_infra/$SERVICE/$PROVIDER/$NAME/scripts/script_del.sh
+    echo test > platf04/01_infra/$SERVICE/$PROVIDER/$NAME/scripts/script_del.sh
     # sh 04_scripts/02_eks_del.sh
   fi
   
