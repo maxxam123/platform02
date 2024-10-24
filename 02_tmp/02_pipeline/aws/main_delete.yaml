@@ -31,20 +31,16 @@ jobs:
      - name: Terraform init
        # id: init
        run: |
-         cp ../../../02_tmp/SERVICE/* . 
-         sed -i -e "s/RESOURCE/NAME/g" main.tf
-         
-         cp ../../../04_provider/PROVIDER/01_provider.tf .
-         sed -i -e "s/RESOURCE/NAME/g" main.tf
-         sed -i -e "s/BUCKET/SERVICE/g" 01_provider.tf
+         cp ../../../../02_tmp/SERVICE/PROVIDER/01_variables.tf .
+         cp ../../../../02_tmp/SERVICE/PROVIDER/03_main.tf .
+         sh scripts/script_del.sh
+         cp ../../../../03_pro/PROVIDER/02_provider.tf .
 
-         echo "01_PROVIDER.TF"
-         cat 01_provider.tf
-
-         cd ../../..
+         cd ../../../..
          git clone https://github.com/maxxam123/platf04.git
          rm -rf platf04/.github/workflows/SERVICE-NAME.yaml
-         rm -rf platf04/01_infra/SERVICE/NAME
+         rm -rf platf04/01_infra/SERVICE/PROVIDER/NAME
+         rm -rf platf04/04_git/PROVIDER/NAME
          echo "LAST........................."
       # rm -rf platf04/.github/workflows/01_NAME.yaml
      #    terraform init -backend-config="bucket=dunhuang-gansu-terraform-state"
@@ -64,32 +60,3 @@ jobs:
          destination-repository-name: "platf04"
          user-email: hennighausenmax@gmail.com
          target-branch: main
-
- # build:
- #   runs-on: ubuntu-latest
- #   needs: terraform
- #   steps:
- #     - uses: actions/checkout@v3
- #     - name: test
- #       run: |
- #         ls -la
- #         git clone https://github.com/maxxam123/platf04.git
- #         cd platf04/.github/workflows
- #         ls -la
- #         rm -rf NAME.yaml
- #         cd ../../../
- #         cd platf04/01_infra/01_lambda
- #         ls -la
- #         rm -rf NAME
- #         cd ../../..
-
- #     - name: Pushes to another repository
- #       uses: cpina/github-action-push-to-another-repository@main
- #       env:
- #         API_TOKEN_GITHUB: ${{ secrets.NEWPLAT }}
- #       with:
- #         source-directory: "platf04"
- #         destination-github-username: "maxxam123"
- #         destination-repository-name: "platf04"
- #         user-email: hennighausenmax@gmail.com
- #         target-branch: main
