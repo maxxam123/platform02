@@ -15,7 +15,7 @@
   echo $EFS
   if [ $EFS ]
   then
-    efs="cp ../../../../02_tmp/SERVICE/PROVIDER/efs.tf ."
+    efs="cp ..\/..\/..\/..\/02_tmp\/SERVICE\/PROVIDER\/efs.tf ."
     sed -i -e "s/EFS/$efs/g" main.yaml
   fi
 
