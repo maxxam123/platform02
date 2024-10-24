@@ -32,6 +32,8 @@
   sed -i -e "s/SERVICE/$SER/g" main.yaml
   cp main.yaml $d_p/$SER-$PRO-$NAM.yaml
 
+  cat main.yaml
+
   
 
   # cp 02_tmp/02_pipeline/01_lambda/$PROVIDER/main.yaml $NAME.yaml
