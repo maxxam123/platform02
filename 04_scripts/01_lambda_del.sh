@@ -31,6 +31,10 @@
       fi
       
   fi
+
+  # echo "cp ../../../../02_tmp/$SERVICE/$PROVIDER/01_variables.tf ." >> platf04/01_infra/$SERVICE/$PROVIDER/$NAME/scripts/script.sh
+  # echo "cp ../../../../02_tmp/$SERVICE/$PROVIDER/03_main.tf" . >> platf04/01_infra/$SERVICE/$PROVIDER/$NAME/scripts/script.sh
+  # echo "cp ../../../../03_pro/$PROVIDER/02_provider.tf" . >> platf04/01_infra/$SERVICE/$PROVIDER/$NAME/scripts/script.sh
   
   echo $NAME > platf04/05_trig/trigger.yaml
   cp $pipeline/$PROVIDER/main_delete.yaml .
