@@ -11,8 +11,7 @@
   CLS=$( sed -n 1p 01_infra/$SERVICE/$PROVIDER/$NAME/values.yaml | awk '{print $2}' )
   if [ $CLS ]
   then
-    echo test > platf04/01_infra/$SERVICE/$PROVIDER/$NAME/scripts/script_del.sh
-    # sh 04_scripts/02_eks_del.sh
+    sh 04_scripts/02_eks_del.sh
   fi
   
   echo $NAME > platf04/05_trig/trigger.yaml
@@ -21,7 +20,7 @@
   sed -i -e "s/SERVICE/$SERVICE/g" main_delete.yaml
   sed -e "s/NAME/$NAME/g" main_delete.yaml > $d_pipeline/main_delete.yaml
 
-  touch platf04/01_infra/$SER/$PRO/$NAME/scripts/tests.sh
+  # touch platf04/01_infra/$SER/$PRO/$NAME/scripts/tests.sh
 
   # cp 02_tmp/02_pipeline/01_lambda/$PROVIDER/main_delete.yaml .
   # sed -i -e "s/NAME/$NAME/g" main_delete.yaml
