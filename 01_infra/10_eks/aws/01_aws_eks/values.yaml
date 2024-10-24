@@ -1,8 +1,8 @@
 eks true
+
+
+
+
 efs true
-efs true
-efs true
-efs true
-efs true
-efs true
-efs true
+autoscaler true
+secretcsi true
