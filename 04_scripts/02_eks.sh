@@ -12,7 +12,8 @@
 
   touch platf04/01_infra/$SER/$PRO/$NAM/scripts/script.sh
   # # ARN=$( sed -n 12p 01_infra/06_eks/$NAME/scripts/values.yaml | awk '{print $2}' )
-  
+
+  touch platf04/01_infra/$SER/$PRO/$NAM/scripts/script.sh
   if [ $AUT ]; then
     echo "../../../../02_tmp/SERVICE/PROVIDER/08_autoscaler.tf" >> platf04/01_infra/$SER/$PRO/$NAM/scripts/script.sh
   #   aut="cp ..\/..\/..\/..\/02_tmp\/SERVICE\/PROVIDER\/08_autoscaler.tf ."
