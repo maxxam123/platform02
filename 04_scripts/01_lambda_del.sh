@@ -14,6 +14,8 @@
     # sh 04_scripts/02_eks_del.sh
       touch platf04/01_infra/$SERVICE/$PROVIDER/$NAME/scripts/script_del.sh
       AUT=$( sed -n 5p 01_infra/10_eks/$PROVIDER/$NAME/values.yaml | awk '{print $2}' )
+      EFS=$( sed -n 6p 01_infra/10_eks/$PROVIDER/$NAME/values.yaml | awk '{print $2}' )
+      SEC=$( sed -n 7p 01_infra/10_eks/$PROVIDER/$NAME/values.yaml | awk '{print $2}' )
       if [ $AUT ]; then
         echo "cp ../../../../02_tmp/$SERVICE/$PROVIDER/08_autoscaler.tf ." >> platf04/01_infra/$SERVICE/$PROVIDER/$NAME/scripts/script_del.sh
       fi      
