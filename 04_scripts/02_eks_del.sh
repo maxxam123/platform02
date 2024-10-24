@@ -4,9 +4,9 @@
   # PRO=$( sed -n 2p 03_trigger/01_lambda_del )
   # SER=$( sed -n 3p 03_trigger/01_lambda_del )
 
-  NAME=$( sed -n 1p 03_trigger/01_lambda_del )
-  PROVIDER=$( sed -n 2p 03_trigger/01_lambda_del )
-  SERVICE=$( sed -n 3p 03_trigger/01_lambda_del )
+  # NAME=$( sed -n 1p 03_trigger/01_lambda_del )
+  # PROVIDER=$( sed -n 2p 03_trigger/01_lambda_del )
+  # SERVICE=$( sed -n 3p 03_trigger/01_lambda_del )
 
   AUT=$( sed -n 5p 01_infra/10_eks/$PROVIDER/$NAME/values.yaml | awk '{print $2}' )
   EFS=$( sed -n 6p 01_infra/10_eks/$PROVIDER/$NAME/values.yaml | awk '{print $2}' )
