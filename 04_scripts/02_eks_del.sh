@@ -29,6 +29,6 @@
     echo "cp ../../../../02_tmp/$SER/$PRO/09_efs.tf ." >> platf04/01_infra/$SER/$PRO/$NAM/scripts/script_del.sh
   fi
 
-  # if [ $SEC ]; then
-  #   echo "cp ../../../../02_tmp/$SER/$PRO/10_secdriver.tf ." >> platf04/01_infra/$SER/$PRO/$NAM/scripts/script_del.sh
-  # fi
+  if [ $SEC ]; then
+    echo "cp ../../../../02_tmp/$SER/$PRO/10_secdriver.tf ." >> platf04/01_infra/$SER/$PRO/$NAM/scripts/script_del.sh
+  fi
