@@ -23,7 +23,7 @@
   CLS=$( sed -n 4p 03_trigger/01_lambda | awk '{print $2}' )
   if [ $CLS ]
   then
-    sh 04_scripts/02_eks.sh
+    # sh 04_scripts/02_eks.sh
   fi
 
   cp $s_p/$PRO/main.yaml .
