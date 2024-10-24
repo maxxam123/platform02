@@ -7,6 +7,12 @@
   d_pipeline="platf04/.github/workflows"
   pipeline="02_tmp/02_pipeline"
   # pipeline="02_tmp/02_pipeline/01_lambda"
+
+  CLS=$( sed -n 1p 01_infra/$SER/$PRO/$NAM/values.yaml | awk '{print $2}' )
+  if [ $CLS ]
+  then
+    sh 04_scripts/02_eks_del.sh
+  fi
   
   echo $NAME > platf04/03_trigger/test
   cp $pipeline/$PROVIDER/main_delete.yaml .
