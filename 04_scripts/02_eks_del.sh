@@ -12,6 +12,9 @@
 
   # # ARN=$( sed -n 12p 01_infra/06_eks/$NAME/scripts/values.yaml | awk '{print $2}' )
 
+  echo LS
+  ls -la
+  ls 
   touch platf04/01_infra/$SER/$PRO/$NAM/scripts/script_del.sh
   if [ $AUT ]; then
     echo "cp ../../../../02_tmp/$SER/$PRO/08_autoscaler.tf ." >> platf04/01_infra/$SER/$PRO/$NAM/scripts/script_del.sh
