@@ -14,11 +14,17 @@
   if [ $AUT ]; then
     aut="cp ..\/..\/..\/..\/02_tmp\/SERVICE\/PROVIDER\/08_autoscaler.tf ."
     sed -i -e "s/AUTOSCALER/$aut/g" main.yaml
+  else
+    sec="echo noautoscaler"
+    sed -i -e "s/SECRETCSI/$sec/g" main.yaml
   fi
 
   if [ $EFS ]; then
     efs="cp ..\/..\/..\/..\/02_tmp\/SERVICE\/PROVIDER\/09_efs.tf ."
     sed -i -e "s/EFS/$efs/g" main.yaml
+  else
+    sec="echo noefs"
+    sed -i -e "s/SECRETCSI/$sec/g" main.yaml
   fi
 
   if [ $SEC ]; then
