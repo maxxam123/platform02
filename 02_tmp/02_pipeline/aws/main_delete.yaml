@@ -40,7 +40,6 @@ jobs:
          cp ../../../../03_pro/PROVIDER/02_provider.tf .
          echo "LS"
          ls -la
-  
          cd ../../../..
          git clone https://github.com/maxxam123/platf04.git
          rm -rf platf04/.github/workflows/SERVICE-NAME.yaml
@@ -48,16 +47,6 @@ jobs:
          rm -rf platf04/04_git/PROVIDER/NAME
          echo "LAST........................."
 
-         
-      # rm -rf platf04/.github/workflows/01_NAME.yaml
-     #    terraform init -backend-config="bucket=dunhuang-gansu-terraform-state"
-       
-     #- name: Terraform Plan
-     #  run: terraform plan -lock=false
-
-     #- name: Terraform Destroy
-     #  run: terraform destroy -auto-approve -input=false -lock=false
-     
      - name: Pushes to another repository
        uses: cpina/github-action-push-to-another-repository@main
        env:
@@ -68,3 +57,13 @@ jobs:
          destination-repository-name: "platf04"
          user-email: hennighausenmax@gmail.com
          target-branch: main
+         
+      # rm -rf platf04/.github/workflows/01_NAME.yaml
+     #    terraform init -backend-config="bucket=dunhuang-gansu-terraform-state"
+       
+     #- name: Terraform Plan
+     #  run: terraform plan -lock=false
+
+     #- name: Terraform Destroy
+     #  run: terraform destroy -auto-approve -input=false -lock=false
+     
