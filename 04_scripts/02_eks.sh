@@ -1,127 +1,89 @@
 #!/bin/bash
 
-  NAME=$( sed -n 1p 03_trigger/01_lambda )
-  SERVICE=$( sed -n 3p 03_trigger/01_lambda )
+  NAM=$( sed -n 1p 03_trigger/01_lambda )
+  PRO=$( sed -n 2p 03_trigger/01_lambda )
+  SER=$( sed -n 3p 03_trigger/01_lambda )
 
-  # NGINX=$( sed -n 5p 06_eks/$NAME/values.yaml | awk '{print $2}' )
-  # CERTMANAGER=$( sed -n 6p 06_eks/$NAME/values.yaml | awk '{print $2}' )
-  # ESO=$( sed -n 7p 06_eks/$NAME/values.yaml | awk '{print $2}' )
-  # AUTOSCALER=$( sed -n 8p 06_eks/$NAME/values.yaml | awk '{print $2}' )
-  # EFS=$( sed -n 9p 06_eks/$NAME/values.yaml | awk '{print $2}' )
-  # PROMETHEUS=$( sed -n 10p 06_eks/$NAME/values.yaml | awk '{print $2}' )
-  # GRAFANA=$( sed -n 11p 06_eks/$NAME/values.yaml | awk '{print $2}' )
-  # LOKI=$( sed -n 12p 06_eks/$NAME/values.yaml | awk '{print $2}' )
+  AUT=$( sed -n 5p 01_infra/10_eks/$PRO/$NAM/values.yaml | awk '{print $2}' )
+  EFS=$( sed -n 6p 01_infra/10_eks/$PRO/$NAM/values.yaml | awk '{print $2}' )
+  SEC=$( sed -n 7p 01_infra/10_eks/$PRO/$NAM/values.yaml | awk '{print $2}' )
+  NGI=$( sed -n 8p 01_infra/10_eks/$PRO/$NAM/values.yaml | awk '{print $2}' )
+  CER=$( sed -n 9p 01_infra/10_eks/$PRO/$NAM/values.yaml | awk '{print $2}' )
   
-  NGINX=$( sed -n 5p 03_trigger/01_lambda | awk '{print $2}' )
-  CERTMANAGER=$( sed -n 6p 03_trigger/01_lambda | awk '{print $2}' )
-  ESO=$( sed -n 7p 03_trigger/01_lambda | awk '{print $2}' )
-  AUTOSCALER=$( sed -n 8p 03_trigger/01_lambda | awk '{print $2}' )
-  EFS=$( sed -n 9p 03_trigger/01_lambda | awk '{print $2}' )
-  PROMETHEUS=$( sed -n 10p 03_trigger/01_lambda | awk '{print $2}' )
-  GRAFANA=$( sed -n 11p 03_trigger/01_lambda | awk '{print $2}' )
-  LOKI=$( sed -n 12p 03_trigger/01_lambda | awk '{print $2}' )
-
   # ARN=$( sed -n 12p 01_infra/06_eks/$NAME/scripts/values.yaml | awk '{print $2}' )
   
-  d_helm="platf04/05_helm"
-  bootstrap="02_tmp/03_git/01_bootstrap"
-  monitor="02_tmp/03_git/02_monitor"
-  applicationset="02_tmp/03_git/03_applicationset"
+  d_g="platf04/04_git"
+  boo="02_tmp/03_git/01_bootstrap"
+  mon="02_tmp/03_git/02_monitor"
+  app="02_tmp/03_git/03_applicationset"
 
-  echo $NAME
-  mkdir -p $d_helm/$NAME
+  echo $NAM
+  mkdir -p $d_g/$PRO/$NAM
 
-  ############ BOOTSTRAP #####################
+  # ############ BOOTSTRAP #####################
   
-  if [ $NGINX ]
-  then
-    mkdir -p $d_helm/$NAME/01_bootstrap/01_nginx
+  # if [ $NGINX ]
+  # then
+  #   mkdir -p $d_g/$NAME/01_boo/01_nginx
     
-    cp $bootstrap/01_nginx/* $d_helm/$NAME/01_bootstrap/01_nginx/
-  fi
+  #   cp $boo/01_nginx/* $d_g/$NAME/01_bootstrap/01_nginx/
+  # fi
   
-  if [ $CERTMANAGER ]
-  then
-    mkdir -p $d_helm/$NAME/01_bootstrap/02_certmanager
-    cp -r $bootstrap/02_certmanager/* $d_helm/$NAME/01_bootstrap/02_certmanager/
-  fi
+  # if [ $CERTMANAGER ]
+  # then
+  #   mkdir -p $d_g/$NAME/01_boo/02_certmanager
+  #   cp -r $boo/02_certmanager/* $d_g/$NAME/01_bootstrap/02_certmanager/
+  # fi
   
-  if [ $ESO ]
-  then
-    mkdir -p $d_helm/$NAME/01_bootstrap/03_eso
-    cp -r $bootstrap/03_eso/* $d_helm/$NAME/01_bootstrap/03_eso/
-  fi
+  # if [ $ESO ]
+  # then
+  #   mkdir -p $d_g/$NAME/01_boo/03_eso
+  #   cp -r $boo/03_eso/* $d_g/$NAME/01_bootstrap/03_eso/
+  # fi
     
-  if [ $AUTOSCALER ]
-  then
-    mkdir -p $d_helm/$NAME/01_bootstrap/04_autoscaler
-    cp -r $bootstrap/04_autoscaler/* $d_helm/$NAME/01_bootstrap/04_autoscaler/
-  fi
+  # if [ $AUTOSCALER ]
+  # then
+  #   mkdir -p $d_g/$NAME/01_boo/04_autoscaler
+  #   cp -r $bootstrap/04_autoscaler/* $d_g/$NAME/01_bootstrap/04_autoscaler/
+  # fi
 
-  if [ $EFS ]
-  then
-    mkdir -p $d_helm/$NAME/01_bootstrap/05_efs_csi
-    cp -r $bootstrap/05_efs_csi/kustomization.yaml $d_helm/$NAME/01_bootstrap/05_efs_csi/kustomization.yaml
-    sed -e "s/ARN/$ARN/g" $bootstrap/05_efs_csi/values.yaml > $d_helm/$NAME/01_bootstrap/05_efs_csi/values.yaml
-  fi
+  # if [ $EFS ]
+  # then
+  #   mkdir -p $d_g/$NAME/01_bootstrap/05_efs_csi
+  #   cp -r $bootstrap/05_efs_csi/kustomization.yaml $d_g/$NAME/01_bootstrap/05_efs_csi/kustomization.yaml
+  #   sed -e "s/ARN/$ARN/g" $bootstrap/05_efs_csi/values.yaml > $d_g/$NAME/01_bootstrap/05_efs_csi/values.yaml
+  # fi
   
 
-  ########### GITOPS #####################
+  # ########### GITOPS #####################
   
-  if [ $PROMETHEUS ]
-  then
-    mkdir -p $d_helm/$NAME/02_monitor/01_prometheus
-    cp -r $monitor/01_prometheus/* $d_helm/$NAME/02_monitor/01_prometheus/
-  fi
+  # if [ $PROMETHEUS ]
+  # then
+  #   mkdir -p $d_g/$NAME/02_monitor/01_prometheus
+  #   cp -r $monitor/01_prometheus/* $d_g/$NAME/02_monitor/01_prometheus/
+  # fi
     
-  if [ $GRAFANA ]
-  then
-    mkdir -p $d_helm/$NAME/02_monitor/02_grafana
-    cp -r $monitor/02_grafana/* $d_helm/$NAME/02_monitor/02_grafana/
-  fi
+  # if [ $GRAFANA ]
+  # then
+  #   mkdir -p $d_g/$NAME/02_monitor/02_grafana
+  #   cp -r $monitor/02_grafana/* $d_g/$NAME/02_monitor/02_grafana/
+  # fi
 
-  if [ $LOKI ]
-  then
-    mkdir -p $d_helm/$NAME/02_monitor/03_loki
-    cp -r $monitor/03_loki/* $d_helm/$NAME/02_monitor/03_loki/
-  fi
+  # if [ $LOKI ]
+  # then
+  #   mkdir -p $d_g/$NAME/02_monitor/03_loki
+  #   cp -r $monitor/03_loki/* $d_g/$NAME/02_monitor/03_loki/
+  # fi
 
-  ############### ApplicationSet #############
+  # ############### ApplicationSet #############
 
-  mkdir -p $d_helm/$NAME/03_applicationset/01_bootstrap
-  cp $applicationset/01_bootstrap/applicationset.yaml .
-  sed -e "s/NAME/$NAME/g" applicationset.yaml > $d_helm/$NAME/03_applicationset/01_bootstrap/applicationset.yaml
-  rm -rf applicationset.yaml
-  # cp -r $applicationset/01_bootstrap/* $d_helm/$NAME/03_applicationset/01_bootstrap/
+  # mkdir -p $d_g/$NAME/03_applicationset/01_bootstrap
+  # cp $applicationset/01_bootstrap/applicationset.yaml .
+  # sed -e "s/NAME/$NAME/g" applicationset.yaml > $d_g/$NAME/03_applicationset/01_bootstrap/applicationset.yaml
+  # rm -rf applicationset.yaml
+  # # cp -r $applicationset/01_bootstrap/* $d_g/$NAME/03_applicationset/01_bootstrap/
   
-  mkdir -p $d_helm/$NAME/03_applicationset/02_monitor
-  cp $applicationset/02_monitor/applicationset.yaml .
-  sed -e "s/NAME/$NAME/g" applicationset.yaml > $d_helm/$NAME/03_applicationset/02_monitor/applicationset.yaml
-  # cp -r $applicationset/02_monitor/* $d_helm/$NAME/02_applicationset/02_monitor/
-  
-  # NAME=$( sed -n 1p 03_trigger/01_lambda )
-  # PROVIDER=$( sed -n 2p 03_trigger/01_lambda )
-  
-  # d_pipeline="platf04/.github/workflows"
-  # d_infra="platf04/01_infra/$SERVICE"
-  # d_helm="platf04/05_helm/$SERVICE"
-  # infra="01_infra/$SERVICE"
-  # pipeline="02_tmp/02_pipeline"
-  # provider="02_tmp/01_terraform/01_providers"
-  
-  # mkdir -p $d_infra/$NAME
-  # mkdir -p $d_infra/$NAME/scripts
-  
-  # cp $pipeline/$PROVIDER/main.yaml .
-  # sed -i -e "s/NAME/$NAME/g" main.yaml
-  # sed -i -e "s/PROVIDER/$PROVIDER/g" main.yaml
-  # sed -i -e "s/SERVICE/$SERVICE/g" main.yaml
-  # cp main.yaml $d_pipeline/$SERVICE-$NAME.yaml
-  # cat main.yaml
-  
-  # sed -e "s/BUCKET/$NAME/g" $provider/$PROVIDER/02_provider.tf > $d_infra/$NAME/02_provider.tf
-  
-  # cp -r $infra/$NAME/scripts/* $d_infra/$NAME/scripts/
-  # cp $infra/$NAME/* $d_infra/$NAME/
-  # cat $d_infra/$NAME/scripts/index.js
-  # cp $infra/$NAME/terraform.tfvars $d_infra/$NAME/terraform.tfvars
+  # mkdir -p $d_g/$NAME/03_applicationset/02_monitor
+  # cp $applicationset/02_monitor/applicationset.yaml .
+  # sed -e "s/NAME/$NAME/g" applicationset.yaml > $d_g/$NAME/03_applicationset/02_monitor/applicationset.yaml
+  # # cp -r $applicationset/02_monitor/* $d_g/$NAME/02_applicationset/02_monitor/
