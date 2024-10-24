@@ -10,30 +10,35 @@
   NGI=$( sed -n 8p 01_infra/10_eks/$PRO/$NAM/values.yaml | awk '{print $2}' )
   CER=$( sed -n 9p 01_infra/10_eks/$PRO/$NAM/values.yaml | awk '{print $2}' )
 
+  touch platf04/01_infra/$SER/$PRO/$NAM/scripts/script.sh
   # # ARN=$( sed -n 12p 01_infra/06_eks/$NAME/scripts/values.yaml | awk '{print $2}' )
+  
   if [ $AUT ]; then
-    aut="cp ..\/..\/..\/..\/02_tmp\/SERVICE\/PROVIDER\/08_autoscaler.tf ."
-    sed -i -e "s/AUTOSCALER/$aut/g" main.yaml
-  else
-    aut="echo noautoscaler"
-    sed -i -e "s/AUTOSCALER/$aut/g" main.yaml
+    echo "../../../../02_tmp/SERVICE/PROVIDER/08_autoscaler.tf" >> platf04/01_infra/$SER/$PRO/$NAM/scripts/script.sh
+  #   aut="cp ..\/..\/..\/..\/02_tmp\/SERVICE\/PROVIDER\/08_autoscaler.tf ."
+  #   sed -i -e "s/AUTOSCALER/$aut/g" main.yaml
+  # else
+  #   aut="echo noautoscaler"
+  #   sed -i -e "s/AUTOSCALER/$aut/g" main.yaml
   fi
 
-  if [ $EFS ]; then
-    efs="cp ..\/..\/..\/..\/02_tmp\/SERVICE\/PROVIDER\/09_efs.tf ."
-    sed -i -e "s/EFS/$efs/g" main.yaml
-  else
-    efs="echo noefs"
-    sed -i -e "s/EFS/$efs/g" main.yaml
-  fi
+  # if [ $EFS ]; then
+  ##   echo "../../../../02_tmp/SERVICE/PROVIDER/09_efs.tf" >> platf04/01_infra/$SER/$PRO/$NAM/scripts/script.sh
+  #   efs="cp ..\/..\/..\/..\/02_tmp\/SERVICE\/PROVIDER\/09_efs.tf ."
+  #   sed -i -e "s/EFS/$efs/g" main.yaml
+  # else
+  #   efs="echo noefs"
+  #   sed -i -e "s/EFS/$efs/g" main.yaml
+  # fi
 
-  if [ $SEC ]; then
-    sec="cp ..\/..\/..\/..\/02_tmp\/SERVICE\/PROVIDER\/10_secdriver.tf ."
-    sed -i -e "s/SECRETCSI/$sec/g" main.yaml
-  else
-    sec="echo nosecdriver"
-    sed -i -e "s/SECRETCSI/$sec/g" main.yaml
-  fi
+  # if [ $SEC ]; then
+  ##   echo "../../../../02_tmp/SERVICE/PROVIDER/10_secdriver.tf" >> platf04/01_infra/$SER/$PRO/$NAM/scripts/script.sh
+  #   sec="cp ..\/..\/..\/..\/02_tmp\/SERVICE\/PROVIDER\/10_secdriver.tf ."
+  #   sed -i -e "s/SECRETCSI/$sec/g" main.yaml
+  # else
+  #   sec="echo nosecdriver"
+  #   sed -i -e "s/SECRETCSI/$sec/g" main.yaml
+  # fi
 
   cat main.yaml
   
