@@ -21,7 +21,6 @@
     sed -i -e "s/EFS/$efs/g" main.yaml
   fi
 
-
   if [ $SEC ]; then
     sec="cp ..\/..\/..\/..\/02_tmp\/SERVICE\/PROVIDER\/10_secdriver.tf ."
     sed -i -e "s/SECRETCSI/$sec/g" main.yaml
@@ -29,7 +28,7 @@
 
   cat main.yaml
   
-  d_g="platf04/$PRO/04_git"
+  d_g="platf04/04_git"
   boo="02_tmp/03_git/01_bootstrap"
   mon="02_tmp/03_git/02_monitor"
   app="02_tmp/03_git/03_applicationset"
@@ -38,18 +37,15 @@
 
   # ############ BOOTSTRAP #####################
   
-  # if [ $NGI ]
-  # then
-  #   mkdir -p $d_g/$PRO/$NAME/01_bootstrap/01_nginx
-    
-  #   cp $boo/01_nginx/* $d_g/$PRO/$NAME/01_bootstrap/01_nginx/
-  # fi
+  if [ $NGI ]; then
+    mkdir -p $d_g/$PRO/$NAME/01_bootstrap/01_nginx
+    cp $boo/01_nginx/* $d_g/$PRO/$NAME/01_bootstrap/01_nginx/
+  fi
   
-  # if [ $CER ]
-  # then
-  #   mkdir -p $d_g/$PRO/$NAM/01_bootstrap/02_certmanager
-  #   cp -r $boo/02_certmanager/* $d_g/$PRO/$NAM/01_bootstrap/02_certmanager/
-  # fi
+  if [ $CER ]; then
+    mkdir -p $d_g/$PRO/$NAM/01_bootstrap/02_certmanager
+    cp -r $boo/02_certmanager/* $d_g/$PRO/$NAM/01_bootstrap/02_certmanager/
+  fi
 
 
   # ########### GITOPS #####################
