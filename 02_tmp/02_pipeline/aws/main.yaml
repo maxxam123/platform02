@@ -32,7 +32,7 @@ jobs:
        id: init
        run: |
          cp ../../../../02_tmp/SERVICE/PROVIDER/01_variables.tf .
-         cp ../../../../02_tmp/SERVICE/PROVIDER/02_main.tf .
+         cp ../../../../02_tmp/SERVICE/PROVIDER/03_main.tf .
          EFS
          AUTOSCALER
          SECRETCSI
