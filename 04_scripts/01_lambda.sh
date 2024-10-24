@@ -1,7 +1,5 @@
 #!/bin/bash
-  
   git clone https://github.com/maxxam123/platf04.git
-
 
   NAM=$( sed -n 1p 03_trigger/01_lambda )
   PRO=$( sed -n 2p 03_trigger/01_lambda )
@@ -19,7 +17,6 @@
   
   cp $s_p/$PRO/main.yaml .
   CLS=$( sed -n 1p 01_infra/$SER/$PRO/$NAM/values.yaml | awk '{print $2}' )
-  # CLS=$( sed -n 4p 03_trigger/01_lambda | awk '{print $2}' )
   if [ $CLS ]
   then
     sh 04_scripts/02_eks.sh
@@ -30,6 +27,7 @@
   sed -i -e "s/SERVICE/$SER/g" main.yaml
   cp main.yaml $d_p/$SER-$PRO-$NAM.yaml
 
+  
   cat main.yaml
 
   
