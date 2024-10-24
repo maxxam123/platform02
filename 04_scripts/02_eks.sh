@@ -10,12 +10,12 @@
   NGI=$( sed -n 8p 01_infra/10_eks/$PRO/$NAM/values.yaml | awk '{print $2}' )
   CER=$( sed -n 9p 01_infra/10_eks/$PRO/$NAM/values.yaml | awk '{print $2}' )
 
-  # ARN=$( sed -n 12p 01_infra/06_eks/$NAME/scripts/values.yaml | awk '{print $2}' )
-  if [ $EFS ]
-  then
-    efs="cp ../../../../02_tmp/SERVICE/PROVIDER/efs.tf ."
-    sed -i -e "s/EFS/$efs/g" main.yaml
-  fi
+  # # ARN=$( sed -n 12p 01_infra/06_eks/$NAME/scripts/values.yaml | awk '{print $2}' )
+  # if [ $EFS ]
+  # then
+  #   efs="cp ../../../../02_tmp/SERVICE/PROVIDER/efs.tf ."
+  #   sed -i -e "s/EFS/$efs/g" main.yaml
+  # fi
 
   cat main.yaml
   
