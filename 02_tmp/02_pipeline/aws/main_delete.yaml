@@ -31,6 +31,9 @@ jobs:
      - name: Terraform init
        # id: init
        run: |
+         ls -la
+         ls ../../../../
+         ls ../../../../02_tmp/SERVICE/PROVIDER
          cp ../../../../02_tmp/SERVICE/PROVIDER/01_variables.tf .
          cp ../../../../02_tmp/SERVICE/PROVIDER/03_main.tf .
          sh scripts/script_del.sh
