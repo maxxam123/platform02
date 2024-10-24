@@ -10,9 +10,9 @@
   NGI=$( sed -n 8p 01_infra/10_eks/$PRO/$NAM/values.yaml | awk '{print $2}' )
   CER=$( sed -n 9p 01_infra/10_eks/$PRO/$NAM/values.yaml | awk '{print $2}' )
 
-  sed -i -e "s/NAME/$NAM/g" main.yaml
-  
   # ARN=$( sed -n 12p 01_infra/06_eks/$NAME/scripts/values.yaml | awk '{print $2}' )
+  
+  sed -i -e "s/NAME/$NAM/g" main.yaml
   
   d_g="platf04/$PRO/04_git"
   boo="02_tmp/03_git/01_bootstrap"
