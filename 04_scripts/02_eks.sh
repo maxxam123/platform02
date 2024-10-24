@@ -11,15 +11,19 @@
   CER=$( sed -n 9p 01_infra/10_eks/$PRO/$NAM/values.yaml | awk '{print $2}' )
 
   # ARN=$( sed -n 12p 01_infra/06_eks/$NAME/scripts/values.yaml | awk '{print $2}' )
-  
-  sed -i -e "s/NAME/$NAM/g" main.yaml
+  if [ $EFS ]
+  then
+    efs="cp ../../../../02_tmp/SERVICE/PROVIDER/efs.tf ."
+    sed -i -e "s/EFS/$efs/g" main.yaml
+  fi
+
+  cat main.yaml
   
   d_g="platf04/$PRO/04_git"
   boo="02_tmp/03_git/01_bootstrap"
   mon="02_tmp/03_git/02_monitor"
   app="02_tmp/03_git/03_applicationset"
 
-  echo $NAM
   mkdir -p $d_g/$PRO/$NAM
 
   # ############ BOOTSTRAP #####################
