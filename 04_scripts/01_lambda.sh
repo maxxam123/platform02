@@ -17,8 +17,7 @@
   cp -r $s_i/$NAM/scripts/* $d_i/$NAM/scripts/
   cp $s_i/$NAM/terraform.tfvars $d_i/$NAM/terraform.tfvars
   
-  
-
+  cp $s_p/$PRO/main.yaml .
   # CLS=$( sed -n 1p 01_infra/$SER/$PRO/$NAM/values.yaml | awk '{print $2}' )
   CLS=$( sed -n 4p 03_trigger/01_lambda | awk '{print $2}' )
   if [ $CLS ]
@@ -26,7 +25,7 @@
     sh 04_scripts/02_eks.sh
   fi
 
-  cp $s_p/$PRO/main.yaml .
+  # cp $s_p/$PRO/main.yaml .
   sed -i -e "s/NAME/$NAM/g" main.yaml
   sed -i -e "s/PROVIDER/$PRO/g" main.yaml
   sed -i -e "s/SERVICE/$SER/g" main.yaml
