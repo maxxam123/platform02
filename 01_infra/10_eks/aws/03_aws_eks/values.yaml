@@ -2,8 +2,8 @@ eks         true
 
 
 
-efs         true
-autoscaler  true
-secretcsi   true
+efs
+autoscaler
+secretcsi
 nginx       true
 certmanager true
