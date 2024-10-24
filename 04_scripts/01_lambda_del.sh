@@ -12,9 +12,9 @@
   if [ $CLS ]
   then
     # sh 04_scripts/02_eks_del.sh
-      touch platf04/01_infra/$SERVICE/$PROVIDER/$NAME/scripts/scriptdel.sh
-      echo test > platf04/01_infra/$SERVICE/$PROVIDER/$NAME/scripts/scriptdel.sh
-      ls platf04/01_infra/$SERVICE/$PROVIDER/$NAME/scripts
+      touch platf04/01_infra/$SERVICE/$PROVIDER/$NAME/scripts/script_del.sh
+      echo test > platf04/01_infra/$SERVICE/$PROVIDER/$NAME/scripts/script_del.sh
+      # ls platf04/01_infra/$SERVICE/$PROVIDER/$NAME/scripts
   fi
   
   echo $NAME > platf04/05_trig/trigger.yaml
