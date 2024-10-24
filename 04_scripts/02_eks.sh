@@ -15,7 +15,7 @@
 
   touch platf04/01_infra/$SER/$PRO/$NAM/scripts/script.sh
   if [ $AUT ]; then
-    echo "../../../../02_tmp/SERVICE/PROVIDER/08_autoscaler.tf" >> platf04/01_infra/$SER/$PRO/$NAM/scripts/script.sh
+    echo "cp ../../../../02_tmp/SERVICE/PROVIDER/08_autoscaler.tf ." >> platf04/01_infra/$SER/$PRO/$NAM/scripts/script.sh
   #   aut="cp ..\/..\/..\/..\/02_tmp\/SERVICE\/PROVIDER\/08_autoscaler.tf ."
   #   sed -i -e "s/AUTOSCALER/$aut/g" main.yaml
   # else
