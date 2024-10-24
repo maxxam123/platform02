@@ -38,8 +38,8 @@ jobs:
          
          echo "LS"
          ls -la
-         echo "EFS"
-         cat 08_efs.tf
+         # echo "EFS"
+         # cat 08_efs.tf
      #    terraform init -backend-config="bucket=dunhuang-gansu-terraform-state"
        
      #- name: Terraform Plan
