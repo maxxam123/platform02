@@ -8,7 +8,7 @@
   pipeline="02_tmp/02_pipeline"
   # pipeline="02_tmp/02_pipeline/01_lambda"
 
-  CLS=$( sed -n 1p 01_infra/$SER/$PRO/$NAM/values.yaml | awk '{print $2}' )
+  CLS=$( sed -n 1p 01_infra/$SERVICE/$PROVIDER/$NAME/values.yaml | awk '{print $2}' )
   if [ $CLS ]
   then
     sh 04_scripts/02_eks_del.sh
