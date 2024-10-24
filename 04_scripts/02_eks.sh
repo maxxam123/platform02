@@ -2,15 +2,17 @@
 
   NAM=$( sed -n 1p 03_trigger/01_lambda )
   PRO=$( sed -n 2p 03_trigger/01_lambda )
-  SER=$( sed -n 3p 03_trigger/01_lambda )
+  # SER=$( sed -n 3p 03_trigger/01_lambda )
 
-  AUT=$( sed -n 5p 01_infra/10_eks/$PRO/$NAM/values.yaml | awk '{print $2}' )
+  # AUT=$( sed -n 5p 01_infra/10_eks/$PRO/$NAM/values.yaml | awk '{print $2}' )
   EFS=$( sed -n 6p 01_infra/10_eks/$PRO/$NAM/values.yaml | awk '{print $2}' )
-  SEC=$( sed -n 7p 01_infra/10_eks/$PRO/$NAM/values.yaml | awk '{print $2}' )
-  NGI=$( sed -n 8p 01_infra/10_eks/$PRO/$NAM/values.yaml | awk '{print $2}' )
-  CER=$( sed -n 9p 01_infra/10_eks/$PRO/$NAM/values.yaml | awk '{print $2}' )
+  # SEC=$( sed -n 7p 01_infra/10_eks/$PRO/$NAM/values.yaml | awk '{print $2}' )
+  # NGI=$( sed -n 8p 01_infra/10_eks/$PRO/$NAM/values.yaml | awk '{print $2}' )
+  # CER=$( sed -n 9p 01_infra/10_eks/$PRO/$NAM/values.yaml | awk '{print $2}' )
 
   # # ARN=$( sed -n 12p 01_infra/06_eks/$NAME/scripts/values.yaml | awk '{print $2}' )
+  echo EFS
+  echo $EFS
   if [ $EFS ]
   then
     efs="cp ../../../../02_tmp/SERVICE/PROVIDER/efs.tf ."
