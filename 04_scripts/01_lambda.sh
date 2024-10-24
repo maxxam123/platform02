@@ -26,8 +26,7 @@
   sed -i -e "s/PROVIDER/$PRO/g" main.yaml
   sed -i -e "s/SERVICE/$SER/g" main.yaml
   cp main.yaml $d_p/$SER-$PRO-$NAM.yaml
-
-  
+ 
   cat main.yaml
 
   
