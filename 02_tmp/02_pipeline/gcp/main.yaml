@@ -31,13 +31,14 @@ jobs:
      - name: Terraform init
        id: init
        run: |
-         cp ../../../../02_tmp/SERVICE/PROVIDER/* .
+         cp ../../../../02_tmp/SERVICE/PROVIDER/01_variables.tf .
+         cp ../../../../02_tmp/SERVICE/PROVIDER/03_main.tf .
+         sh scripts/script.sh
          cp ../../../../03_pro/PROVIDER/02_provider.tf .
          
-         echo "01_PROVIDER.TF"
-         cat 02_provider.tf
-         echo "TFVARS"
-         cat terraform.tfvars
+         echo "LS"
+         ls -la
+         
      #    terraform init -backend-config="bucket=dunhuang-gansu-terraform-state"
        
      #- name: Terraform Plan
