@@ -16,6 +16,7 @@
   ls -la
   ls 
   touch platf04/01_infra/$SER/$PRO/$NAM/scripts/script_del.sh
+  ls platf04/01_infra/$SER/$PRO/$NAM/scripts
   # if [ $AUT ]; then
   #   echo "cp ../../../../02_tmp/$SER/$PRO/08_autoscaler.tf ." >> platf04/01_infra/$SER/$PRO/$NAM/scripts/script_del.sh
   # fi
