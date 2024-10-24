@@ -14,6 +14,11 @@
   # # ARN=$( sed -n 12p 01_infra/06_eks/$NAME/scripts/values.yaml | awk '{print $2}' )
 
   touch platf04/01_infra/$SER/$PRO/$NAM/scripts/script.sh
+
+  echo "cp ../../../../02_tmp/SERVICE/PROVIDER/01_variables.tf ." >> platf04/01_infra/$SER/$PRO/$NAM/scripts/script.sh
+  echo "cp ../../../../02_tmp/SERVICE/PROVIDER/03_main.tf" . >> platf04/01_infra/$SER/$PRO/$NAM/scripts/script.sh
+  echo "cp ../../../../03_pro/PROVIDER/02_provider.tf" . >> platf04/01_infra/$SER/$PRO/$NAM/scripts/script.sh
+  
   if [ $AUT ]; then
     echo "cp ../../../../02_tmp/$SER/$PRO/08_autoscaler.tf ." >> platf04/01_infra/$SER/$PRO/$NAM/scripts/script.sh
   fi
