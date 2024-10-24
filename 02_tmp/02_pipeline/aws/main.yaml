@@ -3,7 +3,7 @@ on:
    branches:
    - main
    paths:
-   - '01_infra/SERVICE/PROVIDER/NAME/*'   #### 01_lambda == SERVICE
+   - '01_infra/SERVICE/PROVIDER/NAME/terraform.tfvars'   #### 01_lambda == SERVICE
 
 env:
  AWS_ACCESS_KEY_ID: ${{ secrets.ACCESS_KEY }}
