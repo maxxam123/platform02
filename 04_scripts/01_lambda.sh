@@ -21,10 +21,10 @@
 
   # CLS=$( sed -n 1p 01_infra/$SER/$PRO/$NAM/values.yaml | awk '{print $2}' )
   CLS=$( sed -n 4p 03_trigger/01_lambda | awk '{print $2}' )
-  # if [ $CLS ]
-  # then
-  #   # sh 04_scripts/02_eks.sh
-  # fi
+  if [ $CLS ]
+  then
+    sh 04_scripts/02_eks.sh
+  fi
 
   cp $s_p/$PRO/main.yaml .
   sed -i -e "s/NAME/$NAM/g" main.yaml
