@@ -2,7 +2,7 @@
 
   NAM=$( sed -n 1p 03_trigger/01_lambda )
   PRO=$( sed -n 2p 03_trigger/01_lambda )
-  # SER=$( sed -n 3p 03_trigger/01_lambda )
+  SER=$( sed -n 3p 03_trigger/01_lambda )
 
   AUT=$( sed -n 5p 01_infra/10_eks/$PRO/$NAM/values.yaml | awk '{print $2}' )
   EFS=$( sed -n 6p 01_infra/10_eks/$PRO/$NAM/values.yaml | awk '{print $2}' )
