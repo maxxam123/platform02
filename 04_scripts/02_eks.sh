@@ -24,6 +24,9 @@
   if [ $SEC ]; then
     sec="cp ..\/..\/..\/..\/02_tmp\/SERVICE\/PROVIDER\/10_secdriver.tf ."
     sed -i -e "s/SECRETCSI/$sec/g" main.yaml
+  else
+    sec="echo nosecdriver"
+    sed -i -e "s/SECRETCSI/$sec/g" main.yaml
   fi
 
   cat main.yaml
