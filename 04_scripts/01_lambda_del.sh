@@ -14,7 +14,7 @@
     sh 04_scripts/02_eks_del.sh
   fi
   
-  echo $NAME > platf04/03_trigger/test
+  echo $NAME > platf04/05_trig/trigger.yaml
   cp $pipeline/$PROVIDER/main_delete.yaml .
   sed -i -e "s/PROVIDER/$PROVIDER/g" main_delete.yaml
   sed -i -e "s/SERVICE/$SERVICE/g" main_delete.yaml
