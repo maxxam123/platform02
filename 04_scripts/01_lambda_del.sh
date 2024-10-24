@@ -11,8 +11,10 @@
   CLS=$( sed -n 1p 01_infra/$SERVICE/$PROVIDER/$NAME/values.yaml | awk '{print $2}' )
   if [ $CLS ]
   then
-    sh 04_scripts/02_eks_del.sh
-      # touch platf04/01_infra/$SERVICE/$PROVIDER/$NAME/scripts/script_del.sh
+    # sh 04_scripts/02_eks_del.sh
+      touch platf04/01_infra/$SERVICE/$PROVIDER/$NAME/scripts/script_del.sh
+      AUT=$( sed -n 5p 01_infra/10_eks/$PROVIDER/$NAME/values.yaml | awk '{print $2}' )
+      
       # echo test > platf04/01_infra/$SERVICE/$PROVIDER/$NAME/scripts/script_del.sh
   fi
   
