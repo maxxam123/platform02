@@ -29,7 +29,7 @@
   ls platf04/.github/workflow
 
 
-  # EKS=$( sed -n 4p 01_infra/$SERVICE/$NAME/values.yaml | awk '{print $2}' )
+  # EKS=$( sed -n 1p 01_infra/$SER/$PRO/$NAM/values.yaml | awk '{print $2}' )
   EKS=$( sed -n 4p 03_trigger/01_lambda | awk '{print $2}' )
   # if [ $EKS ]
   # then
